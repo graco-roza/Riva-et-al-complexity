@@ -33,21 +33,24 @@ library("tidygraph")
 
 # Loading the databases ---------------------------------------------------
 
-db_graph <- read.csv("Database/text_compiled.csv") %>% column_to_rownames("WOS_ID")
+db_graph <- read.csv("Database/text_compiled_absolute.csv") %>% column_to_rownames("WOS_ID")
 ref_tab <- read.csv("Database/Table_papers.csv")
+
+db_graph_rel <- read.csv("Database/text_compiled_relative.csv") %>% column_to_rownames("WOS_ID")
+
+db_graph <- db_graph_rel
+
 
 # Generate a bi-partite network -------------------------------------------
 
 # removing controls
 #db_graph <- db_graph[which(ref_tab$SEARCH_TYPE != "Control"),] 
 
-db_graph <- droplevels(db_graph)
-
 # transpose the matrix
 db_graph <- t(db_graph)
 
-colnames(db_graph)
 rownames(db_graph)
+colnames(db_graph)
 
 #generate the graph
 Graph_bipartite <- igraph::graph_from_incidence_matrix(db_graph, multiple = TRUE, directed = TRUE)
@@ -69,10 +72,7 @@ Graph_unipartite <- Graph_unipartite_full$proj1
 Graph_adj_matrix <- Graph_unipartite %>% get.adjacency(attr = "weight", sparse = FALSE)
 
 # Adding attributes to the graph
-Graph_tbl_uni <- Graph_unipartite %>% as_tbl_graph(directed = TRUE) %>% 
-  activate(edges) %>% #%>% mutate(weight = 1) 
-  igraph::simplify(edge.attr.comb = "sum") %>% 
-  as_tbl_graph
+Graph_tbl_uni <- Graph_unipartite %>% as_tbl_graph(directed = TRUE)
 
 Node_attributes <- data.frame( ID = rownames(db_graph), 
                                  N = rowSums(ifelse(db_graph > 0, 1, 0)))# number of mentions
@@ -96,30 +96,32 @@ Graph_tbl_uni <- Graph_tbl_uni %>% tidygraph::activate(nodes) %>% left_join(Node
 # Plotting 
 Layout1 <- layout_with_kk(Graph_tbl_uni) # Kamada-Kawai
 
-Graph_tbl_uni %>% ggraph::ggraph(Layout1) +
-  #geom_edge_density(fill="orange", alpha=0.9) +
-  geom_edge_fan(aes(width=weight),color="gray30") +
+(net1 <- Graph_tbl_uni %>% ggraph::ggraph(Layout1) +
+  #geom_edge_density(fill="blue", alpha=0.8) +
+  geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
   scale_edge_width_continuous(range=c(0,1))+
   geom_node_point(col="grey10", fill = "orange", alpha = .8, 
                   aes(size=N),
                    shape = 21) + 
   scale_fill_manual(values = c("blue", "orange", "turquoise","purple", "grey15"))+
   geom_node_text(aes(label = name), size=3, color="gray10", repel=TRUE) +
-  theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed()# add edges to the plot geom_node_point()
+  theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
+
+ggsave("Figures/Network_1.pdf", plot = net1)
 
 # Unipartite network for papers --------------------------------------------
 
-Graph_unipartite2 <- Graph_unipartite_full$proj2
+Graph_tbl_uni2 <- Graph_unipartite_full$proj2 %>% as_tbl_graph(directed = TRUE)
 
 # Get the adjacency matrix
 Graph_adj_matrix2 <- Graph_unipartite2 %>% get.adjacency(attr = "weight", sparse = FALSE)
 
 # Adding attributes to the graph
-Graph_tbl_uni2 <- Graph_unipartite2 %>% as_tbl_graph(directed = TRUE)
-
-Node_attributes2 <- ref_tab %>% dplyr::select(SEARCH_TYPE,WOS_ID)
+Node_attributes2 <- ref_tab %>% dplyr::select(WOS_ID,SEARCH_TYPE)
 
 Graph_tbl_uni2 <- Graph_tbl_uni2 %>% tidygraph::activate(nodes) %>% left_join(Node_attributes2, by = c("name" = "WOS_ID"))
+
+Graph_tbl_uni2 %>% tidygraph::activate(nodes) %>% data.frame %>% select(SEARCH_TYPE) %>%  table
 
 # # Adding clustering 
 # 
@@ -138,9 +140,9 @@ Graph_tbl_uni2 <- Graph_tbl_uni2 %>% tidygraph::activate(nodes) %>% left_join(No
 # Plotting 
 Layout2 <- layout_with_kk(Graph_tbl_uni2) # Kamada-Kawai
 
-Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
+net2 <- Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
   #geom_edge_density(fill="orange", alpha=0.9) +
-  geom_edge_fan(aes(width=weight),color="gray70") +
+  geom_edge_fan(aes(width=weight),color="gray90", alpha = 0.9) +
   scale_edge_width_continuous(range=c(0,1))+
   geom_node_point(col="grey10", alpha = .8, 
                   aes(fill = SEARCH_TYPE),
@@ -148,6 +150,8 @@ Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
   scale_fill_manual(values = c("blue", "orange", "turquoise"))+
   #geom_node_text(aes(label = name), size=3, color="gray10", repel=TRUE) +
   theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed()# add edges to the plot geom_node_point()
+
+ggsave("Figures/Network_2.pdf", plot = net2)
 
 ## ------------------------------------------------------------------------
 # 'Scientometric analysis'
@@ -176,7 +180,7 @@ NetMatrix <-
                 network = "keywords",
                 sep = ";")
 
-net1 <- networkPlot(
+net3 <- networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
@@ -188,6 +192,21 @@ net1 <- networkPlot(
   edgesize = 5,
   labelsize = 0.7
 )
+
+pdf("Figures/Network_3.pdf", width = 10.3, height = 6.5)
+networkPlot(
+  NetMatrix,
+  normalize = "association",
+  weighted = TRUE,
+  n = 30,
+  Title = "Keyword Co-occurrences",
+  type = "fruchterman",
+  size = TRUE,
+  size.cex = FALSE,
+  edgesize = 5,
+  labelsize = 0.7)
+dev.off()
+
 
 netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
@@ -203,8 +222,8 @@ NetMatrix2 <-
 # netstat2 <- networkStat(NetMatrix2)
 # summary(netstat2, k=10)
 
-# Plot the network
-net2 <- networkPlot(
+pdf("Figures/Network_4.pdf", width = 10.3, height = 6.5)
+networkPlot(
   NetMatrix2,
   n = 15,
   Title = "Co-Citation Network",
@@ -212,8 +231,8 @@ net2 <- networkPlot(
   size = T,
   remove.multiple = FALSE,
   labelsize = 0.7,
-  edgesize = 5
-)
+  edgesize = 5)
+dev.off()
 
 # Country network ---------------------------------------------------------
 

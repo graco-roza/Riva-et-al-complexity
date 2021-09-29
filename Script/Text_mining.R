@@ -1,3 +1,17 @@
+####################################
+# Review paper on ecological complexity
+####################################
+
+## ------------------------------------------------------------------------
+# 'R script to reproduce the analyses'
+## ------------------------------------------------------------------------
+
+## Authors: Stefano Mammola & Caio Graco Roza
+## Last update: 29 Sep 2021, Helsinki, Finland
+## Software: R (v. R 4.1.0) and R studio (v. 1.4.1103)
+
+###############################################################
+
 pacman::p_load(pdftools,tidyverse,tidytext,stringr)
 
 #TRASH 

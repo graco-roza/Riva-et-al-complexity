@@ -17,55 +17,49 @@ pacman::p_load(pdftools,tidyverse,tidytext,stringr)
 #TRASH 
 # mutate(word = case_when(word == "1a" ~ "selforganization", word == "1c" ~ "self-organisation", TRUE ~ word)) %>% 
 
- directory <- "Input"
- pdfs <- paste(directory, "/", list.files(directory, pattern = "*.pdf"), sep = "")
- pdf_names <- list.files(directory, pattern = "*.pdf")
- pdfs_text <- map(pdfs, pdftools::pdf_text)
-pdfs_text<-list() 
-for (i in 1:259){
-   pdfs_text[[i]]<- pdf_text(pdfs[i])
-   print(pdf_names[i])
-}
-   pdfs_text <- map(pdfs, pdftools::pdf_text) 
- 
-   pdf_text(pdfs[259])
- my_data_unigram <- tibble(document = pdf_names, text = pdfs_text)  %>% 
-    unnest(cols=c(text)) %>% # transforming list into data frame
-    unnest_tokens(word, text, strip_numeric = TRUE) %>%  # no number
-    group_by(document, word) %>% 
-    summarise(count=n())
- 
- 
- my_data_bigram <- tibble(document = pdf_names, text = pdfs_text)  %>% 
-    unnest(cols=c(text)) %>% # transforming list into data frame
-    unnest_tokens(bigram, text,  token = "ngrams", n = 2) %>% 
-    group_by(document, bigram) %>% 
-    summarise(count=n())
+directory <- "Input"
+pdfs <- paste(directory, "/", list.files(directory, pattern = "*.pdf"), sep = "")
+pdf_names <- list.files(directory, pattern = "*.pdf")
+pdfs_text <- map(pdfs, pdftools::pdf_text)
+
+my_data_unigram <- tibble(document = pdf_names, text = pdfs_text)  %>% 
+   #filter(document == "WOS_000272473800001.pdf") %>% 
+   unnest(cols=c(text)) %>% # transforming list into data frame
+   unnest_tokens(word, text, strip_numeric = TRUE) %>%  # no number
+   group_by(document, word) %>% 
+   summarise(count=n())
 
 
- #Diversity search  ---------
- 
+my_data_bigram <- tibble(document = pdf_names, text = pdfs_text)  %>% 
+   #filter(document == "WOS_000272473800001.pdf") %>% 
+   unnest(cols=c(text)) %>% # transforming list into data frame
+   unnest_tokens(bigram, text,  token = "ngrams", n = 2) %>% 
+   group_by(document, bigram) %>% 
+   summarise(count=n())
+
+#Diversity search  ---------
+
 diversity <-  my_data_unigram %>% 
    filter(str_detect(word, "^diversit") | str_detect(word, "^heterogen")) %>% 
    group_by(document) %>% 
    summarise(diversity = sum(count))
- 
- #Interaction search  ---------
- 
+
+#Interaction search  ---------
+
 interaction <-  my_data_unigram %>% 
    filter(str_detect(word, "^interact")) %>% 
    group_by(document) %>% 
    summarise(interaction = sum(count))
- 
- #Aggregation search  ---------
- 
+
+#Aggregation search  ---------
+
 aggregation <-  my_data_unigram %>% 
    filter(str_detect(word, "^aggregat") | str_detect(word, "^cluster")) %>% 
    group_by(document) %>% 
    summarise(aggregation = sum(count))
- 
+
 #Self organization search ----
- 
+
 self_organization_unigram <-  my_data_unigram %>% 
    filter(str_detect(word, "^selforga") | str_detect(word, "^self-orga")) %>% 
    group_by(document) %>% 
@@ -256,6 +250,12 @@ network <-  my_data_unigram %>%
    group_by(document) %>% 
    summarise(network  = sum(count))
 
+#Total number of words ----
+
+word_count <- my_data_unigram %>%
+   anti_join(tidytext::stop_words) %>% 
+   group_by(document) %>%
+   summarise(word_total = sum(count))
 
 #Combining datasets -------
 
@@ -289,13 +289,26 @@ output <- Reduce(
       tipping_point,
       threshold,
       heterarchy, 
-      network
+      network, 
+      word_count
    )
 ) %>%
    mutate_at(vars(-document) , replace_na, replace = 0) %>%
    mutate_at("document", ~ str_sub(., end = nchar(.) - 4)) %>% #removing .pdf from document name
-   rename(WOS_ID = document)
+   rename(WOS_ID = document) %>% 
+   mutate_at("WOS_ID", factor) %>%
+   distinct(WOS_ID, .keep_all= TRUE)
 
+#Save absolute word count 
+write_csv(output %>%
+             select(-word_total),
+          file = "Database/text_compiled_absolute.csv")
+
+#save relative word count
+write_csv(output %>%
+             mutate_at(vars(-WOS_ID), ~ ./word_total * 1e4)  %>% 
+             select(-word_total),
+          file = "Database/text_compiled_relative.csv")
 
     
 

@@ -1,0 +1,3287 @@
+﻿FN Clarivate Analytics Web of Science
+VR 1.0
+PT J
+AU Svitek, M
+AF Svitek, Miroslav
+TI TOWARDS COMPLEX SYSTEM THEORY
+SO NEURAL NETWORK WORLD
+LA English
+DT Article
+DE Complex system theory; knowledge; quantum information systems;
+   information power; information physics; self-organization; smart systems
+AB This tutorial summarizes the new approach to complex system theory that comes basically from physical information analogies. The information components and gates are defined in a similar way as components in electrical or mechanical engineering. Such approach enables the creation of complex networks through their serial, parallel or feedback ordering. Taking into account wave probabilistic functions in analogy with quantum physics, we can enrich the system theory with features such as entanglement. It is shown that such approach can explain emergencies and self-organization properties of complex systems.
+C1 Czech Tech Univ, Fac Transportat Sci, CZ-11000 Prague 1, Czech Republic.
+RP Svitek, M (corresponding author), Czech Tech Univ, Fac Transportat Sci, Konviktska 20, CZ-11000 Prague 1, Czech Republic.
+EM svitek@fd.cvut.cz
+CR Bar-Hillel Y., 1953, BRIT J PHILOS SCI, V4, P147, DOI [10.1093/bjps/IV.14.147, DOI 10.1093/BJPS/IV.14.147]
+   CHUA LO, 1971, IEEE T CIRCUITS SYST, VCT18, P507, DOI 10.1109/TCT.1971.1083337
+   FEYNMAN R.P., 1966, QED STRANGE THEORY L
+   Feynman R. P., 1966, FEYNMAN LECT PHYS
+   Kauffman S., 2004, SCI ULTIMATE REALITY, P654
+   Khrennikov A, 2005, AIP CONF PROC, V750, P187
+   Khrennikov A, 2001, J PHYS A-MATH GEN, V34, P9965, DOI 10.1088/0305-4470/34/47/304
+   LAWDEN DEREK F., 2005, MATH PRINCIPLES QUAN
+   Moos P., 2008, INFORM SYSTEMS TECHN
+   Novaes SF, 2000, PROCEEDINGS OF THE X JORGE ANDRE SWIECA SUMMER SCHOOL ON PARTICLES AND FIELDS, P5
+   Peterka V., 1981, TRENDS PROGR SYSTEM, P239, DOI DOI 10.1016/B978-0-08-025683-2.50013-2
+   SHANNON CE, 1948, BELL SYST TECH J, V27, P379, DOI 10.1002/j.1538-7305.1948.tb01338.x
+   Steiner M, 1998, APPL MATH PHILOS PRO
+   Stonier T., 1990, INFORM INTERNAL STRU, DOI [10.1007/978-1-4471-3265-3., DOI 10.1007/978-1-4471-3265-3]
+   Svitek M, 2005, NEURAL NETW WORLD, V15, P567
+   Svitek M, 2005, NEURAL NETW WORLD, V15, P53
+   SVITEK M, 2012, P 4 INT C MATH BIOL, P170
+   Svitek M., 2013, VIC NEZ SOUCET CASTI
+   SVITEK M., 2014, P 7 EUR C TEL INF SY, P34
+   Svitek M., 2013, TRANSPORT TELEMATICS
+   SVITEK M, 2006, DYNAMICAL SYSTEMS RE
+   Svitek M., 2010, QUANTUM SYSTEM THEOR
+   Svitek M, 2008, NEURAL NETW WORLD, V18, P401
+   Svitek M, 2008, INT J GEN SYST, V37, P603, DOI 10.1080/03081070701833039
+   Svitek M, 2007, NEURAL NETW WORLD, V17, P469
+   Svitek M, 2007, NEURAL NETW WORLD, V17, P237
+   Svitek M, 2013, NEURAL NETW WORLD, V23, P287, DOI 10.14311/NNW.2013.23.018
+   Svitek M, 2012, IEEE T SYST MAN CY C, V42, P233, DOI 10.1109/TSMCC.2011.2115237
+   Svitek M, 2011, IEEE T SYST MAN CY C, V41, P674, DOI 10.1109/TSMCC.2010.2093127
+   Svitek M, 2011, NEURAL NETW WORLD, V21, P269, DOI 10.14311/NNW.2011.21.016
+   Svitek M, 2011, NEURAL NETW WORLD, V21, P67, DOI 10.14311/NNW.2011.21.005
+   Svitek M, 2010, NEURAL NETW WORLD, V20, P241
+   Svitek M, 2009, NEURAL NETW WORLD, V19, P307
+   Svitek M, 2008, WMSCI 2008: 12TH WORLD MULTI-CONFERENCE ON SYSTEMICS, CYBERNETICS AND INFORMATICS, VOL III, PROCEEDINGS, P233
+   Svitek M, 2008, NEURAL NETW WORLD, V18, P489
+   Taleb NN, 2010, BLACK SWAN IMPACT HI
+   VEDRAL V., 2006, INTRO QUANTUM INFORM, DOI [10.1093/acprof:oso/9780199215706.001.0001, DOI 10.1093/ACPROFIOSO/9780199215706.001.0001]
+   Vlcek J., 1999, SYSTEMOVE INZENYRSTV
+   VLCEK J., 2002, INFORM VYKON
+   Votruba Z, 2010, NEURAL NETW WORLD, V20, P609
+   ZADEH LA, 1965, INFORM CONTROL, V8, P338, DOI 10.1016/S0019-9958(65)90241-X
+NR 41
+TC 24
+Z9 24
+U1 0
+U2 17
+PU ACAD SCIENCES CZECH REPUBLIC, INST COMPUTER SCIENCE
+PI 182 07 PRAGUE 8
+PA POD VODARENSKOU VEZI 2, 182 07 PRAGUE 8, 00000, CZECH REPUBLIC
+SN 1210-0552
+J9 NEURAL NETW WORLD
+JI Neural Netw. World
+PY 2015
+VL 25
+IS 1
+BP 5
+EP 33
+DI 10.14311/NNW.2015.25.001
+PG 29
+WC Computer Science, Artificial Intelligence
+SC Computer Science
+GA CD7DW
+UT WOS:000351252000002
+OA Bronze
+DA 2021-09-29
+ER
+
+PT C
+AU Xu, HH
+   Wang, JY
+   Meng, XQ
+AF Xu, HH
+   Wang, JY
+   Meng, XQ
+BE Chen, Z
+   Peng, XY
+   Wang, ZG
+   Duan, HB
+   Fan, WH
+   Li, N
+   Li, N
+   Tan, J
+   Tang, SQ
+   Zhang, P
+   Zhao, G
+TI Equipment battle simulation based on complex system theory
+SO System Simulation and Scientific Computing, Vols 1 and 2, Proceedings
+LA English
+DT Proceedings Paper
+CT Asia Simulation Conference/6th International Conference on System
+   Simulation and Scientific Computing
+CY OCT 24-27, 2005
+CL Beijing, PEOPLES R CHINA
+SP Chinese Assoc Syst Simulat, Korea Soc Simulat, Japanese Soc Simulat Technol, Soc Modeling & Simulat Int, Federat European Simulat Soc, Int Assoc Math & Comp Simulat, Beijing Univ, Aeronaut & Astronaut, Natl Nat Sci Fdn China, Beijing Simulat Ctr, Beijing Electro-Mech Engn Inst, Acad Armored Force Engn, Natl Univ Defence Technol, Tsinghua Univ, Harban Inst Technol, Harbin AF Flight Simulat Technol Inst
+DE equipment; battle simulation; complex system theory; agent; model;
+   framework
+AB According to the requirements of the modern battle simulation, guided by Meta-synthesis and CAS theory, this paper grasps essences of battle system from macrocosm level and make sure simulation aim; and uses Agent-oriented modeling and simulation (AOMS) methods to combine the human effects and the equipments capabilities into Battle Agent considered as basic and functional unit of battle system, which unifies man-in-loop emulator, Semi-Automated Forces and Automated Forces into Battle Agent; then integrates all of the battle agents into a whole system organized by their relationships to evaluate the effectiveness. This paper provides hierarchic rank system framework for aggregation, designs hybrid structure model for computer generating, adapts mixed mechanism including messages and blackboard to interact, and uses HLA as a distributed integration framework. Base on these, we establish a distributed battle simulation system of Battle Agents which communicate with RTI.
+C1 Armored Force Engn Acad, Equipment Battle & Simulat Dept, Beijing 100072, Peoples R China.
+RP Xu, HH (corresponding author), Armored Force Engn Acad, Equipment Battle & Simulat Dept, Beijing 100072, Peoples R China.
+CR DENG HZ, 2004, THESIS NATL U DEFENS
+   [胡晓峰 Hu Xiaofeng], 2003, [系统仿真学报, Journal of System Simulation], V15, P1659
+   LIAO SY, 2004, THESIS NATL U DEFENS
+   LIU XL, 2004, THESIS NATL U DEFENS
+   Wooldridge Michael, 2003, INTRO MULTIAGENT SYS
+NR 5
+TC 0
+Z9 0
+U1 0
+U2 0
+PU INTERNATIONAL ACADEMIC PUBLISHERS LTD
+PI HONG KONG
+PA UNIT 1205, 12 FLOOR, SINO PLAZA, 255 GLOUCESTER ROAD, HONG KONG 00000,
+   CAUSEWAY BAY, PEOPLES R CHINA
+BN 7-5062-7841-3
+PY 2005
+BP 224
+EP 228
+PG 5
+WC Computer Science, Interdisciplinary Applications; Computer Science,
+   Theory & Methods
+SC Computer Science
+GA BDL23
+UT WOS:000234109200057
+DA 2021-09-29
+ER
+
+PT C
+AU Backstrom, T
+AF Backstrom, Tomas
+BE Wei, J
+   Xu, Q
+   Wu, X
+   Chen, J
+TI Incremental and radical innovation from a complex system theory
+   perspective
+SO PROCEEDING OF 2012 INTERNATIONAL SYMPOSIUM ON MANAGEMENT OF TECHNOLOGY
+   (ISMOT'2012)
+LA English
+DT Proceedings Paper
+CT International Symposium on Management of Technology (ISMOT)
+CY NOV 08-09, 2012
+CL Hangzhou, PEOPLES R CHINA
+SP Zhejiang Univ, IEEE, Res Ctr Innovat & Dev, Natl Inst Innovat Management, STA, NSFC, MOE, Haier Grp
+DE Complex system theory; Emergence; Exploring-Exploiting; Paradox;
+   Integrated autonomy; Total Innovation Management
+ID EXPLOITATION; EXPLORATION
+AB One challenge in Total Innovation Management (TIM) is to include all personnel of the organization in all kinds of innovative processes. Most former models have suggested separating incremental and radical innovation in different departments, since they need different kinds of thinking, acting and relating; exploiting respectively exploring. In this paper we are going to develop an understanding of innovation based on complex systems theory in order to transcend the paradox between exploiting and exploring. Activities like communication and experiments are important. We will describe processes and structures for practical use of the TIM-model and point at the need for integrated autonomy to facilitate emergence and structures like culture, praxis and relatonics for organizing of the innovation system.
+C1 Malardalen Univ, Sch Innovat Design & Engn, Eskilstuna, Sweden.
+RP Backstrom, T (corresponding author), Malardalen Univ, Sch Innovat Design & Engn, Eskilstuna, Sweden.
+EM tomas.backstrom@mdh.se
+CR Backstrom T., 2008, ENCY NETWORKED VIRTU, V3, P1367
+   Backstrom T., 2009, LEARNING ORG, V16
+   Backstrom T., 2011, STUDIES IND RENEWAL, P215
+   Backstrom T., NONLINEAR DYNAMICS P
+   BERGE PL, 1966, SOCIAL CONSTRUCTION
+   Cohen J., 1994, COLLAPSE CHAOS DISCO
+   Drath WH, 2008, LEADERSHIP QUART, V19, P635, DOI 10.1016/j.leaqua.2008.09.003
+   ELDRIDGE N, 1972, MODELS PALEOBIOLOGY
+   HAKEN H, 1996, PRINCIPLES BRAIN FUN
+   Hazey J, INNOVATION REO UNPUB
+   Lavie D, 2010, ACAD MANAG ANN, V4, P109, DOI 10.1080/19416521003691287
+   Lewis MW, 2000, ACAD MANAGE REV, V25, P760, DOI 10.2307/259204
+   March JG, 1991, ORGAN SCI, V2, P71, DOI 10.1287/orsc.2.1.71
+   Marinova D., 2003, INT HDB INNOVATION
+   MARION R., 1999, EDGE ORG CHAOS COMPL, P355
+   SANCHEZRUNDE C, 2003, INNOVATIVE FORMS ORG
+   Sawyer R. K., 2005, SOCIAL EMERGENCE SOC
+   SHWEDER RA, 1993, ANNU REV PSYCHOL, V44, P497, DOI 10.1146/annurev.ps.44.020193.002433
+   Takeuchi H, 2008, HARVARD BUS REV, V86, P96
+   Un CA, 2010, J ENG TECHNOL MANAGE, V27, P1, DOI 10.1016/j.jengtecman.2010.03.001
+   Xu QR, 2007, J TECHNOL TRANSFER, V32, P9, DOI 10.1007/s10961-006-9007-x
+   Yamamoto Y., MANUFACTURING UNPUB
+NR 22
+TC 0
+Z9 0
+U1 0
+U2 4
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 978-1-4673-4593-4
+PY 2012
+BP 509
+EP 512
+PG 4
+WC Computer Science, Theory & Methods; Engineering, Electrical & Electronic
+SC Computer Science; Engineering
+GA BB8CA
+UT WOS:000346299300107
+DA 2021-09-29
+ER
+
+PT C
+AU Sun, LK
+   Ju, XF
+   Li, R
+AF Sun Lan-ke
+   Ju Xiao-feng
+   Li Rui
+BE Lan, H
+TI Research on Coordination Mechanism Model of Launch Vehicle Supply Chain
+   Based on Complex System Theory
+SO 2009 INTERNATIONAL CONFERENCE ON MANAGEMENT SCIENCE & ENGINEERING
+   (16TH), VOLS I AND II, CONFERENCE PROCEEDINGS
+SE International Conference on Management Science and Engineering-Annual
+   Conference Proceedings
+LA English
+DT Proceedings Paper
+CT 16th International Conference on Management Science and Engineering
+CY SEP 14-16, 2009
+CL Moscow, RUSSIA
+SP Natl Nat Sci Fdn China, Harbin Inst Technol, State Univ Management, IEEE Technol Management Council
+DE complex system theory; coordination mechanism; launch vehicle; supply
+   chain
+ID POLICIES
+AB The supply chain is a system based on the mechanism of "competition-cooperation-coordination" and coordination is the key to successful implementation of the supply chain. The launch vehicle supply chain is a typical complex system which needs to be coordinated. This paper constructs the coordinated mechanism model of launch vehicle supply chain based on a comprehensive analysis of many domestic and foreign research results, then does the contrast research of price, the sales volume, the system profit and other major variables in coordinated and non-coordinated decision-making's situation, and confirms the coordination mechanism can reduce the prices of products, improve sales volume and increase the system's profits, which was a win-win situation of the supply chain members. Finally, we propose the future research direction.
+C1 [Sun Lan-ke; Ju Xiao-feng; Li Rui] Harbin Inst Technol, Sch Management, Harbin 150001, Peoples R China.
+RP Sun, LK (corresponding author), Harbin Inst Technol, Sch Management, Harbin 150001, Peoples R China.
+CR Boyaci T, 2002, INT J PROD ECON, V77, P95, DOI 10.1016/S0925-5273(01)00229-8
+   Chen HY, 2006, INT J PROD ECON, V103, P347, DOI 10.1016/j.ijpe.2005.09.002
+   Garcia-Dastugue SJ, 2003, IND MARKET MANAG, V32, P251, DOI 10.1016/S0019-8501(02)00269-9
+   HAN J, 1998, CIMS, P8
+   HE X, 2009, PRODUCTION OPERATION, P46
+   Hu Long-ying, 2008, Journal of Harbin Engineering University, V29, P198
+   Lee CH, 2001, EUR J OPER RES, V131, P491, DOI 10.1016/S0377-2217(00)00088-6
+   LIN Q, 2006, J CHINA UNIV GEOSCI, V6, P4346
+   LIPPMAN S, 1997, OPER RES, P54
+   MA SH, 2000, IND ENG MANAGEMENT, V5, P24
+   Narasimhan R, 2005, INT J PROD ECON, V96, P301, DOI 10.1016/j.ijpe.2003.06.004
+   SARMAH SP, 2008, INT J PROD ECON, V46, P38
+   THOMAS DJ, 1996, EUR J OPER RES, P1
+   VLACHOS D, 2007, OPER RES, P367
+   WANG H, 2004, PRODUCTION MANUFACTU, P372
+   WU BG, 2007, LOGISTICS SCI TECH, P103
+   Yao Li gang, 2008, Computer Integrated Manufacturing Systems, V14, P2026
+   [赵纯均 Zhao Chunjun], 2002, [系统工程理论与实践, Systems Engineering-Theory & Practice], V22, P49
+   Zhao Tian-zhi, 2004, Computer Integrated Manufacturing Systems, V10, P929
+   [周长礼 ZHOU Changli], 2009, [数学杂志, Journal of Mathematics], V29, P81
+NR 20
+TC 0
+Z9 0
+U1 0
+U2 1
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+SN 2155-1847
+BN 978-1-4244-3970-6
+J9 INT C MANAGE SCI ENG
+PY 2009
+BP 385
+EP 391
+DI 10.1109/ICMSE.2009.5317411
+PG 7
+WC Computer Science, Information Systems; Computer Science,
+   Interdisciplinary Applications; Engineering, Industrial; Operations
+   Research & Management Science
+SC Computer Science; Engineering; Operations Research & Management Science
+GA BMY95
+UT WOS:000273956800060
+DA 2021-09-29
+ER
+
+PT C
+AU Wang, FS
+   Zhu, WH
+   Lu, HQ
+AF Wang, Fengshan
+   Zhu, Wanhong
+   Lu, Houqing
+BE Jiang, LZ
+TI Wartime Repair Decision-Making Framework for Military Engineering on
+   Complex System Theory
+SO PROCEEDINGS OF THE 2011 INTERNATIONAL CONFERENCE ON INFORMATICS,
+   CYBERNETICS, AND COMPUTER ENGINEERING (ICCE2011), VOL 1: INTELLIGENT
+   CONTROL AND NETWORK COMMUNICATION
+SE Advances in Intelligent and Soft Computing
+LA English
+DT Proceedings Paper
+CT International Conference on Informatics, Cybernetics, and Computer
+   Engineering (ICCE2011)
+CY NOV 19-20, 2011
+CL Melbourne, AUSTRALIA
+DE wartime repair; decision-making framework; system laws; complex system
+   theory; military engineering
+ID NORMATIVE DESIGN; ORGANIZATIONS
+AB To achieve conformity and optimization on resource, task, entity, and other elements, wartime repair decision-making framework was proposed towards military engineering based on complex system theory. On the basis of conceptual description about wartime military engineering damage and repair system, system characteristics were posted in repair structure, and then system laws in military engineering repair structure were constructed with complex system science. According to material, energy. and information shape features, wartime engineering repair operations were abstracted, decision-making framework was presented in the complex operation system. It provided certain reference on predominating repair laws thoroughly. and aimed to gain best operational efficiency.
+C1 [Wang, Fengshan; Zhu, Wanhong; Lu, Houqing] Peoples Liberat Army Univ Sci & Technol, Engn Inst Corps Engn, Nanjing, Peoples R China.
+RP Wang, FS (corresponding author), Peoples Liberat Army Univ Sci & Technol, Engn Inst Corps Engn, Nanjing, Peoples R China.
+EM wfs919@tom.com
+CR Levchuk GM, 2002, IEEE T SYST MAN CY A, V32, P360, DOI 10.1109/TSMCA.2002.802820
+   Levchuk GM, 2002, IEEE T SYST MAN CY A, V32, P346, DOI 10.1109/TSMCA.2002.802819
+   [刘晓东 Liu Xiaodong], 2004, [系统工程理论与实践, Systems Engineering-Theory & Practice], V24, P72
+   Liu Zhong, 2007, OPERATIONS PLAN SYST
+   Miao Dong-sheng, 2006, ELITE SYSTEMS SCI
+   Xie Li-yan, 2007, SHIP ELECT ENG, V27, P4
+   Yang Dong-sheng, 2005, J NATL U DEFENSE TEC, V27, P116
+   [朱万红 ZHU Wanhong], 2007, [中国安全科学学报, China Safety Science Journal], V17, P23
+NR 8
+TC 0
+Z9 0
+U1 0
+U2 0
+PU SPRINGER-VERLAG BERLIN
+PI BERLIN
+PA HEIDELBERGER PLATZ 3, D-14197 BERLIN, GERMANY
+SN 1867-5662
+BN 978-3-642-25184-9
+J9 ADV INTEL SOFT COMPU
+PY 2011
+VL 110
+IS 1
+BP 55
+EP 62
+PG 8
+WC Computer Science, Artificial Intelligence; Computer Science, Cybernetics
+SC Computer Science
+GA BZL80
+UT WOS:000301960900008
+DA 2021-09-29
+ER
+
+PT C
+AU Wang, FS
+   Zhu, WH
+   Lu, HQ
+AF Wang, Fengshan
+   Zhu, Wanhong
+   Lu, Houqing
+BE Zhu, JW
+   Luo, Q
+TI Wartime Repair Decision-making Framework for Military Engineering on
+   Complex System Theory
+SO 2010 INTERNATIONAL COLLOQUIUM ON COMPUTING, COMMUNICATION, CONTROL, AND
+   MANAGEMENT (CCCM2010), VOL I
+LA English
+DT Proceedings Paper
+CT International Colloquium on Computing, Communication, Control, and
+   Management (CCCM 2010)
+CY AUG 20-22, 2010
+CL Yangzhou, PEOPLES R CHINA
+SP IEEE Technol Management Council, Yangzhou Univ, Intelligent Informat Technol Appl Res Assoc, Jiangsu Comp Fed, Yangzhou Assoc Sci & Techynol
+DE wartime repair; decision-making framework; system laws; complex system
+   theory; military engineering
+ID NORMATIVE DESIGN; ORGANIZATIONS
+AB To achieve conformity and optimization on resource, task, entity, and other elements, wartime repair decision-making framework was proposed towards military engineering based on complex system theory. On the basis of conceptual description about wartime military engineering damage and repair system, system characteristics were posted in repair structure, and then system laws in military engineering repair structure were constructed with complex system science. According to material, energy, and information shape features, wartime engineering repair operations were abstracted, decision-making framework was presented in the complex operation system. It provided certain reference on predominating repair laws thoroughly, and aimed to gain best operational efficiency.
+C1 [Wang, Fengshan; Zhu, Wanhong; Lu, Houqing] Peoples Liberat Army Univ Sci & Technol, Engn Inst Corps Engn, Nanjing, Jiangsu, Peoples R China.
+RP Wang, FS (corresponding author), Peoples Liberat Army Univ Sci & Technol, Engn Inst Corps Engn, Nanjing, Jiangsu, Peoples R China.
+EM wfs919@tom.com
+CR Levchuk GM, 2002, IEEE T SYST MAN CY A, V32, P360, DOI 10.1109/TSMCA.2002.802820
+   Levchuk GM, 2002, IEEE T SYST MAN CY A, V32, P346, DOI 10.1109/TSMCA.2002.802819
+   [刘晓东 Liu Xiaodong], 2004, [系统工程理论与实践, Systems Engineering-Theory & Practice], V24, P72
+   Liu Zhong, 2007, OPERATIONS PLAN SYST
+   Miao Dong-sheng, 2006, ELITE SYSTEMS SCI
+   Xie Li-yan, 2007, SHIP ELECT ENG, V27, P4
+   Yang Dong-sheng, 2005, J NATL U DEFENSE TEC, V27, P116
+   [朱万红 ZHU Wanhong], 2007, [中国安全科学学报, China Safety Science Journal], V17, P23
+NR 8
+TC 1
+Z9 1
+U1 0
+U2 0
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 978-1-4244-7380-9
+PY 2010
+BP 225
+EP 228
+DI 10.1109/ISQED.2010.5450421
+PG 4
+WC Computer Science, Theory & Methods; Engineering, Electrical & Electronic
+SC Computer Science; Engineering
+GA BG9RK
+UT WOS:000393717600059
+OA Green Submitted
+DA 2021-09-29
+ER
+
+PT C
+AU Liu, LP
+   Wu, LB
+AF Liu Li-ping
+   Wu Li-bo
+BE Lan, H
+TI A Research on Cooperative Innovation System of Chinese Enterprises Based
+   on Complex System Theory
+SO 2009 INTERNATIONAL CONFERENCE ON MANAGEMENT SCIENCE & ENGINEERING
+   (16TH), VOLS I AND II, CONFERENCE PROCEEDINGS
+SE International Conference on Management Science and Engineering-Annual
+   Conference Proceedings
+LA English
+DT Proceedings Paper
+CT 16th International Conference on Management Science and Engineering
+CY SEP 14-16, 2009
+CL Moscow, RUSSIA
+SP Natl Nat Sci Fdn China, Harbin Inst Technol, State Univ Management, IEEE Technol Management Council
+DE cooperative innovation system; complex system theory; dissipation
+   structure; model; knowledge management entropy
+AB According to the new optimal game analysis on the innovation ability of Chinese enterprises, the best strategy to compete and cooperate in the game is cooperative innovation, which can attribute the advantage resources among to different parts in the cooperative innovation system, and increase the innovation ability of the enterprises and further improve the whole industry. In the research, a pattern of cooperative innovation system is built for any enterprise as an innovation subject, and the structure and function of the system is revealed from three levels as micro-scope, mid-scope and macro-scope, in doing which, the basic conditions for a healthy development of a cooperative innovation system is discussed. Then basic standards to measuring the state of a cooperative innovation system are established by quantization of the knowledge management entropy and dissipative structure negative entropy. Finally, a possible road is pointed out for the orderly development of the cooperative innovation system in the relation to the environment.
+C1 [Liu Li-ping] Harbin Univ Business, Harbin Inst Technol, Harbin 150001, Peoples R China.
+   [Liu Li-ping; Wu Li-bo] Harbin Univ Business, Harbin, Peoples R China.
+RP Liu, LP (corresponding author), Harbin Univ Business, Harbin Inst Technol, Harbin 150001, Peoples R China.
+CR FAN CL, 2000, PASTEUR QUADRANT NEW
+   GUO T, 2008, ACAD EXCHANGE, P80
+   LI G, 2008, J HUBEI I EC, P99
+   LI J, 2007, STUDIES SCI SCI, P188
+   LIN LF, 2007, MARKET MODERNIZATION, P87
+   LIU HD, 2008, IND TECHNOLOGY EC, P28
+   LIU Zhi-lin, 2008, SCI TECHNOLOGY MANAG, P20
+   LIU ZY, 2007, CHINESE J MANAGEMENT, P98
+   REN PY, 2001, MANAGEMENT WORLD, P32
+   TAN H, 2008, SCI TECHNOLOGY PROGR, P6
+   WANG AP, 2004, ANAL SIMULATION COMP
+   WEI J, 2007, SCI CHINA YOUTH TECH, P48
+   WU YB, 2008, WORLD EC PAPERS, P46
+   WU YB, 2007, EC RES J, P125
+   Xu G, 2000, SYSTEM SCI
+   YANG ZG, 2003, SCI RES, P109
+   ZENG ZX, 2008, REFORMATION STRATEGY, P89
+   ZENG ZX, 2008, REFORMATION STRATEGY, P114
+   ZHAN KH, 1982, PRIGOGINE DISSIPATIV
+   ZHONG RB, 2006, CHINA SCI TECHNOLOGY
+   Zhu T, 2007, EC SURVEY, P88
+NR 21
+TC 1
+Z9 1
+U1 0
+U2 7
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+SN 2155-1847
+BN 978-1-4244-3970-6
+J9 INT C MANAGE SCI ENG
+PY 2009
+BP 1671
+EP +
+DI 10.1109/ICMSE.2009.5317845
+PG 3
+WC Computer Science, Information Systems; Computer Science,
+   Interdisciplinary Applications; Engineering, Industrial; Operations
+   Research & Management Science
+SC Computer Science; Engineering; Operations Research & Management Science
+GA BMY95
+UT WOS:000273956800248
+DA 2021-09-29
+ER
+
+PT C
+AU Zhang, XZ
+   Wen, Y
+   Liu, J
+   Wan, D
+AF Zhang, Xizhou
+   Wen, Ying
+   Liu, Jun
+   Wan, Dan
+GP IEEE
+TI Layout Planning Study for Off-road Park Facilities Based on Complex
+   System Theory
+SO 2009 INTERNATIONAL CONFERENCE ON INFORMATION MANAGEMENT, INNOVATION
+   MANAGEMENT AND INDUSTRIAL ENGINEERING, VOL 3, PROCEEDINGS
+LA English
+DT Proceedings Paper
+CT 2nd International Conference on Information Management, Innovation
+   Management and Industrial Engineering
+CY DEC 26-27, 2009
+CL Xian, PEOPLES R CHINA
+DE Ant Colony Optimization Algorithm; Complex System Theory; layout
+   planning; parking facilities; self-organization
+AB Urban off-road park facilities layout planning is an important component of the parking system planning and an integrated system engineering issue with multi-index and multi-constraint. This paper includes the study of the organizational mechanisms of parking facilities layout form and analysis of all factors that impact the public parking facilities layout. In this paper, the author established the simplified model of multi-objective optimization of the parking facilities site considering the highest social benefit of their layout. The Intelligent Ant Colony Optimization Algorithm is introduced to solve the model.
+C1 [Zhang, Xizhou; Wen, Ying; Liu, Jun; Wan, Dan] Huazhong Univ Sci & Technol, Dept Traff Planning & Management, Wuhan 430074, Peoples R China.
+RP Zhang, XZ (corresponding author), Huazhong Univ Sci & Technol, Dept Traff Planning & Management, Wuhan 430074, Peoples R China.
+EM traffic_hust@126.com
+CR CHEN J, 2000, THESIS SE U
+   CHEN SF, 2005, COMPLEX SYSTEMS MODE, P58
+   *HUAZH U SCI TECHN, 2007, HUANGSH CIT COMPR TR
+   ZHANG XY, 2006, URBAN PARKING PLANNI, P13
+   Zhang Y., 2003, THESIS SE U
+NR 5
+TC 0
+Z9 0
+U1 0
+U2 2
+PU IEEE COMPUTER SOC
+PI LOS ALAMITOS
+PA 10662 LOS VAQUEROS CIRCLE, PO BOX 3014, LOS ALAMITOS, CA 90720-1264 USA
+BN 978-0-7695-3876-1
+PY 2009
+BP 271
+EP 275
+DI 10.1109/ICIII.2009.374
+PG 5
+WC Computer Science, Interdisciplinary Applications; Computer Science,
+   Theory & Methods; Engineering, Industrial; Operations Research &
+   Management Science
+SC Computer Science; Engineering; Operations Research & Management Science
+GA BNZ39
+UT WOS:000275941200064
+DA 2021-09-29
+ER
+
+PT J
+AU Shahabi, C
+   Banaei-Kashani, F
+AF Shahabi, Cyrus
+   Banaei-Kashani, Farnoush
+TI Modelling P2P data networks under complex system theory
+SO INTERNATIONAL JOURNAL OF COMPUTATIONAL SCIENCE AND ENGINEERING
+LA English
+DT Article
+DE peer-to-peer networks; complex systems; small-worlds; distributed search
+AB A Peer-to-peer Data Network (PDN) is an open and evolving society of peer nodes that assemble into a network to share their data. We argue that with a self-organising, dynamic, and large-scale architecture, instead of traditional distributed computing systems, PDNs should be classified with natural complex systems (such as social networks). The 'complex system theory' is a meta-theory that provides a common modelling framework to study such complex systems under one umbrella. In this paper, for the first time we introduce and apply the complex system theory as a modelling framework to study PDNs.
+C1 [Shahabi, Cyrus; Banaei-Kashani, Farnoush] Univ Southern Calif, Comp Sci Dept, Los Angeles, CA 90089 USA.
+RP Banaei-Kashani, F (corresponding author), Univ Southern Calif, Comp Sci Dept, Los Angeles, CA 90089 USA.
+EM shahabi@usc.edu; banaeika@usc.edu
+RI Shahabi, Cyrus/C-5199-2014
+OI Shahabi, Cyrus/0000-0001-9118-0681
+FU NSFNational Science Foundation (NSF) [EEC-9529152, IIS-0238560];
+   Microsoft
+FX This research has been funded in part by NSF grants EEC-9529152 (IMSC
+   ERC) and IIS-0238560 (PECASE), unrestricted cash gifts from Microsoft,
+   and an on-going collaboration under NASAs GENESIS-II REASON project. Any
+   opinions, findings and conclusions or recommendations expressed in this
+   material are those of the author(s) and do not necessarily reflect the
+   views of the National Science Foundation.
+CR Albert R, 2000, PHYS REV LETT, V85, P5234, DOI 10.1103/PhysRevLett.85.5234
+   Banaei-Kashani F., 2003, P INT WORKSH DAT INF
+   Banaei-Kashani F., 2004, ACM 13 C INF KNOWL M
+   Bar-Yam Y., 1997, DYNAMICS COMPLEX SYS
+   Brin S., 1995, P 21 INT C VER LARG
+   Chavez E, 2001, ACM COMPUT SURV, V33, P273, DOI 10.1145/502807.502808
+   Doan A., 2001, P ACM INT C MAN DAT
+   Kleinberg J., 2000, Proceedings of the Thirty Second Annual ACM Symposium on Theory of Computing, P163, DOI 10.1145/335305.335325
+   Ohira T, 1998, PHYS REV E, V58, P193, DOI 10.1103/PhysRevE.58.193
+   Okabe A., 2000, SPATIAL TESSELLATION
+   Ratnasamy S., 2001, P ACM SIGCOMM 01 21
+   ROWSTRON A, 2001, P IFIP ACM INT C DIS, P329, DOI DOI 10.1007/3-540-45518-3
+   Sornette D, 2000, SPRINGER SERIES SYNE
+   Stoica I, 2001, ACM SIGCOMM COMP COM, V31, P149, DOI 10.1145/964723.383071
+   Watts DJ, 1998, NATURE, V393, P440, DOI 10.1038/30918
+NR 15
+TC 6
+Z9 6
+U1 0
+U2 0
+PU INDERSCIENCE ENTERPRISES LTD
+PI GENEVA
+PA WORLD TRADE CENTER BLDG, 29 ROUTE DE PRE-BOIS, CASE POSTALE 856, CH-1215
+   GENEVA, SWITZERLAND
+SN 1742-7185
+EI 1742-7193
+J9 INT J COMPUT SCI ENG
+JI Int. J. Comput. Sci. Eng.
+PY 2007
+VL 3
+IS 2
+BP 103
+EP 111
+DI 10.1504/IJCSE.2007.015740
+PG 9
+WC Computer Science, Interdisciplinary Applications
+SC Computer Science
+GA V94JU
+UT WOS:000213126100002
+DA 2021-09-29
+ER
+
+PT C
+AU Deng, XQ
+   Xi, JF
+AF Deng, Xiuquan
+   Xi, Junfeng
+BE Xia, GP
+   Deng, XQ
+TI RESEARCH ON PROJECT MANAGEMENT CAPABILITY BASED ON COMPLEX SYSTEM THEORY
+SO PROCEEDINGS OF THE 38TH INTERNATIONAL CONFERENCE ON COMPUTERS AND
+   INDUSTRIAL ENGINEERING, VOLS 1-3
+LA English
+DT Proceedings Paper
+CT 38th International Conference on Computers and Industrial Engineering
+CY OCT 31-NOV 02, 2008
+CL Beihang Univ, Beijing, PEOPLES R CHINA
+HO Beihang Univ
+DE Project Management Capability; Complex System; Evolution Mechanism;
+   Resources
+AB Based on the analysis of complex system, complex adaptive system and fractal theory, this paper studied the feasibility of three theories applied to project management capability, revealed characteristics that "adaptability" of project management capability system on environment brings up "complexity" of itself internal structure, built an system-level structure model of project management capability based on fractal theory, analyzed the evolution mechanism of project management capability of project-based companies, and made an empirical analysis of the theoretical research results.
+C1 [Deng, Xiuquan; Xi, Junfeng] Beihang Univ, Sch Econ & Management, Beijing 100083, Peoples R China.
+RP Deng, XQ (corresponding author), Beihang Univ, Sch Econ & Management, Beijing 100083, Peoples R China.
+EM dengxiuquan@126.com; fengender_231@sina.com
+CR DENG XQ, 2004, RES ORG INTEGRATED C
+   DREJER A, 1999, TECHNOVATION, V19
+   GUO BH, 2005, THEORY CO INTEGRATED
+   Holland J.H, 2001, EMERGENCE CHAOS ORDE
+   HOLLAND JH, 2000, IMPLICIT ORDER ADAPT
+   LI J, 2006, XIAN U ELECT SCI TEC, P82
+   LIU H, 2002, RES DEV MANAGEMENT, P40
+   WARNECKE HJ, 1992, FRACTAL FACTORY
+NR 8
+TC 0
+Z9 0
+U1 0
+U2 2
+PU PUBLISHING HOUSE ELECTRONICS INDUSTRY
+PI BEIJING
+PA PO BOX 173 WANSHOU ROAD, BEIJING 100036, PEOPLES R CHINA
+BN 978-7-121-07437-0
+PY 2008
+BP 2463
+EP 2468
+PG 6
+WC Computer Science, Information Systems; Engineering, Industrial
+SC Computer Science; Engineering
+GA BIR61
+UT WOS:000262289601063
+DA 2021-09-29
+ER
+
+PT C
+AU Zhang, XZ
+   Wang, C
+   Wen, Y
+   Sun, YL
+AF Zhang Xizhou
+   Wang Cheng
+   Wen Ying
+   Sun Yi-lu
+GP IEEE Computer Soc
+TI A Policy Model for Logistics Based on Complex System Theory
+SO INTERNATIONAL CONFERENCE ON INTELLIGENT COMPUTATION TECHNOLOGY AND
+   AUTOMATION, VOL 2, PROCEEDINGS
+LA English
+DT Proceedings Paper
+CT International Conference on Intelligent Computation Technology and
+   Automation
+CY OCT 20-22, 2008
+CL Changsha, PEOPLES R CHINA
+SP Changsha Univ, Sci & Technol, Cent S Univ, Hunan Univ, Sci & Technol, IEEE Comp Soc
+AB Nowadays the logistics system has evolved into an open complex giant system along with the progress in global economics and technology and the era of network, so that more and more factors have to be considered in the constitution of logistics policy. In order to reach overall synthesis, dynamic evolution and self-adaptive movement of logistics system, we put forward a new policy model based on the complex system theory including Synthesization and Integration,system Space Flight (Qian Xueseq), Adaptive Systems Theory(Santa Fe), Thinking of Complicated Method(Edgar Morin), several complex thoughts of Herbert.A.Simon, and Pansystems Theory(Wu xuemott). The concrete contents of the study include the description of the policy model for logistics, the submodels consisting of external synthesis model, internal dynamic equilibrium model, policy optimization model, and implement model. Consequently, this new policy model provides theoretical reference for the formulation of logistics policy in a country or region.
+C1 [Zhang Xizhou; Wang Cheng] Huazhong Univ Sci & Technol, Dept Traff Plannning & Management, Wuhan, Peoples R China.
+RP Zhang, XZ (corresponding author), Huazhong Univ Sci & Technol, Dept Traff Plannning & Management, Wuhan, Peoples R China.
+EM superaaron1985@gmail.com
+CR ADDIS TR, 2002, HUMAN COMPUTER STUDI, V70, P331
+   CHEN SF, 2005, MODELING COMPLEX SYS, P196
+   CHEN SW, 1999, RES COMPLEX SCI DEMO, P101
+   CHENG H, 2000, PERIOD I VICISSITUDE, P9
+   CHENG SQ, 2005, CONSPECTUS MODERN LO, P65
+   CHENG ZM, 2003, POLICY SCI, P603
+   DUNN WN, 2002, INTRO PUBLIC POLICY, P123
+   Haken H, 1997, J FRANKLIN I, V334B, P759, DOI 10.1016/S0016-0032(97)00032-X
+   JIANG Y, 2002, NATURE, V20, P1
+   LAMBERT D, 2003, MANAGEMENT LOGISTICS, P120
+   LIU ZY, 2001, HDB MODERN LOGISTICS, P101
+   Monostori L, 2006, ADV ENG INFORM, V20, P223, DOI 10.1016/j.aei.2006.05.009
+   POTTER M, 2005, PREDOMINANCE COMPETI, P302
+   QIAN XS, 1990, NATURE MAGAZINE, V24, P5
+   WANG B, 2006, RES EC, V32, P17
+   WANG HL, 2003, MODERN LOGISTICS MAN, P55
+   WEI JG, 2005, EC ANAL LOGISTICS, P151
+   WU XM, 2005, PANSYSTEMS THEORY HI, P459
+   YAN Q, 2002, PUBLIC SCI, P112
+   YAN ZX, 1993, THEORY COMPLEX SYSTE, P56
+   YU JY, 2006, RES EC XIAN, V32, P14
+   YU JY, 2006, RES EC XIAN, V32, P147
+   ZHANG YZ, 2006, RES EC CHANGSHA, V32, P67
+   ZHOU LS, 2003, THEORY POLICY PLANNI, P8
+NR 24
+TC 0
+Z9 0
+U1 0
+U2 1
+PU IEEE COMPUTER SOC
+PI LOS ALAMITOS
+PA 10662 LOS VAQUEROS CIRCLE, PO BOX 3014, LOS ALAMITOS, CA 90720-1264 USA
+BN 978-0-7695-3357-5
+PY 2008
+BP 609
+EP +
+DI 10.1109/ICICTA.2008.376
+PG 2
+WC Computer Science, Information Systems; Engineering, Electrical &
+   Electronic; Mathematics, Applied; Telecommunications; Transportation
+   Science & Technology
+SC Computer Science; Engineering; Mathematics; Telecommunications;
+   Transportation
+GA BIS56
+UT WOS:000262458200125
+DA 2021-09-29
+ER
+
+PT S
+AU Shahabi, C
+   Banaei-Kashani, F
+AF Shahabi, C
+   Banaei-Kashani, F
+BE Bhalla, S
+TI Modelling peer-to-peer data networks under complex system theory
+SO DATABASES IN NETWORKED INFORMATION SYSTEMS, PROCEEDINGS
+SE LECTURE NOTES IN COMPUTER SCIENCE
+LA English
+DT Article; Proceedings Paper
+CT 4th International Workshop on Databases in Networked Information Systems
+CY MAR 28-30, 2005
+CL Aizu Wakamatsu, JAPAN
+SP Univ Aizu, Int Affairs Comm, Aiza Wakamatsu City
+ID SMALL-WORLD NETWORKS
+C1 Univ So Calif, Comp Sci Dept, Los Angeles, CA 90089 USA.
+RP Shahabi, C (corresponding author), Univ So Calif, Comp Sci Dept, Los Angeles, CA 90089 USA.
+EM shahabi@usc.edu; banaeika@usc.edu
+RI Shahabi, Cyrus/C-5199-2014
+OI Shahabi, Cyrus/0000-0001-9118-0681
+CR Albert R, 2000, PHYS REV LETT, V85, P5234, DOI 10.1103/PhysRevLett.85.5234
+   Amaral LAN, 2000, P NATL ACAD SCI USA, V97, P11149, DOI 10.1073/pnas.200327197
+   BANAEIKASHANI F, UNPUB EPIDEMIC SAMPL
+   BANAEIKASHANI F, 2004, P 13 ACM C INF KNOWL, P304
+   Bar-Yam Y., 1997, DYNAMICS COMPLEX SYS
+   Hethcote HW, 2000, SIAM REV, V42, P599, DOI 10.1137/S0036144500371907
+   Kleinberg J., 2000, Proceedings of the Thirty Second Annual ACM Symposium on Theory of Computing, P163, DOI 10.1145/335305.335325
+   Ohira T, 1998, PHYS REV E, V58, P193, DOI 10.1103/PhysRevE.58.193
+   RATNASAMY S, 2001, P 2001 C APPL TECHN, P161, DOI DOI 10.1145/383059.383072
+   ROSTRON AIT, 2001, P IFIP ACM INT C DIS, P329
+   SORNETTE D, 2000, CRITICAL PHENOMENA N
+   STAUFFER D, 1992, INTRO PERCOLATION TH
+   STOICA I, 2001, P 2001 C APPL TECHN, P149, DOI DOI 10.1145/383059.383071
+   Watts DJ, 1998, NATURE, V393, P440, DOI 10.1038/30918
+   Watts DJ, 2002, SCIENCE, V296, P1302, DOI 10.1126/science.1070120
+NR 15
+TC 1
+Z9 1
+U1 0
+U2 2
+PU SPRINGER-VERLAG BERLIN
+PI BERLIN
+PA HEIDELBERGER PLATZ 3, D-14197 BERLIN, GERMANY
+SN 0302-9743
+BN 3-540-25361-0
+J9 LECT NOTES COMPUT SC
+PY 2005
+VL 3433
+BP 238
+EP 243
+PG 6
+WC Computer Science, Information Systems; Computer Science, Theory &
+   Methods
+SC Computer Science
+GA BCF82
+UT WOS:000229113000019
+OA Green Submitted
+DA 2021-09-29
+ER
+
+PT C
+AU Wang, BT
+AF Wang Bo-tao
+BE Zhang, SY
+   Wang, F
+TI A study on IS value realization based on complex system theory
+SO Proceedings of 2006 Chinese Control and Decision Conference
+LA Chinese
+DT Proceedings Paper
+CT 18th Chinese Control and Decision Conference
+CY JUL 27-30, 2006
+CL Tianjin, PEOPLES R CHINA
+DE IS Dissipative Structure; complex system; evolution
+AB The research in IS field focus on the IS project successful application and benefiting from it. According to complex system theory, the application course of IS project is reviewed and the complexity of IS and its value is analyzed. Moreover, this research seeks to build the IS dissipation structure to realize the IS value.
+C1 Beijing Univ Posts & Telecommun, Econ & Management Sch, Beijing 100876, Peoples R China.
+RP Wang, BT (corresponding author), Beijing Univ Posts & Telecommun, Econ & Management Sch, Beijing 100876, Peoples R China.
+CR CRONK MC, 2002, ELECT J BUSINESS RES, V1, P11
+   HU H, 2002, DONGJIANG J, V19, P33
+   KEMPIS R, 1998, DO IT SMART 7 RULES, P93
+   SHAN XY, 2002, J GUANGZI NORMAL U, V20, P94
+   Soh C., 1995, P 16 INT C INF SYST, P29
+   [孙飞 Sun Fei], 2004, [黑龙江大学自然科学学报, Journal of Natural Science of Heilongjiang University], V21, P76
+   VANGREMBERGEN W, 2001, INFORM TECHNOLOGY EV
+   VANGREMBERGEN W, 2001, INFORM SYSTEMS EVALU
+   WANG JG, 1999, J BEIJING I TECHNOLO, V19, P516
+NR 9
+TC 0
+Z9 0
+U1 0
+U2 0
+PU NORTHEASTERN UNIV SHENGYANG
+PI SHENGYANG
+PA PO BOX 125, SHENGYANG, 110004, PEOPLES R CHINA
+BN 978-7-81102-262-9
+PY 2006
+BP 1231
+EP 1234
+PG 4
+WC Automation & Control Systems; Computer Science, Artificial Intelligence
+SC Automation & Control Systems; Computer Science
+GA BFR71
+UT WOS:000244066100322
+DA 2021-09-29
+ER
+
+PT J
+AU Quispe, LAM
+AF Mamani Quispe, Luis Alberto
+TI Organization of the orthographic accent rule system in Spanish:
+   Linguistic Foundations
+SO LETRAS
+LA Spanish
+DT Article
+DE Orthographic accent; Complex system theory; Written accentuation
+   teaching
+AB After showing that the current orthographic accent rules in Spanish exhibit incoherencies and inconsistencies, this paper proposes a different way of organizing them. Due to the fact that the orthographic rules are embedded in the Spanish writing system and that they are related to the linguistic system units, the complex system theory has been used to develop this proposed organization. This has allowed us to show that the organization of the rules cannot be done without taking into account the word order. Based on the latter, four classes of accent marks are proposed, without general rules, without exceptions and without rules of a prohibitive nature. The main consequence, in terms of its usefulness, is that the teaching of the orthographic accent use cannot begin with the general rules, but with the words that have hiatus
+C1 [Mamani Quispe, Luis Alberto] Univ Nacl Mayor San Marcos, Lima, Peru.
+   [Mamani Quispe, Luis Alberto] Univ Ciencias & Humanidades, Lima, Peru.
+RP Quispe, LAM (corresponding author), Univ Nacl Mayor San Marcos, Lima, Peru.; Quispe, LAM (corresponding author), Univ Ciencias & Humanidades, Lima, Peru.
+EM lmamaniq@unmsm.edu.pe
+CR Baicchi Annalisa, 2015, CONSTRUCTION LEARNIN
+   De Beaugrande R., 2005, INTRO LINGUISTICA TE
+   Duval G., 2014, PERSPECTIVAS TEORIAS, P75
+   Earls J., 2011, INTRO TEORIA SISTEMA
+   Echeverria R., 2010, OBSERVADOR MUNDO, VII
+   Garcia R, 2006, SISTEMAS COMPLEJOS C
+   Garcia R, 2011, REV LATINOAM METOD S, V1, P66
+   Hualde J. I., 2014, SONIDOS ESPANOL
+   Lopez J., 2013, MOENIA, V19, P5
+   Loureda O, 2009, REV SIGNOS, V42, P317, DOI 10.4067/S0718-09342009000300002
+   Mamani L, 2013, REV SIGNOS, V46, P389, DOI 10.4067/S0718-09342013000300005
+   Martinez A., 2010, PROBLEMA CAMBIO DIAC
+   Minedu, 2009, DIS CURR NAC LIM PER
+   MINEDUC, 2012, BAS CURR LENG COM
+   Mineduc, 2016, BAS CURR 7 BAS 2 MED
+   Ministerio de Educacion de Ecuador, 2016, CURR ED GEN BAS BACH
+   Moreno F., 2008, PRINCIPIOS SOCIOLING
+   Nunez R., 1999, FONOLOGIA CONT LENG
+   Osorio F., 1998, CINTA MOEBIO, V3, P40
+   Portilla L., 2003, PROBLEMA ACENTUACION
+   Pujol M., 2005, CORPUS PAAU 1992 EST, P29
+   Radford A., 2000, INTRO LINGUISTICA
+   RAE & ASALE, 2011, NUEV GRAM LENG ESP
+   Ramirez L., 1993, ACENTO ESCRITO FUNDA
+   Ramirez S., 2014, PERSPECTIVAS TEORIAS
+   Real Academia Espanola-RAE, 2010, ORT LENG ESP
+   Rodriguez L., 2011, EXPLORACIONES COMPLE
+   Silva-Corvalan Carmen., 2001, SOCIOLINGUISTICA PRA SOCIOLINGUISTICA PRA
+NR 28
+TC 0
+Z9 0
+U1 0
+U2 2
+PU UNIV NACIONAL MAYOR SAN MARCOS
+PI LIMA
+PA CIUDAD UNIVERSITARIA, AV VENEZUELA CDRA. 34 S/N, CASILLA POSTAL 11-0058,
+   LIMA, 11, PERU
+SN 0378-4878
+EI 2071-5072
+J9 LETRAS-LIMA
+JI Letras
+PD JAN-JUN
+PY 2018
+VL 89
+IS 129
+BP 46
+EP 73
+DI 10.30920/letras.89.129.3
+PG 28
+WC Humanities, Multidisciplinary
+SC Arts & Humanities - Other Topics
+GA GK7IK
+UT WOS:000436372800003
+OA Green Submitted, gold
+DA 2021-09-29
+ER
+
+PT J
+AU Sommerer, C
+   Mignonneau, L
+AF Sommerer, Christa
+   Mignonneau, Laurent
+TI Life Spacies and Life Spacies II: modeling complex systems for
+   interactive art
+SO ARTNODES
+LA Spanish
+DT Article
+DE Life Spacies; interactive art; modelling; complex system theory
+AB . Based on the idea that interaction and communication between entities of a system are the driving forces behind the emergence of higher and more complex structures in life, we propose applying the principles of complex system theory to the creation of interactive, computer-generated and audience-participatory artwork and testing whether complexity within an artificial computer-generated system can emerge.
+C1 [Sommerer, Christa; Mignonneau, Laurent] Univ Arte & Diseno Linz, Dept Culturas Interfaz, Linz, Austria.
+RP Sommerer, C (corresponding author), Univ Arte & Diseno Linz, Dept Culturas Interfaz, Linz, Austria.
+EM christa.sommerer@ufg.ac.at; laurent.mignonneau@ufg.ac.at
+CR Sommerer C., 2000, APPL COMPLEXITY NEUR, P25
+NR 1
+TC 1
+Z9 1
+U1 0
+U2 1
+PU UNIV OBERTA CATALUNYA
+PI BARCELONA
+PA AV TIBIDABO 39-43, BARCELONA, 08035, SPAIN
+SN 1695-5951
+J9 ARTNODES
+JI Artnodes
+PD FEB
+PY 2009
+IS 9
+BP 30
+EP 42
+PG 13
+WC Humanities, Multidisciplinary
+SC Arts & Humanities - Other Topics
+GA VA4XB
+UT WOS:000409988200005
+DA 2021-09-29
+ER
+
+PT J
+AU Cai, SJ
+   Chen, CJ
+AF Cai, SJ
+   Chen, CJ
+TI Reliability of paste fill system of the Jinchuan No.2 mine
+SO JOURNAL OF UNIVERSITY OF SCIENCE AND TECHNOLOGY BEIJING
+LA English
+DT Article
+DE paste fill system; reliability study; complex system theory
+AB Because of poor ground conditions, stoping methods of underhand headings with cemented fill were used in the Jinchuan No. 2 mine, a paste fill system was set up. In order to evaluate the reliability of the new system, investigations and trial running have been done. More than 20 items of modification or improvements related to paste preparation subsystem, pump and pipe subsystem, auto-controlling and monitoring subsystem were finished. The reliability of the paste fill system was analyzed by using the theory of large complex system, and it is useful in reliability study on paste fill system.
+C1 Beijing Univ Sci & Technol, Sch Civil & Environm Engn, Beijing 100083, Peoples R China.
+RP Cai, SJ (corresponding author), Beijing Univ Sci & Technol, Sch Civil & Environm Engn, Beijing 100083, Peoples R China.
+CR CAI SJ, 1998, P 6 INT S MIN BACKF, P49
+   CAI SJ, 2001, J XIAN I SCI TECHNOL, V21, P391
+   CHEN CJ, 2000, MINERAL RES DEV, P21
+   HE GF, 1997, RELIABILITY DATA COL, P48
+   LIU TY, 1995, MODERN MINING TECHNO, P7
+   LIU TY, 2001, BACKFILL MINING TECH, P150
+   WANG SY, 1996, OPEN HUGE COMPLEX SY, P10
+   WANG ZH, 2000, NONFERROUS METAL MIN, P33
+   XU SL, 1999, BACKFILL MINING METH, P176
+   ZHOU CP, 1999, P 4 NAT S MIN BACKF, P6
+NR 10
+TC 1
+Z9 1
+U1 0
+U2 1
+PU JOURNAL OF UNIV OF SCIENCE AND TECHNOLOGY BEIJING
+PI BEIJING
+PA 30 XUEYUANLU, BEIJING 100083, PEOPLES R CHINA
+SN 1005-8850
+J9 J UNIV SCI TECHNOL B
+JI J. Univ. Sci. Technol. Beijing
+PD JUN
+PY 2002
+VL 9
+IS 3
+BP 166
+EP 169
+PG 4
+WC Materials Science, Multidisciplinary; Metallurgy & Metallurgical
+   Engineering; Mining & Mineral Processing
+SC Materials Science; Metallurgy & Metallurgical Engineering; Mining &
+   Mineral Processing
+GA 575AL
+UT WOS:000176923300002
+DA 2021-09-29
+ER
+
+PT S
+AU Giampietro, M
+   Mayumi, K
+   Pastore, G
+AF Giampietro, M
+   Mayumi, K
+   Pastore, G
+BE Rossi, C
+   Bastianoni, S
+   Donati, A
+   Archettini, N
+TI Energy analyses as a tool for sustainability: Lessons from complex
+   system theory
+SO TEMPOS IN SCIENCE AND NATURE: STRUCTURES, RELATIONS, AND COMPLEXITY
+SE ANNALS OF THE NEW YORK ACADEMY OF SCIENCES
+LA English
+DT Article; Proceedings Paper
+CT Conference on Tempos in Science and Nature - Structures, Relations, and
+   Complexity
+CY SEP 23-26, 1998
+CL SIENA, ITALY
+SP Univ degli Studi Siena, Consorzio Interuniv CSGI, Monte Paschi Siena Bank, Italian Natl Res Council, Univ Siena, Consorzio Venezia Nuova, Whirlpool, Bruker, Oikos, Meta SpA, Camera Commercio Siena, Comune Siena
+ID AGRICULTURE
+C1 Univ Tokushima, Fac Integrated Arts & Sci, Tokushima 7708502, Japan.
+   Ist Nazl Nutr, I-00178 Rome, Italy.
+RP Mayumi, K (corresponding author), Univ Tokushima, Fac Integrated Arts & Sci, 1-1 Minamijosanjima, Tokushima 7708502, Japan.
+RI Giampietro, Mario/F-6874-2016; Mayumi, Kozo/R-8499-2019
+OI Giampietro, Mario/0000-0002-5569-7023; Mayumi, Kozo/0000-0002-5278-7939;
+   Pastore, Gianni/0000-0001-8016-9292
+CR *ACC SCN, 1993, 2 ACC SCN RAO
+   Allen T. F. H., 1982, HIERARCHY
+   BROOKS D, 1988, EVOLUTION ENTROPY
+   BROOKS DR, 1989, BIOL PHILOS, V4, P407, DOI 10.1007/BF00162588
+   Chesnais J.-C., 1992, DEMOGRAPHIC TRANSITI
+   Conrad M, 1983, ADAPTABILITY SIGNIFI
+   *FAO, 1995, FAO STAT SERIES, V125
+   GIAMPIETRO M, 1994, FUTURES, V26, P616, DOI 10.1016/0016-3287(94)90033-7
+   Giampietro M, 1997, AGR ECOSYST ENVIRON, V65, P201, DOI 10.1016/S0167-8809(97)00050-9
+   Giampietro M., 1997, Structural Change and Economic Dynamics, V8, P453, DOI 10.1016/S0954-349X(97)00017-9
+   GIAMPIETRO M, 1993, HUM ECOL, V21, P229, DOI 10.1007/BF00891538
+   GIAMPIETRO M, 1994, BIOSCIENCE, V44, P677, DOI 10.2307/1312511
+   Giampietro M, 1997, BIOSCIENCE, V47, P587, DOI 10.2307/1313165
+   Giampietro M, 1997, AGR ECOSYST ENVIRON, V62, P145, DOI 10.1016/S0167-8809(96)01137-1
+   GIAMPIETRO M, 1998, ECOLOGY SOC EC LIFE, P327
+   GIAMPIETRO M, 1997, ADV HUMAN ECOLOGY, V6, P129
+   GIAMPIETRO M, 1999, CRITICAL REV PLANT S
+   GIAMPIETRO M, 1997, ADV HUMAN ECOLOGY, V6, P73
+   *ISTAT, 1992, ANN STAT IT
+   JAMES WPT, 1990, HUMAN ENERGY REQUIRE
+   KOESTLER A, 1969, REDUCTIONISM NEW PER, P192
+   Lotka A.J., 1956, ELEMENTS MATH BIOL
+   Morowitz HJ, 1979, ENERGY FLOW BIOL
+   O'Neill R.V., 1989, P140
+   Odum H.T., 1983, SYSTEM ECOLOGY
+   ODUM HT, 1996, ENV ACCOUNTING EMERG
+   PASTORE G, 1996, 4 BIENN M INT SOC EC
+   PASTORE G, 1998, IN PRESS CRITICAL RE
+   Prigogine I, 1978, BEING BECOMING
+   Rosen R., 2012, ANTICIPATORY SYSTEMS
+   Rosen R., 1991, LIFE ITSELF COMPREHE
+   Salthe SN, 1985, EVOLVING HIERARCHICA
+   SCHNEIDER ED, 1994, MATH COMPUT MODEL, V19, P25, DOI 10.1016/0895-7177(94)90188-0
+   Simon H.A., 1962, ARCHITECTURE COMPLEX, V106, P467, DOI DOI 10.1080/14759550302804
+   Tainter, 1988, COLLAPSE COMPLEX SOC
+   ULANOWICZ RE, 1986, GROWTH DEV ECOSYSTEM
+   *UN, 1995, STAT YB 1993
+   WHYTE LL, 1969, HIERARCHICAL STRUCTU
+   *WORLD BANK, 1995, SOC IND DEV 1995
+   *WORLD BANK, 1995, WORLD TABL 1995
+NR 40
+TC 1
+Z9 1
+U1 0
+U2 3
+PU NEW YORK ACAD SCIENCES
+PI NEW YORK
+PA 2 EAST 63RD ST, NEW YORK, NY 10021 USA
+SN 0077-8923
+BN 1-57331-196-0
+J9 ANN NY ACAD SCI
+JI Ann.NY Acad.Sci.
+PY 1999
+VL 879
+BP 344
+EP 367
+DI 10.1111/j.1749-6632.1999.tb10439.x
+PG 24
+WC Biology; Mathematics, Applied; Multidisciplinary Sciences
+SC Life Sciences & Biomedicine - Other Topics; Mathematics; Science &
+   Technology - Other Topics
+GA BN32A
+UT WOS:000081587400039
+DA 2021-09-29
+ER
+
+PT C
+AU Huang, JY
+   Feng, YK
+   Zhang, SD
+AF Huang, Jinyong
+   Feng, Yankuan
+   Zhang, Sandi
+BE Kang, R
+   Huang, HZ
+   Zuo, MJ
+   Miao, Q
+TI Research of Complex System Theory Application on Reliability Analysis of
+   Network System
+SO PROCEEDINGS OF 2009 8TH INTERNATIONAL CONFERENCE ON RELIABILITY,
+   MAINTAINABILITY AND SAFETY, VOLS I AND II: HIGHLY RELIABLE, EASY TO
+   MAINTAIN AND READY TO SUPPORT
+LA English
+DT Proceedings Paper
+CT 8th International Conference on Reliability, Maintainability and Safety
+   (ICRMS 2009)
+CY JUL 20-24, 2009
+CL Chengdu, PEOPLES R CHINA
+SP Chinese Soc Aeronaut & Astronaut, IEEE Reliabil Soc
+DE complex system; complex network; reliability; information entropy
+AB Based on the analysis of the relation between complex system and complex network system, this article discusses the application of complex system theory on the reliability indexes confirmation, failure definition, reliability analysis, and reliability simulation validation of complex network system. This article proposes that it needs to consider the complex network's characteristic and development rule, and research the underlying relation between the hypostasis of complex network system and reliability during the reliability research of complex network system.
+C1 [Huang, Jinyong; Feng, Yankuan; Zhang, Sandi] CEPREI, Reliabil Data Ctr, Guangzhou, Guangdong, Peoples R China.
+RP Huang, JY (corresponding author), CEPREI, Reliabil Data Ctr, Guangzhou, Guangdong, Peoples R China.
+EM hjy_nuaa@hotmail.com
+CR BARABASI AL, 1999, EMERGENCE SCALING RA, P509
+   LI CJ, 2006, NETWORKING RADAR SYS, V34, P48
+   LIN FY, 2007, COMPLEX NETWORKS REL, P136
+   Newman MEJ, 2003, SIAM REV, V45, P167, DOI 10.1137/S003614450342480
+   Tadic B, 2001, PHYSICA A, V293, P273, DOI 10.1016/S0378-4371(01)00014-0
+   Tadic B., 2002, ADV COMPLEX SYST, V05, P445
+   Watts D. J., 1998, COLLECTIVE DYNAMICS, P440
+   ZHANG SY, 2006, COMPLEX SYSTEM COMPL, V3, P42
+   Zhang XL, 2009, EKSPLOAT NIEZAWODN, P32
+NR 9
+TC 1
+Z9 1
+U1 0
+U2 12
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 978-1-4244-4903-3
+PY 2009
+BP 1141
+EP 1145
+PG 5
+WC Engineering, Aerospace; Engineering, Electrical & Electronic
+SC Engineering
+GA BNM82
+UT WOS:000274992400248
+DA 2021-09-29
+ER
+
+PT C
+AU Huo, QD
+   Liu, JX
+   Tang, XJ
+   Tian, CZ
+   Yu, XY
+   Lu, YQ
+   Zhang, XD
+AF Huo Qidi
+   Liu Jianxun
+   Tang Xiaojun
+   Tian Chunzheng
+   Yu Xiuyue
+   Lu Yingquan
+   Zhang Xiaodong
+GP IEEE
+TI Fault Set Construction Method Based on Weighted Flow Entropy and Full
+   Dynamic Simulation
+SO 2018 INTERNATIONAL CONFERENCE ON POWER SYSTEM TECHNOLOGY (POWERCON)
+SE International Conference on Power System Technology
+LA English
+DT Proceedings Paper
+CT International Conference on Power System Technology (POWERCON)
+CY NOV 06-08, 2018
+CL Guangzhou, PEOPLES R CHINA
+SP Chinese Soc Elect Engn, IEEE Power & Energy Soc, China So Power Grid Co Ltd, S China Univ Technol, Guangdong Power Grid Co Ltd
+DE Blackout; Cascading failures; Power flow transfer; Complex system theory
+AB Cascading faults in power systems have the characteristics of low impact probability, so it is important to study the fault development path and defense strategy. In this paper, a method to construct a cascading fault set with entropy index and full process simulation is proposed. The state of the power grid is judged by the weighted flow entropy and the generator excitation current, and the subsequent fault is selected by the coupling branch index. After the power grid is close to the alert state, the corresponding fault form is refined by the FDS (Full Dynamic Simulation). The proposed method can compress the times of time domain simulation on the basis of the reliability of the fault set, greatly improve the efficiency of the formulation of the chain fault defense strategy, and provide the basis for the formulation of the chain fault defense strategy.
+C1 [Huo Qidi; Tang Xiaojun] China Elect Power Res Inst, Beijing, Peoples R China.
+   [Liu Jianxun; Yu Xiuyue; Lu Yingquan] State Grid Fujian Elect Power Co Ltd, Dispatching Ctr, Fuzhou, Fujian, Peoples R China.
+   [Tian Chunzheng; Zhang Xiaodong] State Grid Henan Elect Power Co, Econ Res Inst, Zhengzhou, Henan, Peoples R China.
+RP Huo, QD (corresponding author), China Elect Power Res Inst, Beijing, Peoples R China.
+EM huoqidi@epri.sgcc.com.cn
+FU Science-Technology Project of Dispatching Center of State Grid Fujian
+   Electric Power Co., Ltd [XTB11201703696]; Science and Technology Project
+   of SGCC [XT71-16-034]
+FX This work was supported by:; 1. Science-Technology Project of
+   Dispatching Center of State Grid Fujian Electric Power Co., Ltd
+   (XTB11201703696); 2. Science and Technology Project of SGCC
+   (XT71-16-034).
+CR Albert R, 2002, REV MOD PHYS, V74, P47, DOI 10.1103/RevModPhys.74.47
+   Cao Yi-jia, 2006, Electric Power Automation Equipment, V26, P1
+   [丁明 Ding Ming], 2013, [电力系统自动化, Automation of Electric Power Systems], V37, P52
+   Ding Ming, 2008, Proceedings of the CSEE, V28, P20
+   Ding Ming, 2005, P CSEE S, V25, P118
+   Han Zhen-xiang, 2004, Power System Technology, V28, P1
+   Hu Xuehao, 2003, POWER SYSTEM TECHNOL, V27, P2
+   [刘文颖 Liu Wenying], 2015, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V35, P5740
+   Mei S, 2008, JOINT INT C POW SYST, P1
+   Mei Shengwei, 2006, AUTOMATION ELECT POW, V30
+   Motter AE, 2004, PHYS REV LETT, V93, DOI 10.1103/PhysRevLett.93.098701
+   Ren H., 2013, IEEE T AUTO IN PRESS, P1
+   Song Xin-li, 2008, Power System Technology, V32, P23
+   [谭玉东 Tan Yudong], 2015, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V35, P615
+   Tang Bao-sheng, 2003, Power System Technology, V27, P1
+   [唐晓骏 Tang Xiaojun], 2017, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V37, P5248
+   Tang Yong, 2002, Power System Technology, V26, P1
+   Tang Yong, 2002, Power System Technology, V26, P5
+   *US CAN POW SYST O, FIN REP AUG 14 2003
+   Watts DJ, 1998, NATURE, V393, P440, DOI 10.1038/30918
+   Xu Lin, 2009, IEEE PES AS PAC POW
+   Yi Jun, 2007, Proceedings of the CSEE, V27, P1
+   2014, INT C POW SYST TECHN, P932
+   2006, PHYS REP, V424, P175, DOI DOI 10.1016/J.PHYSREP.2005.10.009
+   2014, INT C POW SYST TECHN, P820
+NR 25
+TC 0
+Z9 0
+U1 0
+U2 1
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+SN 2641-5666
+BN 978-1-5386-6461-2
+J9 INTL CONF POWER SYST
+PY 2018
+BP 225
+EP 231
+PG 7
+WC Energy & Fuels; Engineering, Electrical & Electronic
+SC Energy & Fuels; Engineering
+GA BM7LU
+UT WOS:000468051000034
+DA 2021-09-29
+ER
+
+PT C
+AU Xu, XX
+   Wang, JY
+   Huang, WK
+   Wu, HY
+   Li, YN
+AF Xu, Xiaoxiao
+   Wang, Jiayuan
+   Huang, Wenke
+   Wu, Huanyu
+   Li, Yaning
+BE Wu, Y
+   Zheng, S
+   Luo, J
+   Wang, W
+   Mo, Z
+   Shan, L
+TI Construction Schedule Risk Analysis Based on Complex System Theory:
+   Methodology and Empirical Study
+SO PROCEEDINGS OF THE 20TH INTERNATIONAL SYMPOSIUM ON ADVANCEMENT OF
+   CONSTRUCTION MANAGEMENT AND REAL ESTATE
+LA English
+DT Proceedings Paper
+CT 20th International Symposium on Advancement of Construction Management
+   and Real Estate
+CY OCT 23-25, 2015
+CL Hangzhou, PEOPLES R CHINA
+SP Zhejiang Univ, Chinese Res Inst Construct Management, Zhejiang Univ, Sch Publ Affairs, Zhejiang Univ, Coll Civil Engn & Architecture, Zhejiang Univ, Land Acad Natl Dev, Zhejiang Univ, Inst Land Sci & Real Estate, Zhejiang Univ, Inst Construct Management, Zhejiang Univ, Inst Urban & Rural Planning Theories & Technologies, Enjoy Town Investment Management Co Ltd, Univ Hong Kong, Dept Real Estate & Construct, Hong Kong Polytechn Univ, Dept Building & Real Estate, Chongqing Univ, Int Res Ctr Sustainable Built Environm, Zhejiang Univ Finance & Econ, Sch Urban Rural Planning & Management, Acad Comm Civil Engn Management, Journal Urban Management, Int Journal Construct Management
+DE System dynamics; Discrete event simulation; Monte carlo simulation;
+   WeChat
+ID SIMULATION; CONTEXT
+AB With the development of China's society and economy, a large number of construction projects are being actively carried out. Project schedule, as one of the major concerns in construction projects, is always affected by high uncertainties and risks brought by the substantial amount of human and nonhuman factors. Therefore, more prominence should be given to proposing effective measures to minimize the losses caused by schedule risks. Although a certain progress has been made from the previous studies, the lack of dynamics and uncertainty analysis lead to results different from reality. This study aims to propose a novel model for analyzing construction project schedule risk. On the basis of complex systems theory, this paper builds a system dynamics model, and encapsulates the system dynamics model into discrete event simulation to form "work module" which can be combined according to the requirements of different projects, Monte Carlo simulation is also employed to analyze the uncertainty of risks. In addition, a WeChat platform is established for collecting schedule risk data. Finally, the present model is validated by a case study after the structure test and behaviors test. The results showcase that: (1) System dynamics can effectively deal with the complex problems of project schedule from the perspective of system, which includes rework, quality problems, the allocation of resource, productivity, decision-making delays, schedule pressure, etc. (2) It greatly improves the applicability of the model to combine system dynamics and discrete event simulation together. 3() Monte Carlo simulation enables the model to obtain the distribution of real-time planned duration in the process of construction, and to be suitable for managers with different risk attitudes and risk- bearing capacity to make decisions.
+C1 [Xu, Xiaoxiao; Wang, Jiayuan; Huang, Wenke; Wu, Huanyu; Li, Yaning] Shenzhen Univ, Sch Civil Engn, Shenzhen, Peoples R China.
+RP Wang, JY (corresponding author), Shenzhen Univ, Sch Civil Engn, Shenzhen, Peoples R China.
+EM wangjy08@qq.com
+FU National Natural Science Foundation of ChinaNational Natural Science
+   Foundation of China (NSFC) [71272088]
+FX We thank National Natural Science Foundation of China (No. 71272088) for
+   their financial support of this research.
+CR Barlas Y, 1996, SYST DYNAM REV, V12, P183, DOI 10.1002/(SICI)1099-1727(199623)12:3<183::AID-SDR103>3.0.CO;2-4
+   Barlas Y, 2000, 18 INT C SYST DYN SO, P33
+   Choudhry RM, 2014, J CONSTR ENG M, V140, DOI 10.1061/(ASCE)CO.1943-7862.0000857
+   Hayse J. W., 2000, USING MONTE CARLO AN
+   Law A.M., 1991, SIMULATION MODELING, V2
+   Lee H, 2013, INT J HUM-COMPUT ST, V71, P862, DOI 10.1016/j.ijhcs.2013.01.005
+   Lee S, 2007, SYST DYNAM REV, V23, P35, DOI 10.1002/sdr.359
+   Lee S, 2009, J COMPUT CIVIL ENG, V23, P75, DOI 10.1061/(ASCE)0887-3801(2009)23:2(75)
+   Li ZD, 2014, RESOUR CONSERV RECY, V91, P27, DOI 10.1016/j.resconrec.2014.07.013
+   Lu M, 2003, J CONSTR ENG M ASCE, V129, P537, DOI 10.1061/(ASCE)0733-9364(2003)129:5(537)
+   Maddala G.S., 1986, LTD DEPENDENT QUALIT
+   Martinez JC, 2010, J CONSTR ENG M, V136, P3, DOI 10.1061/(ASCE)CO.1943-7862.0000087
+   Nguyen LD, 2005, COMPUT-AIDED CIV INF, V20, P265, DOI 10.1111/j.1467-8667.2005.00392
+   Rezaie K, 2007, APPL MATH COMPUT, V190, P1492, DOI 10.1016/j.amc.2007.02.038
+   Wang Y, 2011, RES SYSTEM DYNAMICS
+NR 15
+TC 0
+Z9 0
+U1 1
+U2 16
+PU SPRINGER-VERLAG BERLIN
+PI BERLIN
+PA HEIDELBERGER PLATZ 3, D-14197 BERLIN, GERMANY
+BN 978-981-10-0855-9; 978-981-10-0854-2
+PY 2017
+BP 959
+EP 968
+DI 10.1007/978-981-10-0855-9_85
+PG 10
+WC Business; Construction & Building Technology
+SC Business & Economics; Construction & Building Technology
+GA BI0YL
+UT WOS:000405314300085
+DA 2021-09-29
+ER
+
+PT J
+AU Garcia-Rubio, J
+   Ibanez, SJ
+   Canadas, M
+   Antunez, A
+AF Garcia-Rubio, Javier
+   Ibanez, Sergio J.
+   Canadas, Maria
+   Antunez, Antonio
+TI Complex system theory in team sports. example in 5 on 5 basketball
+   contest
+SO REVISTA DE PSICOLOGIA DEL DEPORTE
+LA English
+DT Article
+DE Complex systems; Basketball; Offensive rating
+ID TIME COORDINATION DYNAMICS; PERFORMANCE; PHASE; GAME; MATCH
+AB The purpose of the study was to analyze basketball contest under complex systems framework. Control and order parameters were defined as time and offensive rating. The data was composed by 73 games from the ACB league during the 2007-08 season. Relative phase of confronting teams was calculated through Hilbert Transform. Results show stability, instability and transition periods, with coordination in-phase and anti-phase. Perturbations were found in the development of the game. These perturbations move the systems from stable to instable states. Findings of the study guarantee the dynamics analysis of basketball contest. Coaches should prepare their teams to be able of analyze environmental information and find new solutions for game constraints.
+C1 [Garcia-Rubio, Javier; Ibanez, Sergio J.; Antunez, Antonio] Univ Extremadura, E-06071 Badajoz, Spain.
+   [Canadas, Maria] Univ Murcia, E-30001 Murcia, Spain.
+RP Garcia-Rubio, J (corresponding author), Univ Extremadura, Fac Ciencias Deporte, AVD Univ S-N, Caceres 1007, Extremadura, Spain.
+EM jagaru@unex.es
+RI Ibanez, Sergio J/AAL-5862-2020; Alonso, Maria M Canadas/H-8771-2015;
+   Garcia, Javier/AAA-9006-2019; Antunez, Antonio/L-4588-2014; Ibanez,
+   Sergio J/L-3711-2014; Garcia-Rubio, Javier/H-3679-2016
+OI Ibanez, Sergio J/0000-0001-6009-4086; Alonso, Maria M
+   Canadas/0000-0001-9234-9987; Antunez, Antonio/0000-0002-7451-4448;
+   Ibanez, Sergio J/0000-0001-6009-4086; Garcia-Rubio,
+   Javier/0000-0001-6426-0002
+CR Araujo D, 2006, PSYCHOL SPORT EXERC, V7, P653, DOI 10.1016/j.psychsport.2006.07.002
+   Bourbousson J, 2010, J SPORT SCI, V28, P349, DOI 10.1080/02640410903503640
+   Bourbousson J, 2010, J SPORT SCI, V28, P339, DOI 10.1080/02640410903503632
+   Davids K., 2005, SCI FOOTBALL
+   Duarte R, 2012, J SPORT SCI, V30, P871, DOI 10.1080/02640414.2012.675081
+   Glazier PS, 2010, SPORTS MED, V40, P625, DOI 10.2165/11534970-000000000-00000
+   Grehaigne JF, 2011, REV PSICOL DEPORTE, V20, P747
+   Grehaigne JF, 1997, J SPORT SCI, V15, P137, DOI 10.1080/026404197367416
+   Hughes M. T., 2006, CULTURA CIENCIA DEPO, V2, ps30
+   Ibanez SJ, 2009, J SPORT SCI MED, V8, P458
+   Lames M., 2007, INT J PERFORMANCE AN, V7, P62, DOI [10.1080/24748668.2007.11868388, DOI 10.1080/24748668.2007.11868388]
+   Lames M, 2006, J SPORT SCI MED, V5, P556
+   Oliver D, 2004, BASKETBALL PAPER RUL
+   Ortega E, 2008, REV PSICOL DEPORTE, V17, P279
+   Richardson MJ, 2007, HUM MOVEMENT SCI, V26, P867, DOI 10.1016/j.humov.2007.07.002
+   Rosenblum MG, 1996, PHYS REV LETT, V76, P1804, DOI 10.1103/PhysRevLett.76.1804
+   Sampaio J, 2006, CULT CIENC DEPORTE, V2, P83, DOI 10.12800/ccd.v2i5.177
+   Molinuevo JS, 2012, REV PSICOL DEPORTE, V21, P301
+   Thomas J., 2006, RES METHODS PHYS ED
+   Travassos B, 2011, HUM MOVEMENT SCI, V30, P1245, DOI 10.1016/j.humov.2011.04.003
+   Vilar L, 2012, J SPORT SCI, V30, P459, DOI 10.1080/02640414.2011.627942
+NR 21
+TC 10
+Z9 10
+U1 0
+U2 35
+PU UNIV ILLES BALEARS
+PI PALMA
+PA SERVEI PUBLICACIONS INTERCANVI CIENTIFIC CAS JAI, CAMPUS UNIV, CARRETERA
+   VALLDEMOSSA, K M 7 5, PALMA, ILLES BALEARS 07122, SPAIN
+SN 1132-239X
+EI 1988-5636
+J9 REV PSICOL DEPORTE
+JI Rev. Psicol. Deporte
+PY 2013
+VL 22
+IS 1
+BP 209
+EP 213
+PG 5
+WC Psychology, Applied
+SC Psychology
+GA 095WG
+UT WOS:000315365100028
+DA 2021-09-29
+ER
+
+PT C
+AU Miura, M
+AF Miura, Masashi
+BE Tsuchida, K
+   Goto, T
+   Ishii, N
+   Takahashi, S
+TI Project Based Learning with Multi-Agent Simulation in Liberal Arts
+   Education
+SO 3RD INTERNATIONAL CONFERENCE ON APPLIED COMPUTING AND INFORMATION
+   TECHNOLOGY (ACIT 2015) 2ND INTERNATIONAL CONFERENCE ON COMPUTATIONAL
+   SCIENCE AND INTELLIGENCE (CSI 2015)
+LA English
+DT Proceedings Paper
+CT 3rd International Conference on Applied Computing and Information
+   Technology (ACIT 2015) 2nd International Conference on Computational
+   Science and Intelligence (CSI 2015)
+CY JUL 12-16, 2015
+CL Okayama, JAPAN
+SP Int Assoc Comp & Informat Sci ACIS, Cent Michigan Univ, Software Engn & Informat Technol Inst, Conf Publishing Serv, IEEE Comp Soc
+DE Project Based Learning; Multi-Agent Simulation; Liberal Arts Education;
+   Complex system science
+AB Complexity science is a new field of science that help us to understand complex social phenomenon such as economies, traffics, wars, epidemics, mass actions, etc. On the other hand, multi-agents simulation (MAS) methods are useful and powerful tools for complex system science. They come to be applied to studies and analysis of complex systems along with the development of computers. It can be said that the perspectives of complex systems and the skills for MAS are very useful knowledge for students who should live and work in the complex modern society. Then the author tried to design and conduct an education program dealing with complex system science and MAS as liberal arts targeting at students from all faculties. It's a project-based learning program in which students investigated and discussed "What is complex systems?" and develop MAS. In general, it is difficult for students who haven't gained the any special knowledge of computing to build MAS. Then the author applied the generic multi-agent simulation platform "artisoc" to this program. With artisoc, students can build MAS easily. In this paper, the practical example of PBL program with artisoc and its result are introduced.
+C1 [Miura, Masashi] Tottori Univ, Dept Mech & Aerosp Engn, Tottori, Japan.
+RP Miura, M (corresponding author), Tottori Univ, Dept Mech & Aerosp Engn, Tottori, Japan.
+EM miura@icee.tottori-u.ac.jp
+CR Bar-Yam Y., 2002, ENCY LIFE SUPPORT SY
+   Bonabeau E, 2002, P NATL ACAD SCI USA, V99, P7280, DOI 10.1073/pnas.082080899
+   Hmelo-Silver CE, 2004, EDUC PSYCHOL REV, V16, P235, DOI 10.1023/B:EDPR.0000034022.16470.f3
+   Kahn K. B., 2012, PDMA HDB NEW PRODUCT, V3rd
+   Kazuya Y., 2007, P ANN M INT STUD ASS
+   Mitchell M., 2011, COMPLEXITY GUIDED TO
+   Miura M., 2015, P 20 INT S ART LIF R
+   Yamakage Susumu, 2009, MODELING EXPANDING A
+NR 8
+TC 1
+Z9 1
+U1 0
+U2 5
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 978-1-4673-9642-4
+PY 2015
+BP 242
+EP 247
+DI 10.1109/ACIT-CSI.2015.51
+PG 6
+WC Computer Science, Artificial Intelligence; Computer Science, Information
+   Systems
+SC Computer Science
+GA BF2OA
+UT WOS:000380484400045
+DA 2021-09-29
+ER
+
+PT J
+AU Dzaferagic, M
+   Kaminski, N
+   McBride, N
+   Macaluso, I
+   Marchetti, N
+AF Dzaferagic, Merim
+   Kaminski, Nicholas
+   McBride, Neal
+   Macaluso, Irene
+   Marchetti, Nicola
+TI A functional complexity framework for the analysis of telecommunication
+   networks
+SO JOURNAL OF COMPLEX NETWORKS
+LA English
+DT Article
+DE complex system science; functional complexity framework;
+   telecommunication networks; structural complexity; frequency allocation
+ID COMMUNITIES
+AB The rapid evolution of network services demands new paradigms for studying and designing networks. We propose a framework to investigate the underlying mechanisms of wireless network functions. This framework isolates and analyses a network function as a complex system. We propose functional topologies to visualize and systematically study the relationships between system entities. We also define a complexity metric C-F (functional complexity), which quantifies the variety of structural patterns and roles of nodes in the topology. This complexity metric provides a wholly new approach to study the operation of telecommunication networks. We study the relationship between C-F and graph structures by analysing graph theory metrics in order to recognize complex organizations. C-F is equal to zero for both a full mesh topology and a disconnected topology. We show that complexity is high for a structure with shorter average path length and higher average clustering coefficient. We make a connection between functional complexity, robustness and response to changes that may appear in the system configuration. We also make a connection between the implementation and the outcome of a network function, which correlates the characteristics of the outcome with the complex relationships that underpin the functional structure.
+C1 [Dzaferagic, Merim; Kaminski, Nicholas; McBride, Neal; Macaluso, Irene; Marchetti, Nicola] Trinity Coll Dublin, CONNECT, Res Ctr, Dublin 2, Ireland.
+RP Dzaferagic, M (corresponding author), Trinity Coll Dublin, CONNECT, Res Ctr, Dublin 2, Ireland.
+EM dzaferam@tcd.ie
+RI McBride, Neal/K-3854-2017
+OI McBride, Neal/0000-0002-6509-5771
+FU Science Foundation IrelandScience Foundation IrelandEuropean Commission
+   [13/RC/2077]
+FX This work was supported by the Science Foundation Ireland under
+   (13/RC/2077).
+CR 3GPP, 2010, 32450 3GPP TS
+   Ahn YY, 2010, NATURE, V466, P761, DOI 10.1038/nature09182
+   Balduzzi D, 2008, PLOS COMPUT BIOL, V4, DOI 10.1371/journal.pcbi.1000091
+   Bar-Yam Y, 2004, ADV COMPLEX SYST, V7, P47, DOI 10.1142/S0219525904000068
+   Batool K, 2017, COMPLEX ADAPT SYST M, V5, DOI 10.1186/s40294-017-0043-1
+   Beigy H, 2010, IEEE T SYST MAN CY B, V40, P54, DOI 10.1109/TSMCB.2009.2030786
+   Bristow M, 2014, IEEE T SYST MAN CY-S, V44, P834, DOI 10.1109/TSMC.2013.2282314
+   Butler S, 2008, THESIS
+   Chakrabarti D, 2008, LECT NOTES COMPUTER
+   Dzaferagic M, 2017, IEEE WIR COMM NETW C
+   Dzaferagic M, 2017, INT WIREL COMMUN, P675, DOI 10.1109/IWCMC.2017.7986366
+   Evans T, 2002, INTEGRATED ASSESSMEN, V3, P135
+   Evans TS, 2009, PHYS REV E, V80, DOI 10.1103/PhysRevE.80.016105
+   Gonzalez MC, 2008, NATURE, V453, P779, DOI 10.1038/nature06958
+   Joshi NJ, 2013, PLOS COMPUT BIOL, V9, DOI 10.1371/journal.pcbi.1003111
+   Kaminski N. J, 2016, 2016 IEEE INT S SYST, P1, DOI DOI 10.1109/SYSENG.2016.7753151
+   Kaminski N. J, 2014, THESIS
+   Lanham MJ, 2014, IEEE T SYST MAN CY-S, V44, P103, DOI 10.1109/TSMCC.2012.2230255
+   Liu YY, 2013, P NATL ACAD SCI USA, V110, P2460, DOI 10.1073/pnas.1215508110
+   Lloyd S, 2001, IEEE CONTR SYST MAG, V21, P7, DOI 10.1109/MCS.2001.939938
+   LopezRuiz R, 1995, PHYS LETT A, V209, P321, DOI 10.1016/0375-9601(95)00867-5
+   Macaluso I, 2016, J SYST SCI COMPLEX, V29, P1034, DOI 10.1007/s11424-016-4122-8
+   Macaluso I, 2014, IEEE ICC, P1447, DOI 10.1109/ICC.2014.6883525
+   Newman MEJ, 2006, P NATL ACAD SCI USA, V103, P8577, DOI 10.1073/pnas.0601602103
+   Newman MEJ, 2004, PHYS REV E, V69, DOI [10.1103/PhysRevE.69.026113, 10.1088/1742-5468/2009/03/P03024, 10.1103/PhysRevE.69.066133]
+   Newman MEJ, 2004, PHYS REV E, V70, DOI 10.1103/PhysRevE.70.056131
+   Newman MEJ, 2003, SIAM REV, V45, P167, DOI 10.1137/S003614450342480
+   Onnela JP, 2007, P NATL ACAD SCI USA, V104, P7332, DOI 10.1073/pnas.0610245104
+   TONONI G, 1994, P NATL ACAD SCI USA, V91, P5033, DOI 10.1073/pnas.91.11.5033
+   Wang P, 2009, SCIENCE, V324, P1071, DOI 10.1126/science.1167053
+   Wang Z, 2014, IEEE T SYST MAN CY-S, V44, P499, DOI 10.1109/TSMC.2013.2256890
+   Yaeger L, 2007, EVOLUTION SELECTS CO
+NR 32
+TC 6
+Z9 6
+U1 0
+U2 1
+PU OXFORD UNIV PRESS
+PI OXFORD
+PA GREAT CLARENDON ST, OXFORD OX2 6DP, ENGLAND
+SN 2051-1310
+EI 2051-1329
+J9 J COMPLEX NETW
+JI J. Complex Netw.
+PD DEC
+PY 2018
+VL 6
+IS 6
+BP 971
+EP 988
+DI 10.1093/comnet/cny007
+PG 18
+WC Mathematics, Interdisciplinary Applications
+SC Mathematics
+GA HD6MY
+UT WOS:000452655400008
+OA Green Submitted
+DA 2021-09-29
+ER
+
+PT J
+AU Li, QX
+   Ma, JH
+AF Li, Qiuxiang
+   Ma, Junhai
+TI Research on price Stackelberg game model with probabilistic selling
+   based on complex system theory
+SO COMMUNICATIONS IN NONLINEAR SCIENCE AND NUMERICAL SIMULATION
+LA English
+DT Article
+DE Probabilistic selling; Game theory; Complex analysis; Bifurcation
+ID DEMAND UNCERTAINTY
+AB Probabilistic selling can expand the market and decrease uncertain demand. In this paper, we study a scenario that two manufacturers delegate a retailer to sell two substitute brand-products through traditional selling channel and probabilistic products through probabilistic selling channel; the customer has risk aversion behavior for probabilistic product. A noncooperative dynamic price Stackelberg game model is developed based on limited rational expectation. The influences of parameters on the system stability are further analyzed; the phenomenon of flip bifurcation, chaos, and other complex phenomena are reported using bifurcation, attractor and power spectrum etc. The results show that the system stability could be robust with increase in customer's risk aversion and the probability of each product becoming to probability product, and frail with increase in price discount. The manufacturer may benefit from a larger proportion of its product becoming to probabilistic product. When the chaos occurs, the market becomes abnormal, irregular and unpredictable; the two manufacturers should determine their price adjustment speed according to the parameters' values, to ensure the up and downstream enterprises keep stable. The nonlinear feedback control method is used to control the system's chaos. The derived results have very important theoretical and practical values for the two manufacturers and the common retailer. (C) 2015 Elsevier B.V. All rights reserved.
+C1 [Li, Qiuxiang; Ma, Junhai] Tianjin Univ, Sch Management & Econ, Tianjin 300072, Peoples R China.
+   [Li, Qiuxiang] Henan Univ, Sch Business, Kaifeng 475004, Peoples R China.
+RP Li, QX (corresponding author), Tianjin Univ, Sch Management & Econ, Tianjin 300072, Peoples R China.
+EM lqxkycg@163.com
+FU National Natural Science Foundation of ChinaNational Natural Science
+   Foundation of China (NSFC) [61273231]; Doctoral Fund of Ministry of
+   Education of ChinaMinistry of Education, China [20130032110073]; Tianjin
+   University Innovation Fund
+FX The authors thank the reviewers for their careful reading and providing
+   some pertinent suggestions. The research was supportcd by the National
+   Natural Science Foundation of China (No: 61273231), Doctoral Fund of
+   Ministry of Education of China (Grant No: 20130032110073) and supported
+   by Tianjin University Innovation Fund.
+CR Anderson CK, 2014, EUR J OPER RES, V233, P263, DOI 10.1016/j.ejor.2013.08.018
+   Askar SS, 2014, APPL MATH COMPUT, V232, P144, DOI 10.1016/j.amc.2014.01.097
+   Banker RD, 2014, ACCOUNT REV, V89, P839, DOI 10.2308/accr-50661
+   Cai G, 2013, DECISION SCI, V44, P267, DOI 10.1111/deci.12009
+   Chen CM, 2014, INT J HOSP MANAG, V37, P146, DOI 10.1016/j.ijhm.2013.11.001
+   Cheng YL, 2014, ECON MODEL, V36, P51, DOI 10.1016/j.econmod.2013.09.019
+   Chiarella C, 2014, J ECON BEHAV ORGAN, V105, P1, DOI 10.1016/j.jebo.2014.03.003
+   Chiarella C, 2013, ANN FINANC, V9, P185, DOI 10.1007/s10436-012-0215-0
+   Dan B, 2014, J APPL RES TECHNOL, V12, P212, DOI 10.1016/S1665-6423(14)72337-5
+   Fay S, 2008, MARKET SCI, V27, P674, DOI 10.1287/mksc.1070.0318
+   Fay S, 2010, MARKET SCI, V29, P1040, DOI 10.1287/mksc.1100.0576
+   Fuh CC, 2002, CHAOS SOLITON FRACT, V13, P285, DOI 10.1016/S0960-0779(00)00273-3
+   Hu F, 2013, INT J PROD ECON, V146, P686, DOI 10.1016/j.ijpe.2013.08.024
+   Kaki A, 2014, IEEE T ENG MANAGE, V61, P101, DOI 10.1109/TEM.2013.2266418
+   Kwag HG, 2014, APPL ENERG, V122, P24, DOI 10.1016/j.apenergy.2014.01.068
+   Ma JH, 2013, ABSTR APPL AN
+   Ma JH, 2014, DISCRETE DYN NAT SOC, V2014, DOI 10.1155/2014/749769
+   Ma JH, 2014, NONLINEAR DYNAM, V76, P497, DOI 10.1007/s11071-013-1143-x
+   Ma JH, 2013, NONLINEAR DYNAM, V72, P895, DOI 10.1007/s11071-013-0761-7
+   Puu Tonu, 2003, ATTRACTORS BIFURCATI
+   Sayadi MK, 2014, J OPTIMIZ THEORY APP, V161, P1012, DOI 10.1007/s10957-013-0479-1
+   Shugan SM, 2005, INT J RES MARK, V22, P351, DOI 10.1016/j.ijresmar.2004.11.004
+   Sun H, 2014, DISCRET DYN NAT SOC
+   Tetteh A, 2014, J APPL RES TECHNOL, V12, P296, DOI 10.1016/S1665-6423(14)72346-6
+   Xie JH, 2001, MARKET SCI, V20, P219, DOI 10.1287/mksc.20.3.219.9765
+   Yang L, 2014, EUR J OPER RES, V236, P511, DOI 10.1016/j.ejor.2014.01.013
+   Yang XZ, 2009, CHAOS SOLITON FRACT, V42, P1428, DOI 10.1016/j.chaos.2009.03.058
+   Yassen MT, 2003, APPL MATH COMPUT, V138, P387, DOI 10.1016/S0096-3003(02)00143-1
+NR 28
+TC 9
+Z9 9
+U1 4
+U2 91
+PU ELSEVIER SCIENCE BV
+PI AMSTERDAM
+PA PO BOX 211, 1000 AE AMSTERDAM, NETHERLANDS
+SN 1007-5704
+EI 1878-7274
+J9 COMMUN NONLINEAR SCI
+JI Commun. Nonlinear Sci. Numer. Simul.
+PD JAN
+PY 2016
+VL 30
+IS 1-3
+BP 387
+EP 400
+DI 10.1016/j.cnsns.2015.06.036
+PG 14
+WC Mathematics, Applied; Mathematics, Interdisciplinary Applications;
+   Mechanics; Physics, Fluids & Plasmas; Physics, Mathematical
+SC Mathematics; Mechanics; Physics
+GA CO9LH
+UT WOS:000359496800032
+DA 2021-09-29
+ER
+
+PT C
+AU Ni, HZ
+   Wang, TX
+   Liu, JH
+   Zhao, T
+AF Ni Hongzhen
+   Wang Tangxian
+   Liu Jinhua
+   Zhao Ting
+BE Hongqi, S
+   Xiangxin, L
+TI The Assessment Techniques and Application of Watershed Management
+   Strategies Based on Complex System Theory
+SO PROCEEDING OF THE 5TH INTERNATIONAL YELLOW RIVER FORUM ON ENSURING WATER
+   RIGHT OF THE RIVER'S DEMAND AND HEALTHY RIVER BASIN MAINTENANCE, VOL I
+LA English
+DT Proceedings Paper
+CT 5th International Yellow River Forum on Ensuring Water Right of the
+   River's Demand and Healthy River Basin maintenance
+CY SEP 24-28, 2012
+CL Minist Water Resources, Yellow River Conservancy Commiss, Zhengzhou,
+   PEOPLES R CHINA
+SP China Yellow River Fdn
+HO Minist Water Resources, Yellow River Conservancy Commiss
+DE CHN; water resources complex systems; multi-process scenario simulation;
+   planning revision
+AB The theory based on the human-nature coupled system (Coupled Human Nature, System, referred to as CHN) that uses a holistic point of view for the action mechanism and characteristics of the large complex system of atypical water resources, by the interaction of the variables to each subsystem proceed multi process simulation, description and information transfer, in which a set of simulation model are built which can have a clear and dynamic diagnosis of water resources and in favour of making quick administrative decision of coordinated growth between environmental economy and water resources to meet research needs of the modern water resource planning and water resources complex problem and meet the water resources urgent requirement of our watershed and regional adaptive management. The paper simulates and analyzes the effect of all possible water resource management regulation project and scenarios such as the Yellow River Basin water conservation, pollution control (reuse), water transfer programs to the basin' s economic and social development and ecological environment protection. It can provide decision support for adaptable and dynamic water resources management mechanism of the Yellow River Basin to response to changing natural risks and human development needs and scientific revision of water resources development planning, to improve the efficiency and level of water resources scientific management under the new situation.
+C1 [Ni Hongzhen; Wang Tangxian; Liu Jinhua; Zhao Ting] China Inst Water Resources & Hydropower Res, Beijing 100038, Peoples R China.
+RP Ni, HZ (corresponding author), China Inst Water Resources & Hydropower Res, Beijing 100038, Peoples R China.
+CR China Institute of Water Resources and Hydropower Research, 2005, STUD HARM WAT DEV NA
+   Wang Tangxian, 2011, MODEL ITS APPL COORD
+   Yellow River Conservancy Commission, 2008, YELL RIV WAT RES PLA
+   [Zhao Jianshi 赵建世], 2003, Journal of Geographical Sciences, V13, P112, DOI 10.1007/BF02873154
+   Zhao Jianshi, 2004, SCI CHINA E S, P60
+   Zhao Jianshi, 2003, P 1 INT YELL RIV FOR
+NR 6
+TC 0
+Z9 0
+U1 0
+U2 2
+PU YELLOW RIVER CONSERVANCY PRESS
+PI ZHENGZHOU
+PA CHENGDONG LU, ZHENGZHOU, HENAN 450004, PEOPLES R CHINA
+BN 978-7-5509-0399-9
+PY 2015
+BP 341
+EP 351
+PG 11
+WC Water Resources
+SC Water Resources
+GA BG7KN
+UT WOS:000391414500045
+DA 2021-09-29
+ER
+
+PT C
+AU Sun, YK
+   Guo, DC
+AF Sun, Yun-ke
+   Guo, Da-cheng
+BE Qi, E
+   Shen, J
+   Dou, R
+TI Evaluation Research on the Intensive Development of Regional Higher
+   Education Based on Complex System Theory
+SO PROCEEDINGS OF THE 21ST INTERNATIONAL CONFERENCE ON INDUSTRIAL
+   ENGINEERING AND ENGINEERING MANAGEMENT 2014
+LA English
+DT Proceedings Paper
+CT 21st International Conference on Industrial Engineering and Engineering
+   Management 2014 (IEEM)
+CY NOV 01-02, 2014
+CL Zhuhai, PEOPLES R CHINA
+SP CMES, Chinese Ind Engn Inst, Beijing Inst Technol, Tianjin Univ Sci & Technol
+DE Complex systems theory; evaluation; intensive development; regional
+   higher education
+AB The intensive development of regional higher education was established based on complex system theory. Evaluate intensive development of regional higher educational based on its development level, coordination degree, sustaining ability by the basic theory of complex system, and establish the conceptual model and evaluation index system. Use the model to evaluate the intensive development of higher education in Beijing from 2000 to 2013. The result is able to reflect the characteristics of intensive development of higher education development in Beijing and provides support for next strategy in intensive development of higher education.
+C1 [Sun, Yun-ke] Beijing Inst Technol, Sch Management & Econ, Beijing 100081, Peoples R China.
+   [Sun, Yun-ke] Beijing Municipal Commiss Educ, Dev & Planning Off, Beijing, Peoples R China.
+   [Guo, Da-cheng] Beijing Inst Technol, Inst Educ, Beijing 100081, Peoples R China.
+RP Sun, YK (corresponding author), Beijing Inst Technol, Sch Management & Econ, Beijing 100081, Peoples R China.
+EM sunyk_qd@163.com
+CR Chen Shi-jun, 2007, THESIS TIANJIN U TIA
+   Hu Hai-yan, 2012, J HIGH EDUC, V33, P1
+   Lan Yu, 2013, RES ED DEV, V7, P21
+   LIU Fenqin, 2000, J SYSTEMS SCI INFORM, V3, P89
+   Liu Shu-hua, 2006, HEILONGJIANG RES HIG, V141, P5
+   Liu Xiao-ping, 2008, Journal of System Simulation, V20, P6303
+   Luo Huil, 2007, RES EVALUATION SYSTE, V25, P167
+   Peng Fei, 2007, STAT RES, V24, P29
+   Shi Guo-dong, 2013, J CHANGZHOU U SOCIAL, V14, P1
+   Tian Shan-jun, 2014, J INNER MONGOLIA U P, V46, P97
+   Wu Mei, 2011, J TIANJIN ACAD ED SC, V6, P22
+   Wu Xu-xiao, 2011, THESIS TIANJIN U TIA
+   Yang Hui-bing, 2013, J HUNAN AGR U SOCIAL, V14, P9
+   Zhang XD, 2013, THESIS DALIAN U TECH
+   Zhu Li-ping, 2007, J TIANJIN NORMAL U S, V195, P74
+NR 15
+TC 0
+Z9 0
+U1 1
+U2 3
+PU ATLANTIS PRESS
+PI PARIS
+PA 29 AVENUE LAVMIERE, PARIS, 75019, FRANCE
+BN 978-94-6239-102-4; 978-94-6239-101-7
+PY 2015
+BP 155
+EP 158
+DI 10.2991/978-94-6239-102-4_32
+PG 4
+WC Economics; Engineering, Industrial; Management; Operations Research &
+   Management Science
+SC Business & Economics; Engineering; Operations Research & Management
+   Science
+GA BE5UU
+UT WOS:000373492700032
+DA 2021-09-29
+ER
+
+PT C
+AU Mantilla, B
+   Foulds, R
+   Bergen, M
+AF Mantilla, B
+   Foulds, R
+   Bergen, M
+BE Schreiner, S
+   Cezeaux, JL
+   Muratore, DM
+TI Studio classes modeled on complex system theory in order to increase
+   creativity and critical thinking
+SO PROCEEDINGS OF THE IEEE 30TH ANNUAL NORTHEAST BIOENGINEERING CONFERENCE
+LA English
+DT Proceedings Paper
+CT IEEE 30th Annual Northeast Bioengineering Conference
+CY APR 17-18, 2004
+CL Western New England Coll, Springfield, MA
+SP IEEE, EMB, MassMEDIC, BEACON, tyco Healthcare, Reebok, bei, Whitaker Fdn
+HO Western New England Coll
+AB The mind of scientists is conditioned to perform controlled experiments. The structure of a class is set in the same way, leading to a situation where the teacher teaches and the student learns. As a consequence, they are far apart from each other and at different sides of the table.
+   It becomes a passive process where everything is being prepared by someone else, instead of the student doing it for himself. Learning is done in a separate environment, under different conditions and the rules do not apply for daily living decisions. At the Biomedical Engineering Department (BME) at New Jersey Institute of Technology, we have created a continuous process in which the classes are dictated in order to allow the students to express themselves, explore the problem, work in teams, shape their own answers and highlight the process over the result Their critical thinking and creativity are continually challenged and the amount of new and different ways of approaching a problem increases as the course progresses.
+C1 New Jersey Inst Technol, Newark, NJ 07102 USA.
+RP Mantilla, B (corresponding author), New Jersey Inst Technol, Univ Hts, Newark, NJ 07102 USA.
+CR Briggs John, 1999, 7 LIFE LESSONS CHAOS
+   FOULDS R, IEEE ENG MED BIO JUL, V22, P92
+   SOLE JR, 2000, SIGNS LIFE
+NR 3
+TC 1
+Z9 1
+U1 0
+U2 2
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 0-7803-8285-4
+PY 2004
+BP 220
+EP 221
+PG 2
+WC Engineering, Biomedical; Instruments & Instrumentation; Materials
+   Science, Biomaterials; Radiology, Nuclear Medicine & Medical Imaging
+SC Engineering; Instruments & Instrumentation; Materials Science;
+   Radiology, Nuclear Medicine & Medical Imaging
+GA BAD44
+UT WOS:000221665200110
+DA 2021-09-29
+ER
+
+PT J
+AU Boschetti, F
+   McDonald, D
+   Gray, R
+AF Boschetti, Fabio
+   McDonald, David
+   Gray, Randall
+TI Complexity of a modelling exercise: A discussion of the role of computer
+   simulation in complex system science
+SO COMPLEXITY
+LA English
+DT Editorial Material
+ID COMPUTATION
+AB Shifting the emphasis from a model to a modeling task, which involves both a computer model and a modeler, we ask what makes a problem complex. We propose that a modeling task can be seen as a set of questions-and-answers, nested at multiple levels. The role of the modeler then lies in posing the questions and choosing the best procedure to answer them, while the role of the model lies in answering the questions, via algorithmic, thus logically simple, procedures. Within this frame-work, complexity is broadly related to the number of question-answer levels involved in the process and the nature of the questions posed. Addressing this complexity depends crucially on the ingenuity and creativity of the modeler This may lead to a view of complexity, which is no more observer-independent, but rather accounts for both historical and cultural development, that is the context of the problem at hand. (C) 2008 Wiley Periodicals, Inc.
+C1 [Boschetti, Fabio; McDonald, David; Gray, Randall] CSIRO CMAR, Wembley, WA, Australia.
+RP Boschetti, F (corresponding author), CSIRO CMAR, Wembley, WA, Australia.
+EM fabio.boschetti@csiro.au
+RI Boschetti, Fabio/A-1607-2015
+OI Boschetti, Fabio/0000-0001-8999-6913
+CR Baluja S., 1994, Connection Science, V6, P325, DOI 10.1080/09540099408915729
+   Bennett C. H., 1988, UNIVERSAL TURING MAC, P227
+   BOSCHETTI E, 2007, EMERGENCE COMPLEXITY, V9, P120
+   Boschetti F, 2001, GEOPHYSICS, V66, P1226, DOI 10.1190/1.1487069
+   BOSCHETTI F, ECOLOGICAL IN PRESS
+   CHAITIN G, 1997, LIMIT MATH COURSE IN
+   CHAITIN GJ, 1974, J ACM, V21, P403, DOI 10.1145/321832.321839
+   CRUTCHFIELD JP, 1989, PHYS REV LETT, V63, P105, DOI 10.1103/PhysRevLett.63.105
+   CRUTCHFIELD JP, 1994, PHYSICA D, V75, P11, DOI 10.1016/0167-2789(94)90273-9
+   Hubler AW, 2007, COMPLEXITY, V12, P9, DOI 10.1002/cplx.20178
+   KALTWASSER P, 2004, COMPUTER GEOSCI, P29
+   Kauffman SA., 2000, INVESTIGATIONS
+   ORD T, 2002, MATHLO0209332 CORR
+   PATTEE HH, DOWNWARD CA IN PRESS
+   Pearl J., 2009, CAUSALITY
+   Penrose R., 1989, EMPERORS NEW MIND CO
+   ROSEN R, 2001, LIFE ITSELF COMPREHE
+   Rosen R., 2000, ESSAYS LIFE ITSELF
+   Shalizi CR, 2004, UNCERTAINTY ARTIFICI, P504
+   Takagi H, 2001, P IEEE, V89, P1275, DOI 10.1109/5.949485
+   Tarantola A., 1987, INVERSE PROBLEM THEO
+   Turing AM, 1937, P LOND MATH SOC, V42, P230, DOI 10.1112/plms/s2-42.1.230
+   WEISSTEIN EW, SQUARE ROOT MATHWORL
+NR 23
+TC 10
+Z9 10
+U1 0
+U2 4
+PU WILEY-HINDAWI
+PI LONDON
+PA ADAM HOUSE, 3RD FL, 1 FITZROY SQ, LONDON, WIT 5HE, ENGLAND
+SN 1076-2787
+EI 1099-0526
+J9 COMPLEXITY
+JI Complexity
+PD JUL-AUG
+PY 2008
+VL 13
+IS 6
+BP 21
+EP 28
+DI 10.1002/cplx.20215
+PG 8
+WC Mathematics, Interdisciplinary Applications; Multidisciplinary Sciences
+SC Mathematics; Science & Technology - Other Topics
+GA 329ID
+UT WOS:000257860400004
+OA Green Submitted
+DA 2021-09-29
+ER
+
+PT C
+AU Zhang, S
+   Li, YX
+   Jin, T
+   Yu, H
+   Yang, G
+   Liu, ZX
+AF Zhang, Shen
+   Li, Yongxiang
+   Jin, Tao
+   Yu, Hua
+   Yang, Gang
+   Liu, Zhixiang
+BE Xu, B
+TI Analysis and Research on Power Flow Entropy Index of Power System
+SO PROCEEDINGS OF 2018 IEEE 3RD ADVANCED INFORMATION TECHNOLOGY, ELECTRONIC
+   AND AUTOMATION CONTROL CONFERENCE (IAEAC 2018)
+LA English
+DT Proceedings Paper
+CT 3rd IEEE Advanced Information Technology, Electronic and Automation
+   Control Conference (IAEAC)
+CY OCT 12-14, 2018
+CL Chongqing, PEOPLES R CHINA
+SP IEEE
+DE Power system; complex system theory; self-organized criticality; power
+   flow entropy
+AB In order to meet the optimization of power distribution throughout the country, China will build an UHV AC/DC hybrid power grid with UHV AC and DC backbone grids and coordinated development of power grids at all levels. This paper is based on the characteristics of the complex system of power system, and the entropy theory is applicable to analyze the nature of the orderliness of complex systems. The entropy index is applied to the evaluation system of power system operation status, and the existing entropy index is summarized and analyzed. The weighted power flow entropy weighted by the regional average load rate corrected by the mean squared coefficient is used as the mathematical representation of the self organized criticality of the power system. Finally, a comparative analysis of the example results shows that the index can accurately and effectively reflect the degree of order distribution of the system power flow.
+C1 [Zhang, Shen; Li, Yongxiang; Jin, Tao; Yu, Hua; Yang, Gang; Liu, Zhixiang] Shanxi Prov Elect Power Corp, Elect Power Res Inst, Taiyuan, Shanxi, Peoples R China.
+RP Zhang, S (corresponding author), Shanxi Prov Elect Power Corp, Elect Power Res Inst, Taiyuan, Shanxi, Peoples R China.
+EM zs521174435@qq.com
+RI Jin, Tao/AAL-9100-2020
+OI Jin, Tao/0000-0003-3829-4545
+CR Cao Y. J., 2011, AUTOMATION ELECT POW, V07, P1
+   Dobson I., 2002, Proceedings of the 35th Annual Hawaii International Conference on System Sciences, DOI 10.1109/HICSS.2002.993975
+   Dobson I, 2003, SYST SCI 2003 P 36 A
+   Kinney R, 2005, EUR PHYS J B, V46, P101, DOI 10.1140/epjb/e2005-00237-9
+   Ying L. W., 2015, P CSEE, V06, P136
+NR 5
+TC 0
+Z9 0
+U1 0
+U2 2
+PU IEEE
+PI NEW YORK
+PA 345 E 47TH ST, NEW YORK, NY 10017 USA
+BN 978-1-5386-4509-3
+PY 2018
+BP 1150
+EP 1153
+PG 4
+WC Automation & Control Systems; Computer Science, Theory & Methods;
+   Engineering, Electrical & Electronic
+SC Automation & Control Systems; Computer Science; Engineering
+GA BL9JF
+UT WOS:000457576900226
+DA 2021-09-29
+ER
+
+PT C
+AU He, F
+   Wang, YX
+   Xia, B
+AF He Fang
+   Wang Yongxi
+   Xia Bing
+BE Meng, ZZ
+   Chen, X
+TI Eco-planning Strategies on Urban Soil and Water Conservation
+SO 47TH INTERNATIONAL FEDERATION OF LANDSCAPE ARCHITECTS (IFLA) WORLD
+   CONGRESS
+LA English
+DT Proceedings Paper
+CT 47th International Federation of Landscape Architects (IFLA) World
+   Congress
+CY MAY 28-30, 2010
+CL Zuzhou, PEOPLES R CHINA
+DE Urban Soil and Water Conservation; Planning Strategy; Complex System
+   Theory; Ecology
+AB With rapid urbanization and tremendous changes on the urban development patterns and planning systems, the eco-planning for the urban soil and water conservation in China embraces unprecedented challenges. Starting from the culture of urban soil and water conservation, such as the relationship between man and nature, man and land, the paper analyzes the characteristics of some stages of urban soil and water conservation, and expounds how the eco-planning of modern urban soil and water conservation changes the concept of planning and design strategies under the framework of urban complex systems and ecology theory. The ultimate goal is to guide the chaotic urbanization and to meet the challenges that come from the climate of extremes.
+C1 [He Fang; Wang Yongxi; Xia Bing] Shenzhen BLY Landscape & Architecture Planning &, Shenzhen, Peoples R China.
+EM hfang@vip.163.com
+CR HAN HY, 2009, J ZHEJIANG U, V39, P187
+   LIANG HN, 2000, URBAN PLANNING, V24, P51
+   WU CW, 2006, SOIL WATER CONSERVAT, P29
+   YIN M, 2008, RELIG STUD, P190
+   ZHANG JH, 2008, LANDSCAPE IDEOLOGICA
+NR 5
+TC 0
+Z9 0
+U1 0
+U2 3
+PU LONDON SCIENCE PUBLISHING LTD
+PI LONDON
+PA OFFICE 11, 10 GREAT RUSSELL STREET, LONDON, WC1B 3BQ, ENGLAND
+BN 978-1-907801-10-5
+PY 2010
+BP 357
+EP 360
+PG 4
+WC Architecture
+SC Architecture
+GA BUW25
+UT WOS:000290497400079
+DA 2021-09-29
+ER
+
+PT J
+AU Huang, WS
+   Cai, SJ
+   Wu, D
+   Huang, G
+   Liu, YC
+AF Huang, Wu-sheng
+   Cai, Si-jing
+   Wu, Di
+   Huang, Gang
+   Liu, Yan-chao
+TI Stability Assessment of Underground Mined-Out Areas in a Gold Mine Based
+   on Complex System Theory
+SO GEOTECHNICAL AND GEOLOGICAL ENGINEERING
+LA English
+DT Article
+DE Underground mined-out areas; Complex system; Fuzzy AHP; Catastrophe
+   theory model; Stability assessment
+AB For deep mining of a gold mine in the Altay city, Xinjinag autonomy region, China, it is necessary to evaluate the stability of mined-out areas of upper levels and then to treat those mined-out areas. Based on the features of underground mining, in this paper, a complex system model of stability assessment of underground mined-out area has been set up, which is constituted by 3 sub-systems of geological factors, mining engineering factors and management factors, and this system could be studied and analyzed by using the fuzzy analytic hierarchy process method and the catastrophe theory modeling method. By using those two methods and utilizing measured data of the gold mine, some useful conclusions of stability assessment of mined-out areas have been given out, which would be helpful for the mined-out areas treatment and also for the safely deep mining of the mine.
+C1 [Huang, Wu-sheng; Cai, Si-jing; Huang, Gang; Liu, Yan-chao] Univ Sci & Technol Beijing, Sch Civil & Environm Engn, Dept Resource Engn, Beijing 100083, Peoples R China.
+   [Cai, Si-jing; Huang, Gang; Liu, Yan-chao] Minist Educ, Key Lab High Efficiency Exploitat & Safety Met Mi, Beijing 100083, Peoples R China.
+   [Wu, Di] China Univ Min & Technol, Fac Resources & Safety Engn, Beijing 100083, Peoples R China.
+RP Wu, D (corresponding author), China Univ Min & Technol, Fac Resources & Safety Engn, Beijing 100083, Peoples R China.
+EM tauo123@163.com
+FU National Natural Science Foundation of ChinaNational Natural Science
+   Foundation of China (NSFC) [51404271]; Beijing Municipal Natural Science
+   FoundationBeijing Natural Science Foundation [8154053]
+FX This work is financially supported by the National Natural Science
+   Foundation of China (No. 51404271) and Beijing Municipal Natural Science
+   Foundation (No. 8154053).
+CR CHEN A. B., 2011, J SAF SCI TECHNOL, V07, P50
+   Cheng AB, 2011, METAL MINE, V7, P50
+   [邓红卫 Deng Hongwei], 2012, [中国安全科学学报, China Safety Science Journal（CSSJ）], V22, P24
+   GILMORE R, 1981, CATASTROPHE THEORY S
+   Hopfield JJ, 1986, IEEE CIRCUITS DEVICE, V9, P3
+   [李俊平 LI Junping], 2008, [科技导报, Science & Technology Review], V26, P50
+   Ling FH, 1997, CATASTROPHE THEORY A
+   Ma HJ, 2010, SCI TECHNOL ENG, V10, P5369
+   Miao SJ, 2009, INT J MIN MET MATER, V16, P255, DOI 10.1016/S1674-4799(09)60046-7
+   Singh VK, 2001, INT J ROCK MECH MIN, V38, P269, DOI 10.1016/S1365-1609(00)00078-2
+   van Loon AJ, 2002, EARTH-SCI REV, V59, P287, DOI 10.1016/S0921-8181(02)00164-9
+   Wang F.-Y., 2006, COMPLEX SYST COMPLEX, V3, P26
+   Wu Qi-hong, 2010, Journal of Central South University (Science and Technology), V41, P661
+   [郑勇 ZHENG Yong], 2010, [地质科技情报, Geological Science and Techology Information], V29, P123
+   [周文略 ZHOU Wenlue], 2007, [北京科技大学学报, Journal of University Science and Technology Beijing], V29, P1069
+NR 15
+TC 3
+Z9 3
+U1 0
+U2 10
+PU SPRINGER
+PI DORDRECHT
+PA VAN GODEWIJCKSTRAAT 30, 3311 GZ DORDRECHT, NETHERLANDS
+SN 0960-3182
+EI 1573-1529
+J9 GEOTECH GEOL ENG
+JI Geotech. Geol. Eng.
+PD OCT
+PY 2015
+VL 33
+IS 5
+BP 1295
+EP 1305
+DI 10.1007/s10706-015-9901-9
+PG 11
+WC Engineering, Geological
+SC Engineering
+GA CR7II
+UT WOS:000361522200010
+DA 2021-09-29
+ER
+
+PT C
+AU Quintanilla-Montoya, AL
+   Caldelas, RIR
+   Villarreal, LZ
+   Corona, EA
+   Larios, S
+AF Quintanilla-Montoya, AL
+   Caldelas, RIR
+   Villarreal, LZ
+   Corona, EA
+   Larios, S
+BE Brebbia, CA
+   Perez, JMS
+   Andion, LG
+   Villacampa, Y
+TI Building up the future: participative design of a rural development plan
+   for the coastal communities of the arid regions of Baja California,
+   Mexico
+SO COASTAL ENVIRONMENT V: INCORPORATING OIL SPILL STUDIES
+SE ENVIRONMENTAL STUDIES SERIES
+LA English
+DT Proceedings Paper
+CT 5th International Conference on Environmental Problems in Coastal
+   Regions
+CY 2004
+CL Univ Alicante, Alicante, SPAIN
+SP Wessex Inst Technol
+HO Univ Alicante
+DE rural development; arid-coastal regions; community participation;
+   sustainable development; complex system theory
+ID DESALINATION
+AB The difficult conditions in which the rural communities of developing countries live, as is the case of Mexico, are mainly due to social and economical situations of poverty, unemployment, low population, and distance from the urban centres and states administrations. On the other hand, these communities are linked to the deterioration of the environment and pollution due to domestic and productive activities as well as overexploitation of marine and land resources (marine turtles, whales, cactus, etc.). The situation is worse due to the lack of strategies and detailed policies that could promote the development of these remote areas, based on the active participation of the inhabitants that are directly related to the conservation aspects and the resource management. A reconnaissance of these communities was carried out in order to identify the conditions, needs, interests and social capital, as well as the natural capital and potential resources, using the Complex System Theory. The establishment of institutional linkages between the actors involved are essential for the design of a rural development plan and to the improvement of life quality to the people.
+C1 Univ Autonoma Baja California, Inst Invest Oceanol, Mexico City, DF, Mexico.
+RP Quintanilla-Montoya, AL (corresponding author), Univ Autonoma Baja California, Inst Invest Oceanol, Mexico City, DF, Mexico.
+OI Quintanilla Montoya, Ana Luz/0000-0001-8480-4943
+CR Boltvinik Julio, 2000, POBREZA DISTRIBUCION
+   CHAMBERS R, 1992, 311 I DEV STUD
+   *COM NAC AG, 1993, INF 1989 1993
+   Cortes FIA, 2000, ING HIDRAUL MEX, V15, P27
+   *EUR COMM, 1998, DES GUID US  REN EN
+   *FAO, 2000, QUAL GROWTH
+   Garcia-Rodriguez L, 2002, DESALINATION, V143, P103, DOI 10.1016/S0011-9164(02)00232-1
+   *INEGI, 2000, CENS POBL 2000
+   MAUREL A, 1991, SEM NEW TECHN US REN
+   METZELOPOULOS P, 2000, C POL STRAT DES REN
+   Miles M.B., 1994, QUALITATIVE DATA ANA
+   Scrimshaw NS, 1992, RAPID ASSESSMENT PRO
+   TAYLOR J, 1998, INTRO METODOS CUALIT
+   Weiner D, 2001, DESALINATION, V137, P7, DOI 10.1016/S0011-9164(01)00198-9
+   *WORLD BANK, 2000, QUAL GROWTH
+   2001, PLAN ESTATAL DESARRO
+NR 16
+TC 0
+Z9 0
+U1 2
+U2 5
+PU WIT PRESS
+PI SOUTHAMPTON
+PA ASHURST LODGE, SOUTHAMPTON SO40 7AA, ASHURST, ENGLAND
+SN 1462-6098
+BN 1-85312-710-8
+J9 ENVIRON ST
+PY 2004
+VL 10
+BP 231
+EP 243
+PG 13
+WC Engineering, Environmental; Environmental Sciences; Marine & Freshwater
+   Biology; Water Resources
+SC Engineering; Environmental Sciences & Ecology; Marine & Freshwater
+   Biology; Water Resources
+GA BAR56
+UT WOS:000223250500023
+DA 2021-09-29
+ER
+
+PT C
+AU Chiou, YS
+   Lam, KP
+AF Chiou, Yun-Shang
+   Lam, Khee Poh
+BE Jiang, Y
+   Zhu, YX
+   Yang, XD
+   Li, XT
+TI Sensor-based information modeling for life cycle commissioning of
+   residential buildings
+SO BUILDING SIMULATION 2007, VOLS 1-3, PROCEEDINGS
+LA English
+DT Proceedings Paper
+CT 10th Conference of the
+   International-Building-Performance-Simulation-Association
+CY SEP 03-06, 2007
+CL Tsinghua Univ, Beijing, PEOPLES R CHINA
+SP China HVAC&R Soc, Amer Soc Heating, Refrigerat & Air Condit Engineers, Energy Conservat Buildings & Community Syst, Federat European Heating & Air Conditioning Assoc, US DOE, Int Bldg Performance Simulat Assoc
+HO Tsinghua Univ
+DE information model; life cycle commissioning; residential building;
+   sensor-assisted; complex system theory
+AB According to the National Institute of Building Science (2006),. one of the main goals of building commissioning is to "maintain facility performance across its life cycle". In recent years, the maturing of sensing technology has helped to advance this vision through sensor-assisted building commissioning. For residential projects, however, the overhead associated with long-term sensor performance and quality assurance and sensor data analysis creates a barrier that diminishes the benefit of such technological advancement.
+   This paper describes how the principles of complex system theory can be applied to address these issues in the context of residential building. Two cases are presented. First case demonstrates the application of "scale" and "format"' that underline the idea of "bounded rationality" in dealing with imperfect sensor data. Second case refers to the idea of "decomposable hierarchical system'" as the framework for building system information modeling to reduce the level of difficulty for resident's participation in life cycle commissioning.
+C1 [Chiou, Yun-Shang; Lam, Khee Poh] Carnegie Mellon Univ, Dept Architecture, Pittsburgh, PA 15213 USA.
+RP Chiou, YS (corresponding author), Carnegie Mellon Univ, Dept Architecture, Pittsburgh, PA 15213 USA.
+CR LARKIN JH, 1987, COGNITIVE SCI, V11, P65, DOI 10.1016/S0364-0213(87)80026-5
+   MATSON N, 2002, LBNL48258
+   *NAT I BUILD SCI, 2007, WHOL BUILD DES GUID
+   PIETTE MA, 2000, P ACEEE 2000 SUMM ST
+   Simon H. A., 1996, SCI ARTIFICIAL, V3rd
+   SINGHVI V, 2005, P 2005 ASCE INT C CO
+   Wang SW, 2002, AUTOMAT CONSTR, V11, P59, DOI 10.1016/S0926-5805(01)00050-4
+   Westergren KE, 1999, ENERG BUILDINGS, V29, P247, DOI 10.1016/S0378-7788(98)00065-6
+   Wray C, 2002, LBNL45959
+   WRAY CP, 2000, LBNL44535
+NR 10
+TC 0
+Z9 0
+U1 0
+U2 3
+PU TSINGHUA UNIVERSITY PRESS
+PI BEIJING
+PA TSINGHUA UNIVERSITY HAIDIANQU, BEIJING 100084, PEOPLES R CHINA
+BN 978-0-9771706-3-0
+PY 2007
+BP 1572
+EP 1579
+PG 8
+WC Construction & Building Technology; Engineering, Civil; Mathematics,
+   Applied
+SC Construction & Building Technology; Engineering; Mathematics
+GA BHI13
+UT WOS:000253394500229
+DA 2021-09-29
+ER
+
+PT J
+AU Zhang, YG
+   Wang, ZP
+   Zhang, JF
+AF Zhang, Yagang
+   Wang, Zengping
+   Zhang, Jinfang
+TI FAULT IDENTIFICATION BASED ON NLPCA IN COMPLEX ELECTRICAL ENGINEERING
+SO JOURNAL OF ELECTRICAL ENGINEERING-ELEKTROTECHNICKY CASOPIS
+LA English
+DT Article
+DE fault identification; nonlinear principal component analysis; NLPCA;
+   complex system theory; electrical engineering
+ID POWER SYSTEMS; ESTIMATOR; NOISE
+AB The fault is inevitable in any complex systems engineering. Electric power system is essentially a typically nonlinear system. It is also one of the most complex artificial systems in this world. In our researches, based on the real-time measurements of phasor measurement unit, under the influence of white Gaussian noise (suppose the standard deviation is 0.01, and the mean error is 0), we used mainly nonlinear principal component analysis theory (NLPCA) to resolve fault identification problem in complex electrical engineering. The simulation results show that the fault in complex electrical engineering is usually corresponding to the variable with the maximum absolute value coefficient in the first principal component. These researches will have significant theoretical value and engineering practical significance.
+C1 [Zhang, Yagang; Wang, Zengping; Zhang, Jinfang] N China Elect Power Univ, Dept Elect Engn, Key Lab Power Syst Protect & Dynam Secur Monitori, Minist Educ, Baoding 071003, Hebei, Peoples R China.
+RP Zhang, YG (corresponding author), N China Elect Power Univ, Dept Elect Engn, Key Lab Power Syst Protect & Dynam Secur Monitori, Minist Educ, Box 205, Baoding 071003, Hebei, Peoples R China.
+EM yagangzhang@gmail.com
+OI Zhang, Yagang/0000-0002-8398-3027; Zhang, Yagang/0000-0002-0270-1607
+FU National Natural Science Foundation of ChinaNational Natural Science
+   Foundation of China (NSFC) [50837002, 50777016]; Science Foundation for
+   the Outstanding Doctors of NCEPU; Fundamental Research Funds for the
+   Central UniversitiesFundamental Research Funds for the Central
+   Universities
+FX This research was supported partly by the National Natural Science
+   Foundation of China (50837002, 50777016), the Science Foundation for the
+   Outstanding Doctors of NCEPU and Fundamental Research Funds for the
+   Central Universities.
+CR Bhatia V, 2007, SIGNAL PROCESS, V87, P2569, DOI 10.1016/j.sigpro.2007.04.006
+   CAO J., 2004, THESIS G MASON U VIR
+   GLASCOCK M. D., 1992, CHARACTERIZATION ARC
+   Jackson J. E., 1991, USERS GUIDE PRINCIPA
+   Lee Y., 2008, THESIS GEORGIA I TEC, P1
+   LI T., 2006, THESIS HONG KONG U S
+   Meseguer J, 2010, J PROCESS CONTR, V20, P944, DOI 10.1016/j.jprocont.2010.06.017
+   Muenchhof M, 2009, ANNU REV CONTROL, V33, P136, DOI 10.1016/j.arcontrol.2009.08.002
+   Peng CH, 2010, INT J ELEC POWER, V32, P886, DOI 10.1016/j.ijepes.2010.01.024
+   Phadke AG, 2008, POWER ELECTRON POWER, P3, DOI 10.1007/978-0-387-76537-2_1
+   Phadke A. G., 2009, COMPUTER RELAYING PO
+   Sodhi R, 2010, ELECTR POW SYST RES, V80, P1154, DOI 10.1016/j.epsr.2010.03.005
+   Sodhi R, 2010, ELECTR POW COMPO SYS, V38, P533, DOI 10.1080/15325000903376925
+   TONG CQ, 1995, COMPUT ELECTR ENG, V21, P271, DOI 10.1016/0045-7906(95)00002-C
+   Wang Y, 2009, ELECTR POW COMPO SYS, V37, P517, DOI 10.1080/15325000802599361
+   Wang YG, 2008, DIGIT SIGNAL PROCESS, V18, P444, DOI 10.1016/j.dsp.2007.11.002
+   Wang ZP, 2010, ADV ELECTR COMPUT EN, V10, P28, DOI 10.4316/AECE.2010.01005
+   Zhang YG, 2011, INT J ELEC POWER, V33, P791, DOI 10.1016/j.ijepes.2011.01.018
+   Zhang YG, 2010, ADV ELECTR COMPUT EN, V10, P102, DOI 10.4316/AECE.2010.03017
+   Zhu JP, 2006, APPL MULTIVARIATE ST
+NR 20
+TC 5
+Z9 5
+U1 1
+U2 1
+PU SLOVAK UNIV TECHNOLOGY
+PI BRATISLAVA
+PA FAC ELECTRICAL ENGINEERING & INFORMATION, ILKOVICOVA 3, BRATISLAVA, 812
+   19, SLOVAKIA
+SN 1335-3632
+J9 J ELECTR ENG-SLOVAK
+JI J. Electr. Eng.
+PD JUL-AUG
+PY 2012
+VL 63
+IS 4
+BP 255
+EP 260
+DI 10.2478/v10187-012-0036-4
+PG 6
+WC Engineering, Electrical & Electronic
+SC Engineering
+GA 010JS
+UT WOS:000309091300007
+OA gold
+DA 2021-09-29
+ER
+
+PT J
+AU Zoya, LGR
+AF Rodriguez Zoya, Leonardo G.
+TI The Comparative Method and Complex System Theory Towards an
+   Interdisciplinary Dialogue between Political Science and Complexity
+   Science
+SO REFLEXION POLITICA
+LA Spanish
+DT Article
+DE Methodology; comparative method; complexity sciences; complex systems
+   theory; interdisciplinarity
+AB The study of complex systems is one of the main research objects of the so-called 'the new complexity sciences'. These sciences aim to understand phenomena such as self-organization, emergence, uncertainty, non-linear order, and chaos-order dynamic of complex systemic totalities in the physical, natural and socio-cultural world. In spite of the importance of the knowledge and technologies produced by complexity sciences, in the context of different disciplines of contemporary sciences, they have not been yet systematically and explicitly articulated with the knowledge of social sciences. The goal of this paper is to proceed with a socio-historical and epistemological analysis of the comparative method in political science and articulate it with the developments of complex systems theory. The contribution to which this paper aspires is to strengthen an interdisciplinary dialogue between complexity sciences and political sciences.
+C1 [Rodriguez Zoya, Leonardo G.] Univ Buenos Aires, Buenos Aires, DF, Argentina.
+RP Zoya, LGR (corresponding author), Univ Buenos Aires, Buenos Aires, DF, Argentina.
+CR Almond G., 1966, POLITICA COMP CONCEP
+   BACON F., 2003, NOVUM ORGANUM
+   Bendix R., 1964, ESTADO NACL CIUDADAN
+   Bertalanffy L. V., 1968, TEORIA GEN SISTEMAS
+   BLALOCK H, 1970, INTRO INVESTIGACION
+   Boudon R., 1975, METODOLOGIA CIENCIAS, VIII
+   Boudon R., 1973, METODOLOGIA CIENCIAS, VI
+   Boudon R., 1974, METODOLOGIA CIENCIAS, VII
+   Cais J., 1997, METODOLOGIA ANALISIS
+   Campbell D., 1966, DISENOS EXPT CUASIEX
+   Carnap R., 1985, FUNDAMENTACION LOGIC
+   Castiglioni F., 1997, INTRO CIENCIA POLITI
+   Cohen N., 2003, REV EPISTEMOLOGIA CI, V18
+   Collier D., 1993, COMP CIENCIAS SOCIAL, P51
+   Collier David, 1991, COMP POLITICAL DYNAM
+   Dogan M., 1984, CONTRIBUCIONES, P37
+   EASTON D, 1957, WORLD POLIT, V9, P383, DOI 10.2307/2008920
+   Eckstein Harry, 1963, COMP POLIT, P3
+   Foerster H. V., 1962, PRINCIPLES SELF ORG
+   Foerster H. V., 1996, SEMIL CIBERNETICA
+   Frondizi R., 1949, NOVUM ORGANUM, P9
+   Garcia R., 2006, SISTEMAS COMPLEJOS
+   Garcia R., 2000, CONOCIMIENTO CONSTRU, P153
+   Goodin R, 2004, TEORIA DISENO I
+   Guthrie W. K. C., 1993, HIST FILOSOFIA GRIEG
+   Hall PA, 1996, POLIT STUD-LONDON, V44, P936, DOI 10.1111/j.1467-9248.1996.tb00343.x
+   Hempel C., 1973, FILOSOFIA CIENCIA NA
+   Hempel C. G., 1988, FUNDAMENTOS FORMACIO
+   Johnson S., 2001, SISTEMAS EMERGENTES
+   KALLEBERG AL, 1966, WORLD POLIT, V19, P69, DOI 10.2307/2009843
+   Klein J. T., 2004, EMERGENCE COMPLEXITY, V6, P2, DOI DOI 10.HTTPS://D0I.0RG/10.EMERG/10.17357.5B032D0FDC094281A75E3FF2F998D161
+   Kosko B., 1999, FUTURO BORROSO CIELO
+   Koyre A., 1973, ESTUDIOS HIST PENSAM
+   Kuhn T., 1982, LA TENSION ESENCIAL, P129
+   Kuhn Thomas S., 1962, ESTRUCTURA REVOLUCIO
+   LASSWELL HD, 1968, COMP POLIT, V1, P3, DOI 10.2307/421372
+   Lazarsfeld P., 1962, PUEBLO ELIGE ESTUDIO, P3
+   LIJPHART A, 1975, COMP POLIT STUD, V8, P158, DOI 10.1177/001041407500800203
+   LIJPHART A, 1971, AM POLIT SCI REV, V65, P682, DOI 10.2307/1955513
+   Macridis Roy C., 1955, STUDY COMP GOVT
+   Mair P., 1996, NEW HDB POLITICAL SC, P309
+   Maldonado Carlos Eduardo, 2007, COMPLEJIDAD CIENCIA
+   MARCH JG, 1984, AM POLIT SCI REV, V78, P734, DOI 10.2307/1961840
+   Meckstroth T, 1975, COMP POLIT STUD, P133
+   Merton R., 1949, TEORIA ESTRUCTURA SO
+   Merton R. K., 1973, SOCIOLOGIA CIENCIA
+   Moore B., 1970, ORIGENES SOCIALES DI
+   Moreau Joseph, 1972, ARISTOTELES ESCUELA
+   Morin, 1990, INTRO PENSAMIENTO CO
+   Morin E, 1977, METODO NATURALEZA NA
+   Morin E., 2004, EPISTEMOLOGIA COMPLE
+   Morin E., 1986, METODO
+   Morin E., 1991, METODO
+   Morlino L, 1993, COMP CIENCIAS SOCIAL, P13
+   Navarro P., 1990, NUEVOS AVANCES INVES, VI, P87
+   Nicolescu B., 1994, CARTA TRANSDISCIPLIN
+   Peters B. Guy, 2003, NUEVO I TEORIA I CIE NUEVO I TEORIA I CIE
+   Peters B. Guy, 1999, I THEORY POLITICAL S
+   Piaget J., 1982, PSICOGENESIS E HISTO
+   Piaget J, 1978, EQUILIBRACION ESTRUC
+   Piaget Jean, 1979, TRATADO LOGICA CONOC
+   PICO J., 1998, PAPERS, V54, P9
+   Popper K., 2002, CONJETURAS REFUTACIO
+   Popper K., 1994, LOGIC SOCIAL SCI SEA, P64
+   Popper K, 1935, LOGICA INVESTIGACION
+   Prigogine I., 1987, ESTRUCTURA COMPLEJO
+   Przeworski A., 1970, LOGIC COMP SOCIAL IN
+   Putnam H., 2002, DESPLOME DICOTOMIA H
+   Samaja J., 1993, EPISTEMOLOGIA METODO
+   Sanders D, 1995, TEORIA METODOS CIENC, P69
+   SARTORI G, 1970, AM POLIT SCI REV, V64, P1033, DOI 10.2307/1958356
+   Sartori G., 1971, ITAL POLIT SCI REV, V1, P7
+   Sartori G, 1984, POLITICA LOGICA METO
+   Sautu Ruth, 2005, MANUAL METODOLOGIA C
+   Skocpol Theda, 1979, STATES SOCIAL REVOLU
+   STEVENS SS, 1946, SCIENCE, V103, P677, DOI 10.1126/science.103.2684.677
+   Velasco Juan Miguel Gonzalez, 2009, INVESTIGACION CIENTI
+   Vilar S., 1997, NUEVA RACIONALIDAD C
+   WEAVER W, 1948, Am Sci, V36, P536
+   Zolo Danilo, 1992, DEMOCRACIA COMPLEJID
+NR 80
+TC 0
+Z9 0
+U1 0
+U2 0
+PU UNIV AUTONOMA BUCARAMANGA, INST ESTUDIOS POLITICOS
+PI BUCARAMANGA
+PA CALLE 48 NO 39-234, BUCARAMANGA, 00000, COLOMBIA
+SN 0124-0781
+J9 REFLEX POLITICA
+JI Reflex. Politica
+PD JUN
+PY 2011
+VL 13
+IS 25
+BP 78
+EP 92
+PG 15
+WC Political Science
+SC Government & Law
+GA V1L8T
+UT WOS:000217022200007
+DA 2021-09-29
+ER
+
+PT C
+AU Liu, LJ
+   Guan, XJ
+AF Liu, Lijun
+   Guan, Xiaoji
+BE Xu, Q
+   Li, H
+   Li, Q
+TI Research on the Coal Logistics Network's Property Based on the Complex
+   System Theory of Supply Chain
+SO SUSTAINABLE DEVELOPMENT OF INDUSTRY AND ECONOMY, PTS 1 AND 2
+SE Advanced Materials Research
+LA English
+DT Proceedings Paper
+CT 3rd International Conference on Energy, Environment and Sustainable
+   Development (EESD 2013)
+CY NOV 12-13, 2013
+CL Shanghai, PEOPLES R CHINA
+SP Shanghai Univ Elect Power, Shanghai Normal Univ
+DE coal logistics network; supply chain; network property; complex system
+AB This article puts forward the practical significance of studying the complex characteristic of coal logistics network from the coal resource effective utilization and rational allocation. According to the characteristics of coal enterprises, the coal logistics network is defined as the complex network system. Based on the complex system theory of the supply chain, the coal logistics network is analysed separately from the complexity of node and structure, the small word property as well as the scale-free property and it is pointed out that the coal network has complex network structure, the small world property and the scale-free property.
+C1 [Liu, Lijun; Guan, Xiaoji] Shandong Inst Business & Technol, Coll Management Sci & Engn, Yantai 264005, Shandong, Peoples R China.
+RP Liu, LJ (corresponding author), Shandong Inst Business & Technol, Coll Management Sci & Engn, Yantai 264005, Shandong, Peoples R China.
+EM llj2002-1@163.com
+CR Qiu Zhuqiang, 2007, THESIS CENTRAL S U
+   Wang Shuai, 2009, THESIS CHANGA U
+   Wong Fong, 2009, THESIS BEIJING JIAOT
+   Wu Honggang, 2005, COAL ENTERPRISES MAN
+   Zhao Guozhi, 2008, LOGISTICS TECHNOLOGY
+   Zhong Weiqing, 2004, THESIS LIAONING ENG
+NR 6
+TC 3
+Z9 3
+U1 0
+U2 14
+PU TRANS TECH PUBLICATIONS LTD
+PI STAFA-ZURICH
+PA LAUBLSRUTISTR 24, CH-8717 STAFA-ZURICH, SWITZERLAND
+SN 1022-6680
+BN 978-3-03785-975-9
+J9 ADV MATER RES-SWITZ
+PY 2014
+VL 869-870
+BP 251
+EP 255
+DI 10.4028/www.scientific.net/AMR.869-870.251
+PG 5
+WC Energy & Fuels; Environmental Sciences; Materials Science,
+   Multidisciplinary
+SC Energy & Fuels; Environmental Sciences & Ecology; Materials Science
+GA BA9CI
+UT WOS:000339125800048
+DA 2021-09-29
+ER
+
+PT J
+AU Zhang, RX
+AF Zhang, Ruixue
+TI Modeling and Simulation for the Coordinated Development of Sports -
+   Economy Complex System Based on Complex System Theory
+SO REVISTA DE PSICOLOGIA DEL DEPORTE
+LA English
+DT Article
+DE sports-economy complex system (SPCS); accelerated genetic algorithm
+   (AGA); coordinated development evaluation; evaluation index system (EIS)
+ID INDUSTRY
+AB The regional development of the sports industry and its role in the economy could be potentially facilitated by more research into the sports - economy complex system (SECS). However, the existing studies on SECS overlook the differences between the subsystems, failing to systematically analyze the features of each individual subsystem or the complex system in different phases. Thus, the basic purpose of this research is to solve the major and urgent problems regarding the regional complex system in order to advance the research on SECS. Based on the theory of complex systems, this paper mainly studies the coordinated regional development between sports and economy and constructs a model for simulation and verification. Specifically, the authors examine the relationship between sports development and regional economic growth, modeling the coordination of SECS in the course of development, and setting up an evaluation index system (EIS) for the coordinated development of SECS. For this purpose, the experimental research design is used in this study as the research methodology. On this basis, the accelerated genetic algorithm (AGA) is introduced to evaluate the coordinated development of that system. The proposed model is proved valid through experiments.
+C1 [Zhang, Ruixue] Dalian Minzu Univ, Sch Econ & Management, Dalian 116600, Peoples R China.
+RP Zhang, RX (corresponding author), Dalian Minzu Univ, Sch Econ & Management, Dalian 116600, Peoples R China.
+EM zrx@dlnu.edu.cn
+FU Research project of Humanities and social sciences of Dalian Minzu
+   University [202002002]
+FX This work was supported by a grant from Research project of Humanities
+   and social sciences of Dalian Minzu University (No.202002002)
+CR Abdullah M. N, 2021, 2020 IEEE EMBS C BIO
+   Bi X, 2020, IOP C SERIES EARTH E
+   Cheng Y, 2021, MATH PROBL ENG, V2021, DOI 10.1155/2021/6610000
+   Condorelli R., 2016, OPEN J APPL SCI, V6, P422
+   Fang D, 2019, NAT ENVIRON POLLUT T, V18, P41
+   Ghildiyal Rakesh, 2015, Mens Sana Monogr, V13, P165, DOI 10.4103/0973-1229.153335
+   Giulianotti R, 2018, SUSTAINABILITY-BASEL, V10, DOI 10.3390/su10072241
+   Guinot J, 2020, CHANGING EC PARADIGM, P603, DOI [10.18280/ijsdp.150502, DOI 10.18280/IJSDP.150502]
+   He H, 2020, RES COORDINATED DEV, P1
+   Hulme Adam, 2019, Front Sports Act Living, V1, P56, DOI 10.3389/fspor.2019.00056
+   Jing ZR, 2020, J CLEAN PROD, V263, DOI 10.1016/j.jclepro.2020.121510
+   Kumar BA, 2020, IEEE T IND APPL, V56, P5439, DOI 10.1109/TIA.2020.3010779
+   Li YM, 2019, CLUSTER COMPUT, V22, pS4805, DOI 10.1007/s10586-018-2390-x
+   Liu Fei, 2017, 2017 INT C SMART GRI
+   Ma Y, 2021, SUSTAINABILITY-BASEL, V13, DOI 10.3390/su13074048
+   Mendoza Torralba E, 2020, 2020 8 INT C INF TEC
+   Pol R, 2020, SPORTS MED-OPEN, V6, DOI 10.1186/s40798-020-00256-9
+   Silva AL, 2018, J ORGAN CHANGE MANAG, V31, P962, DOI 10.1108/JOCM-10-2016-0210
+   Stan M, 2016, EC SOCIOLOGIE, P97
+   Varja E, 2016, INT J SPORT FINANC, V11, P269
+   Voyer M, 2020, OCEAN COAST MANAGE, V192, DOI 10.1016/j.ocecoaman.2020.105187
+   Wang ZX, 2018, EBIOMEDICINE, V32, P93, DOI 10.1016/j.ebiom.2018.05.024
+   Xu JF, 2019, SUSTAINABILITY-BASEL, V11, DOI 10.3390/su11195399
+   Yang C, 2019, INT J PROD RES, V57, P1176, DOI 10.1080/00207543.2018.1503427
+   Yang SX, 2020, SUSTAINABILITY-BASEL, V12, DOI 10.3390/su12030813
+   Zheng D, 2015, P 2014 INT C IND MEC, V1
+NR 26
+TC 0
+Z9 0
+U1 0
+U2 0
+PU UNIV ILLES BALEARS
+PI PALMA
+PA SERVEI PUBLICACIONS INTERCANVI CIENTIFIC CAS JAI, CAMPUS UNIV, CARRETERA
+   VALLDEMOSSA, K M 7 5, PALMA, ILLES BALEARS 07122, SPAIN
+SN 1132-239X
+EI 1988-5636
+J9 REV PSICOL DEPORTE
+JI Rev. Psicol. Deporte
+PY 2021
+VL 30
+IS 2
+BP 318
+EP 330
+PG 13
+WC Psychology, Applied
+SC Psychology
+GA TZ6DN
+UT WOS:000684561100029
+DA 2021-09-29
+ER
+
+PT J
+AU Li, H
+   Cai, YL
+AF Li, Hua
+   Cai, Yong-Li
+TI Regional Eco-Security Assessment Based on the Perspective of Complex
+   System Science: A Case Study of Chongming in China
+SO HUMAN AND ECOLOGICAL RISK ASSESSMENT
+LA English
+DT Article
+DE eco-security; complex system; assessment; Chongming
+ID SUSTAINABILITY
+AB The objective of this study is to evaluate eco-security of Chongming in China and identify eco-security grades of the relevant subareas. In addition, the study aims to put forward the framework for a regional eco-security assessment system that is suitable for the analysis and evaluation of a man-land complex ecosystem. From the perspective of complex system science, this study puts forward the ANP-PRS-SENCE framework for a regional eco-security assessment. Based on the framework, a compressive assessment index system and a spatial variation assessment index system for Chongming's eco-security were established. Additionally, the eco-security threshold of Chongming was determined through the approach of system dynamics simulation. The assessment results show that in recent years the comprehensive score of eco-security has been on a gradual rise. With respect to the second-grade indices, the ecological risk and ecological protection indices are still relatively low. Therefore, in order to reduce the ecological risk, ecological construction needs to be strengthened and management measures need to be improved. The spatial variation assessment of eco-security shows that although the eco-security levels of most subareas remain between 0.3 and 0.6, regional variations are still quite obvious.
+C1 [Cai, Yong-Li] E China Normal Univ, Key Lab Ecol Urbanizat Proc & Ecoregistrat, Sch Resource & Environm, Shanghai 200062, Peoples R China.
+   [Li, Hua] Shanghai Maritime Univ, Sch Econ & Management, Shanghai, Peoples R China.
+RP Cai, YL (corresponding author), E China Normal Univ, Key Lab Ecol Urbanizat Proc & Ecoregistrat, Sch Resource & Environm, N Zhongshan Rd, Shanghai 200062, Peoples R China.
+EM ylcai@geo.ecnv.edu.cn
+FU key scientific and technological project of Shanghai [08DZ1205600];
+   Doctor's Degree Paper Program of Shanghai Science and Technology Fund
+   [200706002]; Shanghai Maritime University [2009150]
+FX The project was supported by key scientific and technological project of
+   Shanghai (No. 08DZ1205600); Doctor's Degree Paper Program of Shanghai
+   Science and Technology Fund (No. 200706002); and Science & Technology
+   Program of Shanghai Maritime University (No. 2009150).
+CR BARNTHOUSE LW, 1992, ENVIRON TOXICOL CHEM, V11, P1751, DOI 10.1897/1552-8618(1992)11[1751:TROMIE]2.0.CO;2
+   Boughton DA, 1999, ECOSYST HEALTH, V5, P312, DOI 10.1046/j.1526-0992.1999.09949.x
+   Guneralp B, 2003, ECOL MODEL, V167, P115, DOI 10.1016/S0304-3800(03)00172-8
+   HE Y, 2006, CHINESE J WATER CONS, V22, P18
+   Jia Yanhong, 2006, Shengtaixue Zazhi, V25, P1003
+   MA S, 1984, ACTA ECOL SIN, V4, P1
+   Ni JR, 2006, GEOMORPHOLOGY, V80, P214, DOI 10.1016/j.geomorph.2006.02.009
+   PENG YI, 2004, J GUIZHOU COLL FINAN, V113, P6
+   QIAN HB, 2001, CHINA LAND SCI, V15, P4
+   QING HG, 2007, CONSERV RECYCLING, V51, P24
+   Saaty T. L., 2004, Journal of Systems Science and Systems Engineering, V13, P1, DOI 10.1007/s11518-006-0151-5
+   Saysel AK, 2002, J ENVIRON MANAGE, V64, P247, DOI 10.1006/jema.2001.0488
+   [石洪华 SHI Honghua], 2007, [海洋环境科学, Marine Environmental Science], V26, P594
+   Sun LY, 2010, J ENVIRON MANAGE, V91, P1021, DOI 10.1016/j.jenvman.2009.12.015
+   [汤洁 Tang Jie], 2005, [生态学报, Acta Ecologica Sinica], V25, P1178
+   [拓学森 TUO Xuesen], 2006, [干旱区资源与环境, Journal of Arid Land Resources and Environment], V20, P78
+   Wang Huai-Jie, 2006, Tobacco Science & Technology, P11
+   [王明全 WANG Mingquan], 2007, [干旱区资源与环境, Journal of Arid Land Resources and Environment], V21, P72
+   *WIK, 2010, EC
+   XIAO DN, 2002, CHINESE J APPL ECOLO, V13, P354
+   [谢花林 Xie Hualin], 2004, [北京师范大学学报. 自然科学版, Journal of Beijing Normal University], V40, P705
+   Xu JP, 2009, HUM ECOL RISK ASSESS, V15, P316, DOI 10.1080/10807030902761361
+   Zhao YZ, 2006, J ENVIRON MANAGE, V80, P120, DOI 10.1016/j.jenvman.2005.08.019
+   [周文华 Zhou Wenhua], 2005, [生态学杂志, Chinese Journal of Ecology], V24, P848
+   ZUO W, 2002, GEOGRAPHY TERRITORIA, V19, P67
+NR 25
+TC 1
+Z9 1
+U1 3
+U2 34
+PU TAYLOR & FRANCIS INC
+PI PHILADELPHIA
+PA 530 WALNUT STREET, STE 850, PHILADELPHIA, PA 19106 USA
+SN 1080-7039
+EI 1549-7860
+J9 HUM ECOL RISK ASSESS
+JI Hum. Ecol. Risk Assess.
+PY 2011
+VL 17
+IS 6
+BP 1210
+EP 1228
+DI 10.1080/10807039.2011.605306
+PG 19
+WC Biodiversity Conservation; Environmental Sciences
+SC Biodiversity & Conservation; Environmental Sciences & Ecology
+GA 874LX
+UT WOS:000298960400004
+DA 2021-09-29
+ER
+
+PT J
+AU Plummer, R
+   Fennell, DA
+AF Plummer, Ryan
+   Fennell, David A.
+TI Managing protected areas for sustainable tourism: prospects for adaptive
+   co-management
+SO JOURNAL OF SUSTAINABLE TOURISM
+LA English
+DT Review
+DE adaptive co-management; protected areas and sustainable tourism;
+   governance; complex system theory; ethics
+ID NATURAL-RESOURCE MANAGEMENT; RESILIENCE; SYSTEMS; COLLABORATION;
+   CONSERVATION; PARTNERSHIP; GOVERNANCE; ECOTOURISM; FRAMEWORK; ECOLOGY
+AB This paper looks at the challenging enterprise of managing protected areas for sustainable tourism. It notes that during the past 25 years multistakeholder conflicts, complexity and uncertainty have emerged and persisted as important issues requiring managerial responses. These issues reflect substantial paradigmatic shifts in pursuing and understanding sustainability. Governance directs attention to broad participatory approaches, and complex systems theory emphasises transformative changes and an integrative perspective that couples human and natural systems (a social-ecological system). The paper envisions the prospects of adaptive co-management as an alternative approach to protected areas management for sustainable tourism. It also makes the case for an interdisciplinary approach by highlighting important and informative developments outside tourism studies. Adaptive co-management bridges governance and complex systems by bringing together cooperative and adaptive approaches to management. In appraising the potential for adaptive co-management attention is systematically directed to conceptual, technical, ethical and practical dimensions. While adaptive co-management is clearly not a universal answer, experiences and knowledge from natural resource management raise salient prospects for the approach to be insightfully applied to protected areas for sustainable tourism.
+C1 [Plummer, Ryan; Fennell, David A.] Brock Univ, Dept Tourism & Environm, St Catharines, ON L2S 3A1, Canada.
+RP Plummer, R (corresponding author), Brock Univ, Dept Tourism & Environm, St Catharines, ON L2S 3A1, Canada.
+EM rplummer@brocku.ca
+CR Aguirre JA, 2006, PASOS, V4, P351, DOI 10.25145/j.pasos.2006.04.024
+   Armitage D., 2007, ADAPTIVE COMANAGEMEN, P1
+   Armitage DR, 2009, FRONT ECOL ENVIRON, V7, P95, DOI 10.1890/070089
+   AYLES B, 2007, ADAPTIVE COMANAGEMEN, P105
+   Balint PJ, 2006, ENVIRON MANAGE, V38, P137, DOI 10.1007/s00267-005-0100-y
+   Bellamy JA, 2001, J ENVIRON MANAGE, V63, P407, DOI 10.1006/jema.2001.0493
+   Berkes F, 2006, SCIENCE, V311, P1557, DOI 10.1126/science.1122804
+   Berkes F, 2004, CONSERV BIOL, V18, P621, DOI 10.1111/j.1523-1739.2004.00077.x
+   BERKES F, 1991, ALTERN-P SOC TEC, V18, P12
+   Berkes F, 2007, ADAPTIVE COMANAGEMEN
+   Berkes Fikret, 2007, ADAPTIVE COMANAGEMEN, P308
+   Berkhout F, 2003, NEGOTIATING ENVIRONMENTAL CHANGE, P1
+   Bramwell B, 1999, ANN TOURISM RES, V26, P392, DOI 10.1016/S0160-7383(98)00105-4
+   Bramwell B., 2000, TOURISM COLLABORATIO
+   Brewer G. D., 1973, POLITICIANS BUREAUCR
+   Brinkerhoff JM, 2002, PUBLIC ADMIN DEVELOP, V22, P19, DOI 10.1002/pad.203
+   Butler R.W., 1999, TOURISM GEOGR, V1, P7, DOI [10.1080/14616689908721291, DOI 10.1080/14616689908721291]
+   Campbell LM, 1999, ANN TOURISM RES, V26, P534, DOI 10.1016/S0160-7383(99)00005-5
+   CAPRA F, 1982, TURNING POINT
+   Carlsson L, 2005, J ENVIRON MANAGE, V75, P65, DOI 10.1016/j.jenvman.2004.11.008
+   Chess C., 2000, J ENV PLAN MANAGE, V43, P769, DOI [10.1080/09640560020001674, DOI 10.1080/09640560020001674]
+   COLFER CJP, 2005, COMPLEX FOREST COMMU
+   Conley A, 2003, SOC NATUR RESOUR, V16, P371, DOI 10.1080/08941920309181
+   Connick S., 2003, Journal of Environmental Planning and Management, V46, P177, DOI 10.1080/0964056032000070987
+   DAVEY S, 1993, LAW MOTHER PROTECTIN, P197
+   Davis D., 1992, Tourism Management, V13, P313, DOI 10.1016/0261-5177(92)90104-F
+   DEARDEN P, 2004, RESOURCE ENV MANAGEM, P314
+   DORCEY AHJ, 2004, RESOURCE ENV MANAGEM, P528
+   DOUBLEDAY N, 2007, ADAPTIVE COMANAGEMEN, P228
+   Dredge D., 2006, Journal of Sustainable Tourism, V14, P562, DOI 10.2167/jost567.0
+   Eagles P. F. J., 2002, Tourism in national parks and protected areas: planning and management, DOI 10.1079/9780851995892.0000
+   Farrell B., 2005, Journal of Sustainable Tourism, V13, P109, DOI 10.1080/09669580508668481
+   Farrell BH, 2004, ANN TOURISM RES, V31, P274, DOI 10.1016/j.annals.2003.12.002
+   Faulkner B., 1997, Pacific Tourism Review, V1, P93
+   Fennell D. A., 2003, International Journal of Tourism Research, V5, P197, DOI 10.1002/jtr.428
+   Fennell D. A., 2008, ECOTOURISM
+   FENNELL DA, 2004, RECENT ADV RES UPDAT, V5, P99
+   Fennell D, 2008, J ENVIRON MANAGE, V88, P62, DOI 10.1016/j.jenvman.2007.01.020
+   Folke, 2003, NAVIGATING SOCIAL EC, P33, DOI DOI 10.1017/CB09780511541957.005
+   Folke C, 2005, ANNU REV ENV RESOUR, V30, P441, DOI 10.1146/annurev.energy.30.050504.144511
+   Folke C, 2002, AMBIO, V31, P437, DOI 10.1639/0044-7447(2002)031[0437:RASDBA]2.0.CO;2
+   Frame T. M., 2004, Journal of Environmental Planning and Management, V47, P59, DOI 10.1080/0964056042000189808
+   Glasbergen Pieter, 1998, COOPERATIVE ENV GOVE, P1, DOI DOI 10.1007/978-94-011-5143-6_1
+   Gunderson LH, 2001, PANARCHY, P315
+   Hall C. M., 2000, Tourism and national parks: issues and implications., P57
+   Hall C. M., 1999, Journal of Sustainable Tourism, V7, P274, DOI 10.1080/09669589908667340
+   Hardy A., 2002, Journal of Sustainable Tourism, V10, P475, DOI 10.1080/09669580208667183
+   Hill R, 2006, SOC NATUR RESOUR, V19, P577, DOI 10.1080/08941920600742310
+   Hiwasaki L, 2006, SOC NATUR RESOUR, V19, P675, DOI 10.1080/08941920600801090
+   Holling CS, 2001, PANARCHY, P25
+   HOLLING CS, 1996, CONSERV BIOL, V10, P28
+   HOUGH JL, 1988, ENVIRON CONSERV, V15, P129, DOI 10.1017/S0376892900028939
+   Hunter C, 1997, ANN TOURISM RES, V24, P850, DOI 10.1016/S0160-7383(97)00036-4
+   Innes JE, 1999, J AM PLANN ASSOC, V65, P412, DOI 10.1080/01944369908976071
+   *IUCN, 1993, 4 WORLD C NAT PARKS
+   Jamal T., 2004, Tourism Geographies, V6, P352, DOI 10.1080/1461668042000249656
+   JAMAL TB, 1995, ANN TOURISM RES, V22, P186, DOI 10.1016/0160-7383(94)00067-3
+   Jamal TB, 2002, J PLAN EDUC RES, V22, P164, DOI 10.1177/0739456X02238445
+   Jiggins J., 2000, International Journal of Agricultural Resources, Governance and Ecology, V1, P28
+   Kates RW, 2001, SCIENCE, V292, P641, DOI 10.1126/science.1059386
+   Katz D, 1978, SOCIAL PSYCHOL ORG
+   Kooiman J., 2005, FISH LIFE INTERACTIV, DOI 10.5117/9789053566862
+   Lane MB, 2001, SOC NATUR RESOUR, V14, P657, DOI 10.1080/08941920118212
+   Lebel L, 2006, ECOL SOC, V11
+   Lee MW, 1999, ADV OCCUP ERGO SAF, V3, P3
+   LEMELIN H, 2005, BREAKING ICE RENEWAB, P183
+   Levin SA, 1999, FRAGILE DOMINION
+   Lovelock B., 2002, Journal of Sustainable Tourism, V10, P5, DOI 10.1080/09669580208667150
+   MALLOY RC, 2000, SPORT ETHICS CONCEPT
+   Marschke M, 2003, CAN J DEV STUD, V24, P369, DOI 10.1080/02255189.2003.9668927
+   Mbaiwa J. E., 2005, Journal of Sustainable Tourism, V13, P203, DOI 10.1080/01434630508668554
+   Mbaiwa JE, 2003, J ARID ENVIRON, V54, P447, DOI 10.1006/jare.2002.1101
+   McCool S. F., 2000, Trends in outdoor recreation, leisure and tourism., P111, DOI 10.1079/9780851994031.0111
+   McKercher B, 1999, TOURISM MANAGE, V20, P425, DOI 10.1016/S0261-5177(99)00008-4
+   Milne S., 2001, Tourism Geographies, V3, P369, DOI 10.1080/146166800110070478
+   Mowforth M., 1998, TOURISM SUSTAINABILI
+   Nadasdy P., 2003, HUNTERS BUREAUCRATS
+   Nadasdy P, 2007, ADAPTIVE COMANAGEMEN, P208
+   Nepal S. K., 2000, Tourism and national parks: issues and implications., P73
+   Ogutu ZA, 2002, LAND DEGRAD DEV, V13, P251, DOI 10.1002/ldr.502
+   Olsson P, 2004, ENVIRON MANAGE, V34, P75, DOI 10.1007/s00267-003-0101-7
+   Ormsby A., 2006, Journal of Sustainable Tourism, V14, P271, DOI 10.1080/09669580608669059
+   Pinkerton E., 2007, ADAPTIVE COMANAGEMEN, P151
+   Plummer R., 2006, Current Issues in Tourism, V9, P499, DOI 10.2167/cit284.0
+   Plummer R., 2006, Current Issues in Tourism, V9, P191, DOI 10.2167/cit/194.0
+   Plummer R, 2004, ENVIRON MANAGE, V33, P876, DOI 10.1007/s00267-003-3038-y
+   Plummer R, 2007, ECOL SOC, V12
+   Plummer R, 2007, ECOL ECON, V61, P62, DOI 10.1016/j.ecolecon.2006.09.025
+   PLUMPTRE T, 2000, GOVERNANCE NEW MILLE
+   RAMIREZ E, 2005, THESIS LUND U HELSIN
+   REED MG, 2000, TOURISM COLLABORATIO, P247
+   ROCHARUNGSAT P, 2004, P NZ TOUR HOSP RES C, P335
+   RUITENBEEK J, 2001, 34 CIFOR
+   Sandersen HT, 2000, COAST MANAGE, V28, P87
+   Satria Arif, 2006, Environment Development and Sustainability, V8, P99, DOI 10.1007/s10668-005-0909-9
+   SELIN S, 1995, ANN TOURISM RES, V22, P844, DOI 10.1016/0160-7383(95)00017-X
+   SHARMA R, COMANAGEMENT PROTECT
+   Sharpley R., 2000, Journal of Sustainable Tourism, V8, P1, DOI 10.1080/09669580008667346
+   Siurua H, 2006, ETHICS ENVIRON, V11, P71, DOI 10.1353/een.2006.0006
+   Southgate C. R. J., 2006, Journal of Ecotourism, V5, P80, DOI 10.1080/14724040608668448
+   Stewart E. J., 2006, Tourism in Marine Environments, V3, P77, DOI 10.3727/154427306779435210
+   Tosun C, 2000, TOURISM MANAGE, V21, P613, DOI 10.1016/S0261-5177(00)00009-1
+   Tremblay P., 2000, Tourism, collaboration and partnerships: politics, practice and sustainability., P314
+   Vernon J, 2005, ANN TOURISM RES, V32, P325, DOI 10.1016/j.annals.2004.06.005
+   Walker B, 2006, ECOL SOC, V11
+   Westley F, 2001, PANARCHY, P103
+   Woods N, 2000, WORLD DEV, V28, P823, DOI 10.1016/S0305-750X(99)00156-4
+   Young O.R., 2002, DRAMA COMMONS, P263
+   ZUBE EH, 1990, LANDSCAPE URBAN PLAN, V19, P117, DOI 10.1016/0169-2046(90)90030-6
+NR 109
+TC 129
+Z9 136
+U1 9
+U2 92
+PU ROUTLEDGE JOURNALS, TAYLOR & FRANCIS LTD
+PI ABINGDON
+PA 2-4 PARK SQUARE, MILTON PARK, ABINGDON OX14 4RN, OXON, ENGLAND
+SN 0966-9582
+EI 1747-7646
+J9 J SUSTAIN TOUR
+JI J. Sustain. Tour.
+PY 2009
+VL 17
+IS 2
+BP 149
+EP 168
+AR PII 908751634
+DI 10.1080/09669580802359301
+PG 20
+WC Green & Sustainable Science & Technology; Hospitality, Leisure, Sport &
+   Tourism
+SC Science & Technology - Other Topics; Social Sciences - Other Topics
+GA 414OB
+UT WOS:000263872900003
+DA 2021-09-29
+ER
+
+PT J
+AU SILYANOVA, SA
+AF SILYANOVA, SA
+TI 5TH ALL-UNION SEMINAR-SCHOOL COMPLEX SYSTEM-THEORY AND ITS APPLICATION
+   TO SYSTEMS-ENGINEERING AND ECOLOGY (PALANGA, MAY, 1979)
+SO AVTOMATIKA
+LA Russian
+DT Editorial Material
+NR 0
+TC 0
+Z9 0
+U1 0
+U2 0
+PU ACADEMY SCIENCE UKRAINE
+PI KIEV 22
+PA PROSPECT SCIENCE 46,MSP, KIEV 22, UKRAINE 252650
+SN 0572-2691
+J9 AVTOMATIKA+
+PY 1980
+IS 1
+BP 92
+EP 93
+PG 2
+WC Automation & Control Systems
+SC Automation & Control Systems
+GA JH914
+UT WOS:A1980JH91400013
+DA 2021-09-29
+ER
+
+PT J
+AU Bian, YC
+   Song, KY
+   Bai, JH
+AF Bian, Yuanchao
+   Song, Kaiyi
+   Bai, Junhong
+TI Impact of Chinese market segmentation on regional collaborative
+   governance of environmental pollution: A new approach to complex system
+   theory
+SO GROWTH AND CHANGE
+LA English
+DT Article
+ID SPILLOVER; GAME
+AB The market segmentation among local governments under decentralization of China not only directly triggered the "fragmentation" of regional development, but also hindered collaborative actions in environmental governance. This study adopts a new method to calculate regional environmental collaborative governance using a synergy degree model of a complex system, and then it empirically analyzes the impact of Chinese market segmentation. We find that the regional environmental collaborative governance in China shows a growing trend during the period of investigation, but the level is still low. Market segmentation has significantly inhibited the regional collaborative governance of environmental pollution among local governments of China. The effect of market segmentation on the order of personnel input and capital input is significantly negative, while the effect on the order of policy input and organizational input is not significant. In the areas where the air pollution and water pollution are serious, the effect of market segmentation is also significantly negative. The conclusions are helpful to understanding the institutional factors that hinder regional environmental collaborative governance in China more comprehensively, and provide insights for improving the performance of environmental governance.
+C1 [Bian, Yuanchao; Song, Kaiyi; Bai, Junhong] Nanjing Normal Univ, Sch Business, 1 Wenyuan Rd, Nanjing 210023, Jiangsu, Peoples R China.
+RP Bian, YC (corresponding author), Nanjing Normal Univ, Sch Business, 1 Wenyuan Rd, Nanjing 210023, Jiangsu, Peoples R China.
+EM bycdats@163.com
+FU National Natural Science Foundation of ChinaNational Natural Science
+   Foundation of China (NSFC) [71874084]; Humanities and Social Science
+   Fund of Ministry of Education of ChinaMinistry of Education, China
+   [20YJC790001]; Jiangsu Social Science Fund Base Project [19JD006]
+FX This work was supported by the National Natural Science Foundation of
+   China [grant numbers 71874084]; Humanities and Social Science Fund of
+   Ministry of Education of China [grant numbers 20YJC790001]; Jiangsu
+   Social Science Fund Base Project [grant numbers 19JD006]
+CR ARELLANO M, 1991, REV ECON STUD, V58, P277, DOI 10.2307/2297968
+   ARELLANO M, 1995, J ECONOMETRICS, V68, P29, DOI 10.1016/0304-4076(94)01642-D
+   Baggio JA, 2018, ENVIRON MODELL SOFTW, V109, P32, DOI 10.1016/j.envsoft.2018.08.002
+   Bian YC, 2019, J CLEAN PROD, V228, P376, DOI 10.1016/j.jclepro.2019.04.286
+   Bodin O, 2017, SCIENCE, V357, P659, DOI 10.1126/science.aan1114
+   Chang SH, 2018, PHYSICA A, V490, P139, DOI 10.1016/j.physa.2017.08.010
+   Chen SM, 2019, J CLEAN PROD, V239, DOI 10.1016/j.jclepro.2019.02.078
+   Chen XY, 2017, J CLEAN PROD, V142, P915, DOI [10.1016/j.jcle, 10.1016/j.jclepro.2016.02.119, 10.1016/j.jclepro.2016.05.068]
+   COPELAND BR, 1994, Q J ECON, V109, P755, DOI 10.2307/2118421
+   de Frutos J, 2019, J ENVIRON ECON MANAG, V97, P182, DOI 10.1016/j.jeem.2017.08.001
+   GROSSMAN GM, 1995, Q J ECON, V110, P353, DOI 10.2307/2118443
+   Huang LX, 2011, ENRGY PROCED, V5, P1008, DOI 10.1016/j.egypro.2011.03.178
+   Huang X, 2016, J CLEAN PROD, V120, P43, DOI 10.1016/j.jclepro.2015.10.095
+   Inman R. P., 1997, PERSPECTIVES PUBLIC
+   Li J, 2020, CHINA ECON REV, V60, DOI 10.1016/j.chieco.2019.101403
+   Li WX, 2016, J ENVIRON MANAGE, V182, P429, DOI 10.1016/j.jenvman.2016.07.085
+   Oates W. E., 1972, FISCAL FEDERALISM
+   Ogawa H, 2009, AM ECON REV, V99, P1206, DOI 10.1257/aer.99.4.1206
+   Olson Mancur., 1965, LOGIC COLLECTIVE ACT
+   Parsley D. C., 2001, NBER WORKING PAPER
+   Peng X, 2020, SCI TOTAL ENVIRON, V732, DOI 10.1016/j.scitotenv.2020.139200
+   Pi J.C., 2017, ECON REV, V5, P40
+   Poncet S., 2005, REV INT ECON, V13, P409, DOI [10.1111/j.1467-9396.2005.00514.x, DOI 10.1111/J.1467-9396.2005.00514.X]
+   Saveyn B., 2004, ENV TAX REFORM VERTI, P1
+   Sigman H, 2003, NATL TAX J, V56, P107, DOI 10.17310/ntj.2003.1.07
+   STEWART RB, 1977, YALE LAW J, V86, P1196, DOI 10.2307/795705
+   TIEBOUT CM, 1956, J POLIT ECON, V64, P416, DOI 10.1086/257839
+   Wu HT, 2020, SCI TOTAL ENVIRON, V708, DOI 10.1016/j.scitotenv.2019.135085
+   Yang YP, 2016, INT J FINANC STUD, V4, DOI 10.3390/ijfs4010003
+   Zhao S. D., 2017, JIANGSU SOCIAL SCI, V6, P159
+NR 30
+TC 1
+Z9 1
+U1 10
+U2 20
+PU WILEY
+PI HOBOKEN
+PA 111 RIVER ST, HOBOKEN 07030-5774, NJ USA
+SN 0017-4815
+EI 1468-2257
+J9 GROWTH CHANGE
+JI Growth Change
+PD MAR
+PY 2021
+VL 52
+IS 1
+BP 283
+EP 309
+DI 10.1111/grow.12446
+EA NOV 2020
+PG 27
+WC Development Studies; Regional & Urban Planning
+SC Development Studies; Public Administration
+GA QO5NG
+UT WOS:000591909300001
+DA 2021-09-29
+ER
+
+PT J
+AU Wichers, M
+   Schreuder, M
+   Hartman, C
+   Wigman, H
+AF Wichers, Marieke
+   Schreuder, Marieke
+   Hartman, Catharina
+   Wigman, Hanneke
+TI COMPLEX SYSTEM THEORY AND THE TRANSDIAGNOSTIC USE OF EARLY WARNING
+   SIGNALS TO FORESEE THE TYPE OF FUTURE TRANSITIONS IN SYMPTOMS
+SO SCHIZOPHRENIA BULLETIN
+LA English
+DT Meeting Abstract
+CT 6th Biennial Conference of the
+   Schizophrenia-International-Research-Society (SIRS)
+CY APR 04-08, 2018
+CL Florence, ITALY
+SP Schizophrenia Int Res Soc
+C1 [Wichers, Marieke; Schreuder, Marieke; Hartman, Catharina; Wigman, Hanneke] Univ Med Ctr Groningen, Interdisciplinary Ctr Psychopathol & Emot Regulat, Groningen, Netherlands.
+RI Wichers, Marieke/N-6667-2014; Schreuder, Marieke/AAZ-5120-2020
+OI Wichers, Marieke/0000-0001-5024-9064; Schreuder,
+   Marieke/0000-0003-4901-2697
+NR 0
+TC 0
+Z9 0
+U1 0
+U2 0
+PU OXFORD UNIV PRESS
+PI OXFORD
+PA GREAT CLARENDON ST, OXFORD OX2 6DP, ENGLAND
+SN 0586-7614
+EI 1745-1701
+J9 SCHIZOPHRENIA BULL
+JI Schizophr. Bull.
+PD APR
+PY 2018
+VL 44
+SU 1
+MA 9.4
+BP S14
+EP S14
+PG 1
+WC Psychiatry
+SC Psychiatry
+GA GC1KW
+UT WOS:000429541800034
+DA 2021-09-29
+ER
+
+PT J
+AU Du, J
+   Yuan, F
+   Ding, LP
+   Chen, GX
+   Liu, XH
+AF Du, Jin
+   Yuan, Feng
+   Ding, Liping
+   Chen, Guangxuan
+   Liu, Xuehua
+TI Research on Threat Information Network Based on Link Prediction
+SO INTERNATIONAL JOURNAL OF DIGITAL CRIME AND FORENSICS
+LA English
+DT Article
+DE Complex Network; Interdisciplinary Approach; Link Prediction; Network
+   Evolution Mechanism; Situational Awareness; Threat Information Network;
+   Threat Intelligence Complex System Science Method
+AB The study of complex networks is to discover the characteristics of these connections and to discover the nature of the system between them. Link prediction method is a classic in the study of complex networks. It ca not only reflect the relationship between the node similarity. More can be estimated through the edge, which reveals the intrinsic factors of network evolution, namely the network evolution mechanism. Threat information network is the evolution and development of the network. The introduction of such a complex network of interdisciplinary approach is an innovative research perspective to observe that the threat intelligence occurs. The characteristics of the network show, at the same time, also can predict what will happen. The evolution of the network for network security situational awareness of the research provides a new approach.
+C1 [Du, Jin; Chen, Guangxuan; Liu, Xuehua] Chinese Acad Sci, Inst Software, Beijing, Peoples R China.
+   [Du, Jin] Yunnan Police Coll, Kunming, Yunnan, Peoples R China.
+   [Yuan, Feng] Inst Software Applicat Technol, Guangzhou, Peoples R China.
+   [Yuan, Feng] Chinese Acad Sci, Guangzhou, Peoples R China.
+   [Ding, Liping] Inst Software Applicat Technol, Digital Forens Lab, Guangzhou, Peoples R China.
+   [Ding, Liping] Chinese Acad Sci, Inst Software, Guangzhou, Peoples R China.
+   [Chen, Guangxuan] Zhejiang Police Coll, Hangzhou, Peoples R China.
+   [Liu, Xuehua] Univ Chinese Acad Sci, Beijing, Peoples R China.
+RP Du, J (corresponding author), Chinese Acad Sci, Inst Software, Beijing, Peoples R China.; Du, J (corresponding author), Yunnan Police Coll, Kunming, Yunnan, Peoples R China.
+FU National Key Research and Development Program of China [2016QY01W0200];
+   Science and Technology Planning Project of Guangdong Province, China
+   [2017B050506002]; Collaborative Innovation Center for Economics crime
+   investigation and prevention technology,Jiangxi Province [JXJZXTCX-007,
+   JXJZXTCX-009]; Science and Technology Planning Project of Guangzhou
+   Municipality,China [201802020015]; Support Scheme of Guangzhou for
+   Leading Talents in Innovation and Entrepreneurship [2016008]
+FX This work has been supported by the National Key Research and
+   Development Program of China under grant 2016QY01W0200, Science and
+   Technology Planning Project of Guangdong Province,
+   China(2017B050506002), Collaborative Innovation Center for Economics
+   crime investigation and prevention technology,Jiangxi
+   Province(No.JXJZXTCX-007, No.JXJZXTCX-009), Science and Technology
+   Planning Project of Guangzhou Municipality,China(201802020015), Support
+   Scheme of Guangzhou for Leading Talents in Innovation and
+   Entrepreneurship(No. 2016008).
+CR Bader BW, 2007, SIAM J SCI COMPUT, V30, P205, DOI 10.1137/060676489
+   Bliss CA, 2014, J COMPUT SCI-NETH, V5, P750, DOI 10.1016/j.jocs.2014.01.003
+   Bringmann B, 2010, IEEE INTELL SYST, V25, P26, DOI 10.1109/MIS.2010.91
+   Chatfleld C., 2013, ANAL TIME SERIES INT
+   Davis D, 2013, SOC NETW ANAL MIN, V3, P127, DOI 10.1007/s13278-012-0068-6
+   Jiaying C., 2016, J COMPUTER APPL
+   Juszczyszyn K., 2011, Proceedings of the 2011 IEEE Third International Conference on Privacy, Security, Risk and Trust and IEEE Third International Conference on Social Computing (PASSAT/SocialCom 2011), P27, DOI 10.1109/PASSAT/SocialCom.2011.15
+   Leskovec J, 2009, INTERNET MATH, V6, P29, DOI 10.1080/15427951.2009.10129177
+   Liben-Nowell D, 2007, J AM SOC INF SCI TEC, V58, P1019, DOI 10.1002/asi.20591
+   Lichtnwalter R., 2012, P 2012 IEEE ACM INT, DOI [10.1109/ASONAM.2012.68, DOI 10.1109/ASONAM.2012.68]
+   Liu H., 2011, USING LINK PREDICTIO
+   Mslove A., 2009, P 2 ACM WORKSH ONL S, P37, DOI DOI 10.1145/1592665.1592675
+   Peng X., 2015, COMMUNITY NETWORK LI
+   Rummele N, 2015, WWW'15 COMPANION: PROCEEDINGS OF THE 24TH INTERNATIONAL CONFERENCE ON WORLD WIDE WEB, P1362, DOI 10.1145/2740908.2741697
+   Signoretto M, 2011, IEEE SIGNAL PROC LET, V18, P403, DOI 10.1109/LSP.2011.2151856
+NR 15
+TC 0
+Z9 0
+U1 2
+U2 2
+PU IGI GLOBAL
+PI HERSHEY
+PA 701 E CHOCOLATE AVE, STE 200, HERSHEY, PA 17033-1240 USA
+SN 1941-6210
+EI 1941-6229
+J9 INT J DIGIT CRIME FO
+JI Int. J. Digit. Crime Forensics
+PD APR-JUN
+PY 2021
+VL 13
+IS 2
+BP 94
+EP 102
+DI 10.4018/IJDCF.2021030106
+PG 9
+WC Computer Science, Interdisciplinary Applications
+SC Computer Science
+GA QJ6PU
+UT WOS:000619811300006
+OA Bronze
+DA 2021-09-29
+ER
+
+PT J
+AU Bonaiuti, M
+AF Bonaiuti, Mauro
+TI Are we entering the age of involuntary degrowth? Promethean technologies
+   and declining returns of innovation
+SO JOURNAL OF CLEANER PRODUCTION
+LA English
+DT Article
+DE Involuntary degrowth; Promethean technologies; Declining marginal
+   returns on innovation; Georgescu-Roegen bioeconomics; Complex system
+   theory; TFP growth
+ID PRODUCTIVITY GROWTH; EVOLUTION; FIRE; AGRICULTURE; COMPLEXITY; ECONOMY;
+   ENERGY
+AB Any reflections on an eventual transition towards a degrowth society have to take into account the current crisis in the dominant system and question whether the latter will be able to grow again or not. In order for the latter to happen, the role played by technological innovation is crucial. This paper starts by reconsidering Georgescu-Roegen's definition of Promethean Techniques and Tainter's principle of Declining Marginal Returns, with the aim of providing - within the common framework of the theory of complex systems - a sound theoretical basis for the analysis of the rise and fall of complex societies. The main purpose is to verify whether, after the last Promethean revolution, a "Great Wave" emerged or not. The second part of the paper presents an initial investigation into this hypothesis, using Total Factor Productivity growth as an indicator of (marginal) returns on innovation (1750-2015). Despite the limitations implicit in the use of this indicator, data show three cycles of innovation, corresponding to the first, second and third industrial revolutions, but of different magnitude and duration. In particular, the whole cycle that began with the first industrial revolution in England around 1750, reached a peak in the U.S. in the nineteen-thirties and later declined, following a trend that basically confirms the Great Wave hypothesis. Even recent innovations resulting from the ICT revolution, however considerable, do not seem capable of counteracting this long-term trend. Data on returns on innovation seem, therefore, to be coherent with evidence provided by research in other fields (energy, mineral resources, agriculture, health, education and scientific research), showing that advanced capitalist societies have entered a phase of declining marginal returns - or involuntary degrowth - with possible major effects on the system's capacity to maintain its present institutional framework. (C) 2017 Elsevier Ltd. All rights reserved.
+C1 [Bonaiuti, Mauro] Dept Econ & Stat, Lungodora Siena 100, I-10153 Turin, Italy.
+RP Bonaiuti, M (corresponding author), Dept Econ & Stat, Lungodora Siena 100, I-10153 Turin, Italy.
+EM mauro.bonaiuti@unito.it
+CR A'Hearn B, 2014, CAMBRIDGE EC HIST MO, V1, P1700
+   ANDERSON PW, 1972, SCIENCE, V177, P393, DOI 10.1126/science.177.4047.393
+   Arrighi GIOVANNI, 1994, LONG 20 CENTURY
+   AYRES RU, 1990, TECHNOL FORECAST SOC, V37, P1, DOI 10.1016/0040-1625(90)90057-3
+   Bardi U., 2014, EXTRACTED QUEST MINE
+   BIRABEN JN, 1979, POPULATION, V34, P13, DOI 10.2307/1531855
+   Bonaiuti M, 2011, ROUTL STUD ECOL ECON, V11, P1
+   Bonaiuti M, 2014, THE GREAT TRANSITION
+   Bowman DMJS, 2009, SCIENCE, V324, P481, DOI 10.1126/science.1163886
+   Brown KS, 2009, SCIENCE, V325, P859, DOI 10.1126/science.1175028
+   Burmeister E, 2000, CRITICAL ESSAYS PIER
+   Cleveland C. J, 2003, ENCY LIFE SUPPORT SY, P1
+   CLEVELAND CJ, 1984, SCIENCE, V225, P890, DOI 10.1126/science.225.4665.890
+   Coelli TJ, 2005, AGR ECON-BLACKWELL, V32, P115, DOI 10.1111/j.0169-5150.2004.00018.x
+   Cowen T., 2011, THE GREAT STAGNATION
+   Diamond, 2005, COLLAPSE SOC CHOOSE
+   Diamond J., 1997, GUNS GERMS STEEL
+   Dunbar R., 2014, HUMAN EVOLUTION
+   Field AJ, 2006, J ECON HIST, V66, P203
+   Field AJ, 2009, J MACROECON, V31, P173, DOI 10.1016/j.jmacro.2007.08.008
+   Georgescu-Roegen N., 1971, ENTROPY LAW EC PROCE
+   Georgescu-Roegen N., 1993, ENTROPY BIOECONOMICS, P184
+   GEORGESCUROEGEN N, 1979, DEMAIN DECROISSANCE
+   Giampietro M., 2011, METABOLIC PATTERN SO
+   Glikson A, 2013, ANTHROPOCENE, V3, P89, DOI 10.1016/j.ancene.2014.02.002
+   Goldschmidt R, 1933, SCIENCE, V78, P539, DOI 10.1126/science.78.2033.539
+   Gordon R, 2014, SECULAR STAGNATION F, P47
+   Gordon R.J., 2000, 7752 NAT BUR EC RES
+   Gordon R.J., 2012, IS US EC GROWTH OVER
+   Gordon RJ, 2000, J ECON PERSPECT, V14, P49, DOI 10.1257/jep.14.4.49
+   Gordon RJ, 2015, AM ECON REV, V105, P54, DOI 10.1257/aer.p20151102
+   Goudsblom J, 2012, INT REV SOCIOL, V22, P405, DOI 10.1080/03906701.2012.753780
+   GOULD S J, 1977, Paleobiology, V3, P115
+   Gould S.J, 1986, NAT HIST, V86, P22
+   Gowdy John, 2014, Journal of Bioeconomics, V16, P179, DOI 10.1007/s10818-013-9156-6
+   Gowdy J, 2016, BEHAV BRAIN SCI, V39, DOI 10.1017/S0140525X1500059X
+   GRINEVALD J, 1976, REV EUROPEENNE SCI S, V36, P39
+   Hall C. A. S., 2008, BIOFUELS SOLAR WIND, P109
+   Hall CAS, 2014, ENERG POLICY, V64, P141, DOI 10.1016/j.enpol.2013.05.049
+   Harari Yuval Noah, 2015, SAPIENS BRIEF HIST H
+   Illich I., 1973, TOOLS CONVIVIALITY
+   Kendrick John W, 1961, PRODUCTIVITY TRENDS
+   Kerschner C, 2013, GLOBAL ENVIRON CHANG, V23, P1424, DOI 10.1016/j.gloenvcha.2013.08.015
+   Kerschner C, 2010, J CLEAN PROD, V18, P544, DOI 10.1016/j.jclepro.2009.10.019
+   Korotayev A.V, 2010, STRUCTURE DYNAMICS J, V4
+   Krugman P, 2014, SECULAR STAGNATION F, P61
+   Latouche S., 2014, THE GREAT TRANSITION
+   Maddison A., 1991, DYNAMIC FORCES CAPIT
+   Marchetti. C, 2010, C OFF ARB WELTM
+   Marshall A, 1890, PRINCIPLES EC
+   Martin SX, 2014, GLOBAL COMPETITIVENE, V2015, P3
+   Meadows D. H., 1972, LIMITS GROWTH REPORT
+   Negroponte N., 1995, BEING DIGITAL
+   Perez C., 2002, TECHNOLOGICAL REVOLU
+   Planck M., 1949, VORTRAGE ERINNERUNGE
+   Rifkin J., 2014, ZERO MARGINAL COST S
+   Rifkin J., 1980, ENTROPY NEW WORLD VI
+   Rifkin Jeremy, 2000, THE AGE OF ACCESS
+   ROMER PM, 1986, J POLIT ECON, V94, P1002, DOI 10.1086/261420
+   Sahlins M., 1972, STONE AGE EC
+   Schneider F, 2010, J CLEAN PROD, V18, P511, DOI 10.1016/j.jclepro.2010.01.014
+   Schumpeter J.A., 1939, BUSINESS CYCLES THEO
+   Sekulova F, 2013, J CLEAN PROD, V38, P1, DOI 10.1016/j.jclepro.2012.06.022
+   Sgouridis S, 2016, ENVIRON RES LETT, V11, DOI 10.1088/1748-9326/11/9/094009
+   SOLOW RM, 1987, NEW YORK TIMES BK R, P36
+   SOLOW RM, 1956, Q J ECON, V70, P65, DOI 10.2307/1884513
+   Sorman AH, 2013, J CLEAN PROD, V38, P80, DOI 10.1016/j.jclepro.2011.11.059
+   Spengler O., 1926, DECLINE W
+   Strumsky D, 2010, SYST RES BEHAV SCI, V27, P496, DOI 10.1002/sres.1057
+   Summers L, 2014, SECULAR STAGNATION F, P27
+   Summers LH, 2015, AM ECON REV, V105, P60, DOI 10.1257/aer.p20151103
+   Tainter, 1988, COLLAPSE COMPLEX SOC
+   Tainter JA, 2006, ECOL COMPLEX, V3, P91, DOI 10.1016/j.ecocom.2005.07.004
+   Toffler A., 1991, 3 WAVE
+   Toynbee A., 1947, STUDY HIST
+   Wallerstein Immanuel., 2004, WORLD SYSTEMS ANAL I
+NR 76
+TC 12
+Z9 12
+U1 2
+U2 17
+PU ELSEVIER SCI LTD
+PI OXFORD
+PA THE BOULEVARD, LANGFORD LANE, KIDLINGTON, OXFORD OX5 1GB, OXON, ENGLAND
+SN 0959-6526
+EI 1879-1786
+J9 J CLEAN PROD
+JI J. Clean Prod.
+PD OCT 1
+PY 2018
+VL 197
+SI SI
+BP 1800
+EP 1809
+DI 10.1016/j.jclepro.2017.02.196
+PN 2
+PG 10
+WC Green & Sustainable Science & Technology; Engineering, Environmental;
+   Environmental Sciences
+SC Science & Technology - Other Topics; Engineering; Environmental Sciences
+   & Ecology
+GA GR5TJ
+UT WOS:000442704500019
+DA 2021-09-29
+ER
+
+PT J
+AU Axinciuc, M
+AF Axinciuc, Madeea
+TI Emergence, Synchronization and Synchronicity Re-approaching the Concept
+   of Complex System from a Critical Philosophical Perspective
+SO PHILOBIBLON-TRANSYLVANIAN JOURNAL OF MULTIDISCIPLINARY RESEARCH IN
+   HUMANITIES
+LA English
+DT Article
+DE natural science and humanities; history of scientific concepts; history
+   of ideas; time and space; causality; emergence; synchronization;
+   synchronicity; critique of the 'complex system' theory;
+   multidisciplinarity; humanities and scientificity; functional
+   definitions
+AB The present study aims at re-approaching, in a critical manner, three interrelated terms differently (and independently) used or conceptualized in mono- and multi-disciplinary research today, in natural sciences and humanities: 'emergence', 'synchronization', 'synchronicity'. The comparative perspective meant to bring different contextual meanings and usages together will shed a 'renewed' light upon the general significance of the concept of 'complex system', by re-evaluating the contribution that fields like philosophy or religious studies might add in order to nuance and re-define the various understandings of the formula when used in different frameworks. The bringing together of the three terms within the framework opened by different visions and understandings of the time-space continuum highlights, in a critical manner, important aspects and features to be taken into consideration for clarifying the significance of the three concepts in their interconnectedness, for re-evaluating the conventional existing definitions, and conceptualizations of 'complex systems', for configuring more complex research methodologies, and fostering a renewed concept of 'scientificity', enriched and reshaped through dimensions which are essential for its application within the area of Humanities.
+C1 [Axinciuc, Madeea] Univ Bucharest, Bucharest, Romania.
+RP Axinciuc, M (corresponding author), Univ Bucharest, Bucharest, Romania.
+EM madeea.axinciuc@lls.unibuc.ro
+FU  [PN-II-ID-PCE-2011-3-0348]
+FX The present work is supported by the research grant
+   PN-II-ID-PCE-2011-3-0348.
+CR ANDERSON PW, 1972, SCIENCE, V177, P393, DOI 10.1126/science.177.4047.393
+   Clayton Philip, 2006, REEMERGENCE EMERGENC
+   Corning P. A., 2002, Complexity, V7, P18, DOI 10.1002/cplx.10043
+   Frazer James George, 1994, GOLDEN BOUGH STUDY M, P37
+   Horvat S, 2013, PHYSICA D, V256, P43, DOI 10.1016/j.physd.2013.04.008
+   Jung Carl Gustav, 1993, SYNCHRONICITY ACAUSA
+   Koestler Arthur, 1969, EMERGENCE COMPLEXITY
+   Koestler Arthur, 1973, ROOTS COINCIDENCE
+   Laughlin R. B, 2005, DIFFERENT UNIVERSE R
+   Lewes George Henry, 1875, PROBLEMS LIFE MIND, P412
+   Matthies Angela, CONCEPT EMERGENCE SY, V2
+   Pauli W., 2001, ATOM ARCHETYPE PAULI
+   Trask, 1957, SACRED PROFANE NATUR
+NR 13
+TC 0
+Z9 0
+U1 0
+U2 1
+PU BIBLIOTECA CENTRALA UNIV LUCIAN BLAGA CLUJ-NAPOCA
+PI CLUJ-NAPOCA
+PA CLINICILOR ST NO 2, CLUJ-NAPOCA, 400371, ROMANIA
+SN 1224-7448
+EI 2247-8442
+J9 PHILOBIBLON
+JI Philobiblon
+PD JUL-DEC
+PY 2015
+VL 20
+IS 2
+BP 334
+EP 345
+PG 12
+WC Humanities, Multidisciplinary
+SC Arts & Humanities - Other Topics
+GA V8K2D
+UT WOS:000421711000005
+DA 2021-09-29
+ER
+
+PT J
+AU Cheng, LF
+   Yu, T
+AF Cheng, Lefeng
+   Yu, Tao
+TI Smart dispatching for energy internet with complex cyber-physical-social
+   systems: A parallel dispatch perspective
+SO INTERNATIONAL JOURNAL OF ENERGY RESEARCH
+LA English
+DT Review
+DE ACP method; AI; complex system theory; cyber-physical-social system;
+   cyber-physical system; energy internet; parallel dispatch; parallel
+   dispatching robot; parallel intelligence; parallel machine learning;
+   parallel system theory; smart artificial society modeling; smart
+   dispatching; virtual and real interaction
+ID POWER; ELECTRICITY; GAME; STABILITY; EMERGENCE; POLICY; GO
+AB Energy internet (EI) is a complex coupled multienergy system; it is essential to investigate its multienergy dispatching optimization issues. To this end, this paper first proposes a novel conception of smart dispatching for EI with a complex cyber-physical-social system (CPSS) network from the perspective of parallel dispatch, called parallel dispatching robot (PDR), and investigates the implementations of PDR based on smart artificial society (SAS) modeling. First, we introduce EI and describe the dispatching issues of EI. Second, we discuss several important concepts supporting the parallel dispatch conception of EI, including knowledge automation (KA), CPSS, and parallel machine learning (PML). On the basis of these, we elaborate the concept of parallel dispatch. Moreover, we construct a large closed-loop feedback control framework of parallel dispatch for EI integrating a CPSS network based on KA and PML. Third, we establish an experimental platform for PDR research based on the proposed parallel dispatch framework. Fourth, we develop the PML-based SAS models of a single PDR in centralized dispatching modes and group PDRs in decentralized dispatching modes to achieve crowd wisdom emergence and performance improvement in current cyber-physical system frameworks of EI. Moreover, we design an external global closed loop for PDR to evaluate its operation stability. Lastly, we conduct a detailed discussion on PDR and offer some prospects for its engineering implementations. The biggest innovation of this paper lies in systematically proposing the smart dispatching concept and framework for complex CPSS-based EI from the perspective of parallel dispatch and thoroughly investigating how to use SAS modeling to implement parallel dispatching and control for EI considering human and social factors, which is a major extension and theoretical improvement to existing single smart wide area robot concept and a preliminary attempt in investigating a shift from Energy 4.0 to Energy 5.0 in China.
+C1 [Cheng, Lefeng; Yu, Tao] South China Univ Technol, Sch Elect Power, Guangzhou 510641, Guangdong, Peoples R China.
+   [Cheng, Lefeng; Yu, Tao] South China Univ Technol, Guangdong Key Lab Clean Energy Technol, Guangzhou 510641, Guangdong, Peoples R China.
+RP Cheng, LF (corresponding author), South China Univ Technol, Sch Elect Power, Guangzhou 510641, Guangdong, Peoples R China.; Yu, T (corresponding author), South China Univ Technol, Guangdong Key Lab Clean Energy Technol, Guangzhou 510641, Guangdong, Peoples R China.
+EM chenglf_scut@163.com; taoyu1@scut.edu.cn
+OI Cheng, Lefeng/0000-0002-7007-7535; Yu, Tao/0000-0002-0143-261X
+FU Science and Technology Project of China Southern Power Grid Company Ltd.
+   [GDKJXM20180576]; Key Science and Technology Project of China Southern
+   Power Grid Company Ltd. [GZKJQQ00000419]; National Natural Science
+   Foundation of ChinaNational Natural Science Foundation of China (NSFC)
+   [51777078, 51477055]
+FX Science and Technology Project of China Southern Power Grid Company
+   Ltd., Grant/Award Number: GDKJXM20180576; Key Science and Technology
+   Project of China Southern Power Grid Company Ltd., Grant/Award Number:
+   GZKJQQ00000419; National Natural Science Foundation of China,
+   Grant/Award Numbers: 51777078 and 51477055
+CR Aliabadi DE, 2017, ENERG POLICY, V100, P191, DOI 10.1016/j.enpol.2016.09.063
+   ALTAIE MZ, 2017, ADV INFORM KNOWL PRO, P1
+   Anjana KR, 2018, INT J ENERG RES, V42, P936, DOI 10.1002/er.3852
+   [Anonymous], 2015, ECONOMIST
+   Appelrath HJ, 2012, BUS INFORM SYST ENG+, V4, P1, DOI 10.1007/s12599-011-0197-x
+   Bann J, 1996, IEEE T POWER SYST, V11, P475, DOI 10.1109/59.486136
+   Beccuti G, 2015, 2015 IEEE EINDHOVEN POWERTECH
+   Bevrani H, 2011, INTELLIGENT AUTOMATIC GENERATION CONTROL, P1
+   Cao YJ, 2018, J MOD POWER SYST CLE, V6, P399, DOI 10.1007/s40565-017-0350-8
+   Chen XJ, 2014, GUANGDONG ELECT POWE, V27, P76, DOI [10.13648/j.cnki.issn1674-0629.2016.06.005, DOI 10.13648/J.CNKI.ISSN1674-0629.2016.06.005]
+   [程乐峰 Cheng Lefeng], 2019, [电力系统自动化, Automation of Electric Power Systems], V43, P15
+   Cheng LF, 2019, INT J ENERG RES, V43, P1928, DOI 10.1002/er.4333
+   Cheng LF, 2018, IEEE ACCESS, V6, P74204, DOI 10.1109/ACCESS.2018.2879025
+   [程乐峰 Cheng Lefeng], 2018, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V38, P5687
+   Cheng LF, 2018, IEEE ACCESS, V6, P32064, DOI 10.1109/ACCESS.2018.2842469
+   Cheng LF, 2018, ENERGIES, V11, DOI 10.3390/en11051160
+   Cheng LF, 2018, ENERGIES, V11, DOI 10.3390/en11040913
+   [程乐峰 Cheng Lefeng], 2018, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V38, P25
+   Cheng LF, 2018, ENERGIES, V11, DOI 10.3390/en11010249
+   Costa SAH, 2013, 2013 IEEE PES CONFERENCE ON INNOVATIVE SMART GRID TECHNOLOGIES (ISGT LATIN AMERICA)
+   Dai Ruwei, 1990, CHINESE J NATURE, V13, P3
+   [邓建玲 Deng Jianling], 2015, [自动化学报, Acta Automatica Sinica], V41, P2003
+   Devogelaer D., 2015, 2030 CLIMATE ENERGY
+   Duroch E.D., 1990, P 11 BIENN IEEE WORK
+   DyLiacco TE, 1997, IEEE COMPUT APPL POW, V10, P38, DOI 10.1109/67.595291
+   European Climate Foundation, 2010, ROADM 2050 PRACT GUI
+   Evins R, 2014, ENERGY, V73, P387, DOI 10.1016/j.energy.2014.06.029
+   Fish AN, 2016, KNOWLEDGE AUTOMATION, P10
+   Friedman TL, 2008, HOT FLAT CROWDED WHY, P10
+   Geetha A, 2017, INT J ENERG RES, V41, P1817, DOI 10.1002/er.3730
+   Golshannavaz S, 2016, INT J ENERG RES, V40, P1518, DOI 10.1002/er.3536
+   Guan XH, 2015, CYBER PHYS ENERGY SY, P5
+   Guo QS, 2012, EXP DIABETES RES, DOI 10.1155/2012/672013
+   Hang YL, 2018, IEEE T SMART GRID, V9, P4194, DOI 10.1109/TSG.2017.2652919
+   Hefner R.W., 2013, GLOBAL PENTECOSTALIS, P1
+   Hou JC, 2018, INT J ENERG RES, V42, P1469, DOI 10.1002/er.3929
+   Hu YL, 2014, IEEE INTELL SYST, V29, P48, DOI 10.1109/MIS.2014.38
+   Huang AQ, 2011, P IEEE, V99, P133, DOI 10.1109/JPROC.2010.2081330
+   Huang T, 2011, ELECTR POW SYST RES, V81, P1161, DOI 10.1016/j.epsr.2011.01.006
+   Imhof LA, 2006, J MATH BIOL, V52, P667, DOI 10.1007/s00285-005-0369-8
+   Jeremy Rifkin, 2011, 3 IND REVOLUTION LAT, P24
+   Kang MZ, 2017, IEEE-CAA J AUTOMATIC, V4, P161, DOI 10.1109/JAS.2017.7510487
+   Khaitan SK, 2015, IEEE SYST J, V9, P350, DOI 10.1109/JSYST.2014.2322503
+   Li L, 2017, IEEE-CAA J AUTOMATIC, V4, P389, DOI 10.1109/JAS.2017.7510493
+   [李力 Li Li], 2017, [自动化学报, Acta Automatica Sinica], V43, P1
+   Liu Z, 2015, GLOBAL ENERGY INTERCONNECTION, P1
+   Lu Qiang, 2011, Proceedings of the CSEE, V31, P1
+   Madan S, 1996, 1996 CANADIAN CONFERENCE ON ELECTRICAL AND COMPUTER ENGINEERING - CONFERENCE PROCEEDINGS, VOLS I AND II, P392, DOI 10.1109/CCECE.1996.548119
+   Maeder C, 2013, KERNKRAFTW DEUTSCHL, V58, P8
+   McKinsey Global Institute, 2013, DISR TECHN ADV WILL
+   National Energy Administration, 2018, GUID OP EN REL WORK
+   Newman MEJ, 1999, PHYS LETT A, V263, P341, DOI 10.1016/S0375-9601(99)00757-4
+   Newman MEJ, 2000, PHYS REV LETT, V84, P3201, DOI 10.1103/PhysRevLett.84.3201
+   Nilsson M, 2007, ENERG POLICY, V35, P540, DOI 10.1016/j.enpol.2005.12.023
+   Nowak MA, 2004, NATURE, V428, P646, DOI 10.1038/nature02414
+   O'Brien T, 2008, IEEE POW ENER SOC GE, P1042
+   Pan ZG, 2016, APPL ENERG, V167, P230, DOI 10.1016/j.apenergy.2015.10.095
+   Pratt Robert G., 2018, SMART GRID ESTIMATIO, DOI [10.2172/971103, DOI 10.2172/971103]
+   PRC National Development and Reform Commission PRC National Energy Administration, 2016, EN TECHN REV INN ACT
+   Rifkin J, 2014, ZERO MARGINAL COST S, P67
+   Russell SJ, 2013, ARTIF INTELL, P2
+   Silver D, 2017, MASTERING CHESS SHOG
+   Silver D, 2017, NATURE, V550, P354, DOI 10.1038/nature24270
+   Silver D, 2016, NATURE, V529, P484, DOI 10.1038/nature16961
+   Song Qi, 2014, Automation of Electric Power Systems, V38, P27, DOI 10.7500/AEPS20130220001
+   [孙宏斌 Sun Hongbin], 2015, [电网技术, Power System Technology], V39, P3005
+   Sun Hongbin, 2014, Automation of Electric Power Systems, V38, P1, DOI 10.7500/AEPS20140424002
+   [孙秋野 Sun Qiuye], 2017, [自动化学报, Acta Automatica Sinica], V43, P176
+   Takahashi R, 2015, IEEE T SMART GRID, V6, P618, DOI 10.1109/TSG.2014.2384491
+   [汤毅 Tang Yi], 2016, [电力系统保护与控制, Power System Protection and Control], V44, P150
+   Traulsen A, 2005, PHYS REV LETT, V95, DOI 10.1103/PhysRevLett.95.238701
+   Traulsen A., REV NONLINEAR DYNAMI, V2, P25
+   Traulsen A, 2006, PHYS REV E, V74, DOI 10.1103/PhysRevE.74.011909
+   Tuyls K, 2005, EVOLUTIONARY GAME TH, P5
+   UK Department for Business Energy & Industrial Strategy, 2016, 2050 PATHW
+   Wang F., 2004, COMPLEX SYSTEMS COMP, V1, P25
+   Wang F.-Y., 2004, COMPLEX SYST COMPLEX, V1, P33
+   Wang F, 2018, J INTELL MANUF, V29, P211, DOI 10.1007/s10845-015-1102-0
+   Wang Fei-yue, 2004, Control and Decision, V19, P485
+   Wang FY, 2007, IEEE INTELL SYST, V22, P65, DOI 10.1109/MIS.2007.4338496
+   Wang FY, 2016, IEEE-CAA J AUTOMATIC, V3, P345, DOI 10.1109/JAS.2016.7510067
+   Wang FY, 2013, ACM T INTEL SYST TEC, V4, DOI 10.1145/2438653.2438667
+   Wang FY, 2010, IEEE T INTELL TRANSP, V11, P630, DOI 10.1109/TITS.2010.2060218
+   Wang FY, 2010, IEEE INTELL SYST, V25, P85, DOI 10.1109/MIS.2010.104
+   [王飞跃 Wang Feiyue], 2015, [自动化学报, Acta Automatica Sinica], V41, P1
+   Wang FY, 2015, WORKSH DISTR EN SYST
+   Wang JY, 2016, J COMPUT RES DEV, V52, P1109, DOI 10.7544/issn1000-1239.2015.20131592
+   Wang K, 2018, IEEE SYST J, V12, P2403, DOI 10.1109/JSYST.2016.2639820
+   [韦晓广 Wei Xiaoguang], 2018, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V38, P4969
+   Xi L, 2015, ENERG CONVERS MANAGE, V103, P82, DOI 10.1016/j.enconman.2015.06.030
+   Xiong WB, 2016, SO POWER SYST TECHNO, V10, P27, DOI [10.13648/j.cnki.issn1674-0629.2016.06.005, DOI 10.13648/J.CNKI.ISSN1674-0629.2016.06.005]
+   Xue YS, 2017, P IEEE, V105, P2290, DOI 10.1109/JPROC.2017.2768698
+   Xue YS, 2015, J MOD POWER SYST CLE, V3, P297, DOI 10.1007/s40565-015-0111-5
+   Xue YS, 2015, J MOD POWER SYST CLE, V3, P149, DOI 10.1007/s40565-015-0112-4
+   [杨胜春 Yang Shengchun], 2014, [电网技术, Power System Technology], V38, P33
+   Yang ZQ, 2017, IEEE T IND ELECTRON, V64, P1600, DOI 10.1109/TIE.2016.2615037
+   Yin Lin-fei, 2018, Control Theory & Applications, V35, P169, DOI 10.7641/CTA.2017.70239
+   [张东霞 Zhang Dongxia], 2015, [中国电机工程学报, Proceedings of the Chinese Society of Electrical Engineering], V35, P2
+   Zhang JJ, 2017, IEEE-CAA J AUTOMATIC, V4, P466, DOI 10.1109/JAS.2017.7510547
+   Zhang Y, 2011, ENERGY TECHNOLOGY EC, V23, P1, DOI [10.3969/j.issn.1674-8441.2011.09.001, DOI 10.3969/J.ISSN.1674-8441.2011.09.001]
+   Zhong HW, 2015, ENERG POLICY, V83, P14, DOI 10.1016/j.enpol.2015.03.016
+   Zhou KL, 2016, APPL ENERG, V178, P212, DOI 10.1016/j.apenergy.2016.06.052
+NR 102
+TC 4
+Z9 6
+U1 7
+U2 75
+PU WILEY
+PI HOBOKEN
+PA 111 RIVER ST, HOBOKEN 07030-5774, NJ USA
+SN 0363-907X
+EI 1099-114X
+J9 INT J ENERG RES
+JI Int. J. Energy Res.
+PD JUN 25
+PY 2019
+VL 43
+IS 8
+BP 3080
+EP 3133
+DI 10.1002/er.4384
+PG 54
+WC Energy & Fuels; Nuclear Science & Technology
+SC Energy & Fuels; Nuclear Science & Technology
+GA IC6HF
+UT WOS:000471071800003
+DA 2021-09-29
+ER
+
+EF

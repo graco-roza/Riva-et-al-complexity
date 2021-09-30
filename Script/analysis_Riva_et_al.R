@@ -27,6 +27,7 @@ library("ggraph")
 library("igraph")
 library("magrittr")
 library("network")
+library("SemNetCleaner")
 library("tidyverse")
 library("tidygraph")
 
@@ -278,22 +279,85 @@ plot(x = results, k = 10, pause = FALSE)
 
 # Network of keywords ------------------------------------------------------
 
+# Singularize keywords
+
+DE <- MATRIX_1$ID
+
+for(i in 1: length(DE)) {
+  
+  DE_i <- strsplit(DE[i], ";")[[1]]
+  
+  if(is.na(DE_i) == TRUE){
+    DE[i] <- DE_i
+  } else {
+    
+    Names <- c()
+    for(k in 1 : length(DE_i))
+      Names = append(Names,SemNetCleaner::singularize(tolower(DE_i[k])))
+    
+    DE[i] <- paste(Names, collapse = " ;")  
+  }
+}
+  
+MATRIX_1$ID <- DE
+
+# Replacing ecosystems manually
+
+
+
+
+
+###
+
 NetMatrix <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-occurrences",
                 network = "keywords",
                 sep = ";")
 
+sort(table(colnames(NetMatrix)))
+rownames(NetMatrix)
+
+# # Singularize keywords
+# 
+# Names <- c()
+# 
+# for(m in 1:length(rownames(NetMatrix)))
+#   Names = append(Names,SemNetCleaner::singularize(tolower(rownames(NetMatrix))[m]))
+# 
+# sort(table(Names))
+# 
+# NetMatrix@Dimnames[[1]] = Names
+# NetMatrix@Dimnames[[2]] = Names
+# 
+# NetMatrix@i
+# 
+# ?cocMatrix
+# 
+# ?biblioNetwork
+# 
+# rownames(NetMatrix) = colnames(NetMatrix) = Names
+# 
+# NetMatrix2 <- data.frame(Names = as.factor(Names), as.matrix(NetMatrix))
+# NetMatrix2 <- NetMatrix2 %>% dplyr::group_by(Names) %>% dplyr::summarise_all(sum) 
+# 
+# NetMatrix3 <- NetMatrix2 %>% dplyr::select(-ends_with(".1")) 
+# dim(NetMatrix2)
+# 
+# NetMatrix2 <- matrix(NetMatrix2)
+
 net3 <- networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
-  n = 30,
+  cluster = "louvain",
+  remove.multiple = TRUE,
+  n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
   size = TRUE,
   size.cex = FALSE,
-  edgesize = 5,
+  edgesize = 3,
   labelsize = 0.7
 )
 
@@ -302,7 +366,7 @@ networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
-  n = 30,
+  n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
   size = TRUE,
@@ -316,12 +380,16 @@ netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
 
 # Co-citation -------------------------------------------------------------
+MATRIX_1$CR
+
 
 NetMatrix2 <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-citation",
                 network = "references",
                 sep = ";")
+
+NetMatrix2@Dimnames
 
 # netstat2 <- networkStat(NetMatrix2)
 # summary(netstat2, k=10)

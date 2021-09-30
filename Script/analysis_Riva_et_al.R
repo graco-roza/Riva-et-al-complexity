@@ -69,8 +69,8 @@ db_graph <- db_graph_rel
 
 # Generate a bi-partite network -------------------------------------------
 
-# removing controls
-#db_graph <- db_graph[which(ref_tab$SEARCH_TYPE != "Control"),] 
+# Removing control
+db_graph <- db_graph[which(ref_tab$SEARCH_TYPE != "Control"),] 
 
 # transpose the matrix
 db_graph <- t(db_graph)
@@ -255,6 +255,65 @@ EstimateDF %>% ggplot2::ggplot(aes(Variable, Estimate)) +
 # mcmc.diagnostics(test)
 # summary(test)
 
+
+#  Testing seprate networks ----------------------------------------------
+
+
+
+# controls
+db_graph_control <- db_graph[which(ref_tab$SEARCH_TYPE == "Control"),] 
+db_graph_EC      <- db_graph[which(ref_tab$SEARCH_TYPE == "Ecological complexity"),] 
+db_graph_CCS     <- db_graph[which(ref_tab$SEARCH_TYPE == "Complex system science"),] 
+
+# transpose the matrix
+db_graph_control <- t(db_graph_control)
+db_graph_EC      <- t(db_graph_EC)
+db_graph_CCS     <- t(db_graph_CCS)
+
+#generate the graph
+db_graph_control <- igraph::graph_from_incidence_matrix(db_graph_control, multiple = TRUE, directed = TRUE)
+db_graph_EC      <- igraph::graph_from_incidence_matrix(db_graph_EC, multiple = TRUE, directed = TRUE)
+db_graph_CCS     <- igraph::graph_from_incidence_matrix(db_graph_CCS, multiple = TRUE, directed = TRUE)
+
+# Unipartite network 
+Graph_unipartite_control <- igraph::bipartite_projection(db_graph_control)$proj1 %>% as_tbl_graph(directed = TRUE)
+Graph_unipartite_EC      <- igraph::bipartite_projection(db_graph_EC)$proj1 %>% as_tbl_graph(directed = TRUE)
+Graph_unipartite_CCS     <- igraph::bipartite_projection(db_graph_CCS)$proj1 %>% as_tbl_graph(directed = TRUE)
+
+# 
+# 
+# Node_attributes <- data.frame( ID = rownames(db_graph), 
+#                                N = rowSums(ifelse(db_graph > 0, 1, 0)))# number of mentions
+# 
+# Graph_tbl_uni <- Graph_tbl_uni %>% tidygraph::activate(nodes) %>% left_join(Node_attributes, by = c("name" = "ID"))
+
+# Plotting 
+
+
+(net_control <- Graph_unipartite_control %>% ggraph::ggraph(layout_with_kk(Graph_unipartite_control)) +
+    geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
+    scale_edge_width_continuous("Edge strength",range=c(0,1))+
+    geom_node_point(col="grey10", fill = "purple", alpha = .8, shape = 21) + 
+    scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
+    geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
+    theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
+
+(net_EC <- Graph_unipartite_EC %>% ggraph::ggraph(layout_with_kk(Graph_unipartite_EC)) +
+    geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
+    scale_edge_width_continuous("Edge strength",range=c(0,1))+
+    geom_node_point(col="grey10", fill = "purple", alpha = .8, shape = 21) + 
+    scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
+    geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
+    theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
+
+(net_CCS <- Graph_unipartite_CCS %>% ggraph::ggraph(layout_with_kk(Graph_unipartite_CCS)) +
+    geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
+    scale_edge_width_continuous("Edge strength",range=c(0,1))+
+    geom_node_point(col="grey10", fill = "purple", alpha = .8, shape = 21) + 
+    scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
+    geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
+    theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
+
 ## ------------------------------------------------------------------------
 # 'Scientometric analysis'
 ## ------------------------------------------------------------------------
@@ -298,18 +357,8 @@ for(i in 1: length(DE)) {
   
 MATRIX_1$ID <- DE
 
-<<<<<<< HEAD
-# Generating the matrix
-=======
-# Replacing ecosystems manually
-
-
-
-
-
 ###
 
->>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
 NetMatrix <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-occurrences",
@@ -319,45 +368,13 @@ NetMatrix <-
 sort(table(colnames(NetMatrix)))
 rownames(NetMatrix)
 
-<<<<<<< HEAD
-# Plot
-=======
-# # Singularize keywords
-# 
-# Names <- c()
-# 
-# for(m in 1:length(rownames(NetMatrix)))
-#   Names = append(Names,SemNetCleaner::singularize(tolower(rownames(NetMatrix))[m]))
-# 
-# sort(table(Names))
-# 
-# NetMatrix@Dimnames[[1]] = Names
-# NetMatrix@Dimnames[[2]] = Names
-# 
-# NetMatrix@i
-# 
-# ?cocMatrix
-# 
-# ?biblioNetwork
-# 
-# rownames(NetMatrix) = colnames(NetMatrix) = Names
-# 
-# NetMatrix2 <- data.frame(Names = as.factor(Names), as.matrix(NetMatrix))
-# NetMatrix2 <- NetMatrix2 %>% dplyr::group_by(Names) %>% dplyr::summarise_all(sum) 
-# 
-# NetMatrix3 <- NetMatrix2 %>% dplyr::select(-ends_with(".1")) 
-# dim(NetMatrix2)
-# 
-# NetMatrix2 <- matrix(NetMatrix2)
-
->>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
 net3 <- networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
   cluster = "louvain",
   remove.multiple = TRUE,
-  n = 20,
+  n = 50,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
   size = TRUE,
@@ -371,11 +388,8 @@ networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
-<<<<<<< HEAD
   cluster = "louvain",
   remove.multiple = TRUE,
-=======
->>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
   n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
@@ -384,13 +398,12 @@ networkPlot(
   edgesize = 3,
   labelsize = 0.7
 )
+dev.off()
 
 netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
 
 # Co-citation -------------------------------------------------------------
-MATRIX_1$CR
-
 
 # Generating the matrix
 NetMatrix2 <-
@@ -408,14 +421,17 @@ NetMatrix2@Dimnames
 pdf("Figures/Network_4.pdf", width = 10.3, height = 6.5)
 networkPlot(
   NetMatrix2,
-  n = 15,
+  n = 30,
   Title = "Co-Citation Network",
   type = "fruchterman",
+  cluster = "louvain",
   size = T,
   remove.multiple = FALSE,
   labelsize = 0.7,
   edgesize = 5)
 dev.off()
+
+?networkPlot
 
 # Country network ---------------------------------------------------------
 
@@ -426,6 +442,9 @@ NetMatrix3 <-
                 analysis = "collaboration",
                 network = "countries",
                 sep = ";")
+
+
+dim(NetMatrix3)
 
 net3 <-
   networkPlot(
@@ -438,3 +457,120 @@ net3 <-
     labelsize = 0.7,
     cluster = "none"
   )
+
+## Make this as a geographic map
+
+library("rgeos")
+library("rworldmap")
+
+# get world map
+wmap <- getMap(resolution="high")
+
+# get centroids
+centroids <- gCentroid(wmap, byid=TRUE)
+class(centroids)
+
+centroids <- centroids %>% data.frame %>% rownames_to_column("country") %>% mutate_at("country", tolower) %>% 
+           filter(country %in% tolower(rownames(NetMatrix3)))
+
+
+
+# Countries of the Search
+Country <- data.frame(table(db$Country_search))
+colnames(Country) <- c("Country", "N_news")
+
+# Adding the coordinate of each country
+Country <- unique(dplyr::left_join(x  = Country, 
+                                   y  = data.frame(Country = db$Country_search, long = db$lon3, lat = db$lat3), 
+                                   by ="Country", copy = FALSE)) 
+
+##Calculating country connections
+all_pairs <- data.frame(long1 = NA, 
+                        long2 = NA, 
+                        lat1  = NA, 
+                        lat2  = NA, 
+                        lwd   = NA, 
+                        countrySearch = NA, 
+                        country = NA) 
+
+for (i in 1:nlevels(db$Country_search)) {
+  
+  #select first country
+  country_i <- db[db$Country_search == as.character(unique(db$Country_search)[i]),]
+  
+  #remove potential NAs
+  country_i <- country_i[1:table(db$Country_search)[i],]
+  
+  country_i$Country_event <- droplevels(country_i$Country_event)
+  
+  country_i <- country_i[country_i$Country_event != as.character(unique(db$Country_search)[i]), ]
+  
+  country_i <- subset(country_i, !is.na(lon2) & !is.na(lat2))
+  
+  
+  if(nrow(country_i) < 1){
+    NULL
+  }
+  
+  else {
+    len <- length(table(droplevels(country_i$Country_event)))
+    
+    all_pairs2 <- data.frame( long1 = rep(country_i$lon3[1], len),
+                              long2 = c(unique(country_i$lon2)),
+                              lat1 = rep(country_i$lat3[1], len),
+                              lat2 = c(unique(country_i$lat2)),
+                              lwd = as.numeric(table(droplevels(country_i$Country_event))),
+                              countrySearch = rep(as.character(unique(db$Country_search)[i]),len),
+                              country= names(table(droplevels(country_i$Country_event)))
+    ) 
+    
+    all_pairs  <- rbind(all_pairs,all_pairs2)
+    
+  }
+}
+
+all_pairs <- na.omit(all_pairs)
+
+world<-map_data("world")
+
+(map2 <- ggplot() +
+    geom_map(map = world, data = world,
+             aes(long, lat, map_id = region), 
+             color = "gray50", fill = "grey70", size = 0.3) +
+    
+    geom_curve(aes(x = jitter(long1,0.0001), 
+                   y = jitter(lat1,0.0001), 
+                   xend = jitter(long2, 0.0001), 
+                   yend = jitter(lat2, 0.0001),  # draw edges as arcs
+                   size = lwd),
+               data = all_pairs, curvature = 0.22,
+               alpha = 0.2,  color = "orange") +
+    
+    geom_point(data = Country, 
+               aes(x = long, y = lat),
+               alpha = 0.7, colour = "black",fill="blue",
+               size = range01(sqrt(Country$N_news))*13,
+               shape = 21,stroke = 0.8)+
+    
+    
+    scale_size_continuous("Number of connections:", breaks=c(1,5,10,15))+
+    
+    theme_map()+
+    # theme(legend.position = "bottom",
+    #       legend.text = element_text(size = 12),
+    #       legend.title = element_text(size = 12),
+    theme(
+      axis.line=element_blank(),axis.text.x=element_blank(),
+      axis.text.y=element_blank(),axis.ticks=element_blank(),
+      axis.title.x=element_blank(),
+      axis.title.y=element_blank(),legend.position="none",
+      panel.background=element_rect(fill = "black", colour = "black"),
+      panel.border=element_blank(),panel.grid.major=element_blank(),
+      panel.grid.minor=element_blank(),
+      plot.background= element_rect(fill = "black", colour = "black"))
+  
+)
+
+
+
+

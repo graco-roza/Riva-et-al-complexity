@@ -60,7 +60,8 @@ NodeTraitGet <- function(Graph, mode = "in", dir = TRUE){
 
 # Loading the databases ---------------------------------------------------
 
-db_graph <- read.csv("Database/text_compiled_absolute.csv") %>% column_to_rownames("WOS_ID")
+#db_graph <- read.csv("Database/text_compiled_absolute.csv") %>% column_to_rownames("WOS_ID")
+
 ref_tab <- read.csv("Database/Table_papers.csv")
 
 db_graph_rel <- read.csv("Database/text_compiled_relative.csv") %>% column_to_rownames("WOS_ID")
@@ -124,12 +125,12 @@ Layout1 <- layout_with_kk(Graph_tbl_uni) # Kamada-Kawai
 (net1 <- Graph_tbl_uni %>% ggraph::ggraph(Layout1) +
   #geom_edge_density(fill="blue", alpha=0.8) +
   geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
-  scale_edge_width_continuous(range=c(0,1))+
-  geom_node_point(col="grey10", fill = "orange", alpha = .8, 
+  scale_edge_width_continuous("Edge strength",range=c(0,1))+
+  geom_node_point(col="grey10", fill = "purple", alpha = .8, 
                   aes(size=N),
                    shape = 21) + 
-  scale_fill_manual(values = c("blue", "orange", "turquoise","purple", "grey15"))+
-  geom_node_text(aes(label = name), size=3, color="gray10", repel=TRUE) +
+  scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
+  geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
   theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
 
 ggsave("Figures/Network_1.pdf", plot = net1)
@@ -166,16 +167,16 @@ Graph_tbl_uni2 %>% tidygraph::activate(nodes) %>% data.frame %>% select(SEARCH_T
 # Plotting 
 Layout2 <- layout_with_kk(Graph_tbl_uni2) # Kamada-Kawai
 
-net2 <- Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
+(net2 <- Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
   #geom_edge_density(fill="orange") +
-  geom_edge_fan(aes(width=weight),color="gray90", alpha = 0.9) +
-  scale_edge_width_continuous(range=c(0,1)) +
+  geom_edge_fan(aes(width=weight),color="gray90", alpha = 0.95) +
+  scale_edge_width_continuous("Edge strength",range=c(0,1)) +
   geom_node_point(col="grey10", alpha = .8, aes(fill = SEARCH_TYPE), shape = 21) + 
-  scale_fill_manual(values = c("blue", "orange", "turquoise"))+
+  scale_fill_manual("",values = c("blue", "orange", "turquoise"))+
   #geom_node_text(aes(label = name), size=3, color="gray10", repel=TRUE) +
   theme_void() + 
-  theme(legend.position = "bottom",legend.direction = "vertical") + 
-  coord_fixed()# add edges to the plot geom_node_point()
+  theme(legend.position = "bottom", legend.direction = "vertical") + 
+  coord_fixed())# add edges to the plot geom_node_point()
 
 ggsave("Figures/Network_2.pdf", plot = net2)
 
@@ -219,44 +220,40 @@ EstimateDF %<>% # Bind them together
 
 EstimateDF %>% head
 
-# EstimateDF %>% ggplot(aes(Variable, Estimate)) +
-#   geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.3) +
-#   geom_point()
-
 EstimateDF %>% ggplot2::ggplot(aes(Variable, Estimate)) +
-  geom_hline(lty = 2, yintercept = 0) +
-  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.2) +
-  geom_point() + theme_bw() +
+  geom_hline(lty = 2, yintercept = 0, col = "grey30") +
+  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0) +
+  geom_point() + theme_classic() +
   coord_flip()
 
 ## With abundance
-AdjMatrix <- Graph_tbl_uni2 %>% get.adjacency(attr = "weight", sparse = FALSE) 
-AdjMatrix %>% as.matrix %>% dim #square
-
-ResponseNetwork <- as.network(AdjMatrix %>% as.matrix, 
-                              directed = TRUE, 
-                              matrix.type = "a", 
-                              ignore.eval = FALSE, 
-                              names.eval = "weight")  # Important! )
-
-as.matrix(ResponseNetwork, attrname = "weight")
-
-#Adding node-level attributes
-Graph_tbl_uni2 %>% as.data.frame %>% colnames
-
-ResponseNetwork %v% "SEARCH_TYPE" <- Graph_tbl_uni2 %>% as.data.frame %>% pull(SEARCH_TYPE)
-
-NMCMC <- 1000
-
-test <- ergm(ResponseNetwork ~ sum + #nonzero +  
-               nodematch("SEARCH_TYPE") , control = control.ergm(
-                 parallel =10, parallel.type="PSOCK",
-                 MCMC.samplesize = NMCMC,
-                 MCMLE.maxit = 50),
-             response = "weight", reference = ~ Poisson)
-
-mcmc.diagnostics(test)
-summary(test)
+# AdjMatrix <- Graph_tbl_uni2 %>% get.adjacency(attr = "weight", sparse = FALSE) 
+# AdjMatrix %>% as.matrix %>% dim #square
+# 
+# ResponseNetwork <- as.network(AdjMatrix %>% as.matrix, 
+#                               directed = TRUE, 
+#                               matrix.type = "a", 
+#                               ignore.eval = FALSE, 
+#                               names.eval = "weight")  # Important! )
+# 
+# as.matrix(ResponseNetwork, attrname = "weight")
+# 
+# #Adding node-level attributes
+# Graph_tbl_uni2 %>% as.data.frame %>% colnames
+# 
+# ResponseNetwork %v% "SEARCH_TYPE" <- Graph_tbl_uni2 %>% as.data.frame %>% pull(SEARCH_TYPE)
+# 
+# NMCMC <- 1000
+# 
+# test <- ergm(ResponseNetwork ~ sum + #nonzero +  
+#                nodematch("SEARCH_TYPE") , control = control.ergm(
+#                  parallel =10, parallel.type="PSOCK",
+#                  MCMC.samplesize = NMCMC,
+#                  MCMLE.maxit = 50),
+#              response = "weight", reference = ~ Poisson)
+# 
+# mcmc.diagnostics(test)
+# summary(test)
 
 ## ------------------------------------------------------------------------
 # 'Scientometric analysis'
@@ -301,6 +298,9 @@ for(i in 1: length(DE)) {
   
 MATRIX_1$ID <- DE
 
+<<<<<<< HEAD
+# Generating the matrix
+=======
 # Replacing ecosystems manually
 
 
@@ -309,6 +309,7 @@ MATRIX_1$ID <- DE
 
 ###
 
+>>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
 NetMatrix <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-occurrences",
@@ -318,6 +319,9 @@ NetMatrix <-
 sort(table(colnames(NetMatrix)))
 rownames(NetMatrix)
 
+<<<<<<< HEAD
+# Plot
+=======
 # # Singularize keywords
 # 
 # Names <- c()
@@ -346,6 +350,7 @@ rownames(NetMatrix)
 # 
 # NetMatrix2 <- matrix(NetMatrix2)
 
+>>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
 net3 <- networkPlot(
   NetMatrix,
   normalize = "association",
@@ -366,15 +371,19 @@ networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
+<<<<<<< HEAD
+  cluster = "louvain",
+  remove.multiple = TRUE,
+=======
+>>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
   n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
   size = TRUE,
   size.cex = FALSE,
-  edgesize = 5,
-  labelsize = 0.7)
-dev.off()
-
+  edgesize = 3,
+  labelsize = 0.7
+)
 
 netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
@@ -383,6 +392,7 @@ summary(netstat1, k = 10)
 MATRIX_1$CR
 
 
+# Generating the matrix
 NetMatrix2 <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-citation",
@@ -394,6 +404,7 @@ NetMatrix2@Dimnames
 # netstat2 <- networkStat(NetMatrix2)
 # summary(netstat2, k=10)
 
+# Plot
 pdf("Figures/Network_4.pdf", width = 10.3, height = 6.5)
 networkPlot(
   NetMatrix2,

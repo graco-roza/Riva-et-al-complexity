@@ -27,6 +27,7 @@ library("ggraph")
 library("igraph")
 library("magrittr")
 library("network")
+library("SemNetCleaner")
 library("tidyverse")
 library("tidygraph")
 
@@ -218,44 +219,40 @@ EstimateDF %<>% # Bind them together
 
 EstimateDF %>% head
 
-# EstimateDF %>% ggplot(aes(Variable, Estimate)) +
-#   geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.3) +
-#   geom_point()
-
 EstimateDF %>% ggplot2::ggplot(aes(Variable, Estimate)) +
   geom_hline(lty = 2, yintercept = 0) +
-  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0.2) +
-  geom_point() + theme_bw() +
+  geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0) +
+  geom_point() + theme_classic() +
   coord_flip()
 
 ## With abundance
-AdjMatrix <- Graph_tbl_uni2 %>% get.adjacency(attr = "weight", sparse = FALSE) 
-AdjMatrix %>% as.matrix %>% dim #square
-
-ResponseNetwork <- as.network(AdjMatrix %>% as.matrix, 
-                              directed = TRUE, 
-                              matrix.type = "a", 
-                              ignore.eval = FALSE, 
-                              names.eval = "weight")  # Important! )
-
-as.matrix(ResponseNetwork, attrname = "weight")
-
-#Adding node-level attributes
-Graph_tbl_uni2 %>% as.data.frame %>% colnames
-
-ResponseNetwork %v% "SEARCH_TYPE" <- Graph_tbl_uni2 %>% as.data.frame %>% pull(SEARCH_TYPE)
-
-NMCMC <- 1000
-
-test <- ergm(ResponseNetwork ~ sum + #nonzero +  
-               nodematch("SEARCH_TYPE") , control = control.ergm(
-                 parallel =10, parallel.type="PSOCK",
-                 MCMC.samplesize = NMCMC,
-                 MCMLE.maxit = 50),
-             response = "weight", reference = ~ Poisson)
-
-mcmc.diagnostics(test)
-summary(test)
+# AdjMatrix <- Graph_tbl_uni2 %>% get.adjacency(attr = "weight", sparse = FALSE) 
+# AdjMatrix %>% as.matrix %>% dim #square
+# 
+# ResponseNetwork <- as.network(AdjMatrix %>% as.matrix, 
+#                               directed = TRUE, 
+#                               matrix.type = "a", 
+#                               ignore.eval = FALSE, 
+#                               names.eval = "weight")  # Important! )
+# 
+# as.matrix(ResponseNetwork, attrname = "weight")
+# 
+# #Adding node-level attributes
+# Graph_tbl_uni2 %>% as.data.frame %>% colnames
+# 
+# ResponseNetwork %v% "SEARCH_TYPE" <- Graph_tbl_uni2 %>% as.data.frame %>% pull(SEARCH_TYPE)
+# 
+# NMCMC <- 1000
+# 
+# test <- ergm(ResponseNetwork ~ sum + #nonzero +  
+#                nodematch("SEARCH_TYPE") , control = control.ergm(
+#                  parallel =10, parallel.type="PSOCK",
+#                  MCMC.samplesize = NMCMC,
+#                  MCMLE.maxit = 50),
+#              response = "weight", reference = ~ Poisson)
+# 
+# mcmc.diagnostics(test)
+# summary(test)
 
 ## ------------------------------------------------------------------------
 # 'Scientometric analysis'
@@ -278,22 +275,51 @@ plot(x = results, k = 10, pause = FALSE)
 
 # Network of keywords ------------------------------------------------------
 
+# Singularize keywords
+
+DE <- MATRIX_1$ID
+
+for(i in 1: length(DE)) {
+  
+  DE_i <- strsplit(DE[i], ";")[[1]]
+  
+  if(is.na(DE_i) == TRUE){
+    DE[i] <- DE_i
+  } else {
+    
+    Names <- c()
+    for(k in 1 : length(DE_i))
+      Names = append(Names,SemNetCleaner::singularize(tolower(DE_i[k])))
+    
+    DE[i] <- paste(Names, collapse = " ;")  
+  }
+}
+  
+MATRIX_1$ID <- DE
+
+# Generating the matrix
 NetMatrix <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-occurrences",
                 network = "keywords",
                 sep = ";")
 
+sort(table(colnames(NetMatrix)))
+rownames(NetMatrix)
+
+# Plot
 net3 <- networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
-  n = 30,
+  cluster = "louvain",
+  remove.multiple = TRUE,
+  n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
   size = TRUE,
   size.cex = FALSE,
-  edgesize = 5,
+  edgesize = 3,
   labelsize = 0.7
 )
 
@@ -302,30 +328,35 @@ networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
-  n = 30,
+  cluster = "louvain",
+  remove.multiple = TRUE,
+  n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
   size = TRUE,
   size.cex = FALSE,
-  edgesize = 5,
-  labelsize = 0.7)
-dev.off()
-
+  edgesize = 3,
+  labelsize = 0.7
+)
 
 netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
 
 # Co-citation -------------------------------------------------------------
 
+# Generating the matrix
 NetMatrix2 <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-citation",
                 network = "references",
                 sep = ";")
 
+NetMatrix2@Dimnames
+
 # netstat2 <- networkStat(NetMatrix2)
 # summary(netstat2, k=10)
 
+# Plot
 pdf("Figures/Network_4.pdf", width = 10.3, height = 6.5)
 networkPlot(
   NetMatrix2,

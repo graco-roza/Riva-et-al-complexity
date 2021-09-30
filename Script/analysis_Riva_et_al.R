@@ -60,7 +60,8 @@ NodeTraitGet <- function(Graph, mode = "in", dir = TRUE){
 
 # Loading the databases ---------------------------------------------------
 
-db_graph <- read.csv("Database/text_compiled_absolute.csv") %>% column_to_rownames("WOS_ID")
+#db_graph <- read.csv("Database/text_compiled_absolute.csv") %>% column_to_rownames("WOS_ID")
+
 ref_tab <- read.csv("Database/Table_papers.csv")
 
 db_graph_rel <- read.csv("Database/text_compiled_relative.csv") %>% column_to_rownames("WOS_ID")
@@ -124,12 +125,12 @@ Layout1 <- layout_with_kk(Graph_tbl_uni) # Kamada-Kawai
 (net1 <- Graph_tbl_uni %>% ggraph::ggraph(Layout1) +
   #geom_edge_density(fill="blue", alpha=0.8) +
   geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
-  scale_edge_width_continuous(range=c(0,1))+
-  geom_node_point(col="grey10", fill = "orange", alpha = .8, 
+  scale_edge_width_continuous("Edge strength",range=c(0,1))+
+  geom_node_point(col="grey10", fill = "purple", alpha = .8, 
                   aes(size=N),
                    shape = 21) + 
-  scale_fill_manual(values = c("blue", "orange", "turquoise","purple", "grey15"))+
-  geom_node_text(aes(label = name), size=3, color="gray10", repel=TRUE) +
+  scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
+  geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
   theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
 
 ggsave("Figures/Network_1.pdf", plot = net1)
@@ -166,16 +167,16 @@ Graph_tbl_uni2 %>% tidygraph::activate(nodes) %>% data.frame %>% select(SEARCH_T
 # Plotting 
 Layout2 <- layout_with_kk(Graph_tbl_uni2) # Kamada-Kawai
 
-net2 <- Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
+(net2 <- Graph_tbl_uni2 %>% ggraph::ggraph(Layout2) +
   #geom_edge_density(fill="orange") +
-  geom_edge_fan(aes(width=weight),color="gray90", alpha = 0.9) +
-  scale_edge_width_continuous(range=c(0,1)) +
+  geom_edge_fan(aes(width=weight),color="gray90", alpha = 0.95) +
+  scale_edge_width_continuous("Edge strength",range=c(0,1)) +
   geom_node_point(col="grey10", alpha = .8, aes(fill = SEARCH_TYPE), shape = 21) + 
-  scale_fill_manual(values = c("blue", "orange", "turquoise"))+
+  scale_fill_manual("",values = c("blue", "orange", "turquoise"))+
   #geom_node_text(aes(label = name), size=3, color="gray10", repel=TRUE) +
   theme_void() + 
-  theme(legend.position = "bottom",legend.direction = "vertical") + 
-  coord_fixed()# add edges to the plot geom_node_point()
+  theme(legend.position = "bottom", legend.direction = "vertical") + 
+  coord_fixed())# add edges to the plot geom_node_point()
 
 ggsave("Figures/Network_2.pdf", plot = net2)
 
@@ -220,7 +221,7 @@ EstimateDF %<>% # Bind them together
 EstimateDF %>% head
 
 EstimateDF %>% ggplot2::ggplot(aes(Variable, Estimate)) +
-  geom_hline(lty = 2, yintercept = 0) +
+  geom_hline(lty = 2, yintercept = 0, col = "grey30") +
   geom_errorbar(aes(ymin = Lower, ymax = Upper), width = 0) +
   geom_point() + theme_classic() +
   coord_flip()

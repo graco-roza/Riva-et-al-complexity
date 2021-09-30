@@ -298,7 +298,18 @@ for(i in 1: length(DE)) {
   
 MATRIX_1$ID <- DE
 
+<<<<<<< HEAD
 # Generating the matrix
+=======
+# Replacing ecosystems manually
+
+
+
+
+
+###
+
+>>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
 NetMatrix <-
   biblioNetwork(MATRIX_1,
                 analysis = "co-occurrences",
@@ -308,7 +319,38 @@ NetMatrix <-
 sort(table(colnames(NetMatrix)))
 rownames(NetMatrix)
 
+<<<<<<< HEAD
 # Plot
+=======
+# # Singularize keywords
+# 
+# Names <- c()
+# 
+# for(m in 1:length(rownames(NetMatrix)))
+#   Names = append(Names,SemNetCleaner::singularize(tolower(rownames(NetMatrix))[m]))
+# 
+# sort(table(Names))
+# 
+# NetMatrix@Dimnames[[1]] = Names
+# NetMatrix@Dimnames[[2]] = Names
+# 
+# NetMatrix@i
+# 
+# ?cocMatrix
+# 
+# ?biblioNetwork
+# 
+# rownames(NetMatrix) = colnames(NetMatrix) = Names
+# 
+# NetMatrix2 <- data.frame(Names = as.factor(Names), as.matrix(NetMatrix))
+# NetMatrix2 <- NetMatrix2 %>% dplyr::group_by(Names) %>% dplyr::summarise_all(sum) 
+# 
+# NetMatrix3 <- NetMatrix2 %>% dplyr::select(-ends_with(".1")) 
+# dim(NetMatrix2)
+# 
+# NetMatrix2 <- matrix(NetMatrix2)
+
+>>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
 net3 <- networkPlot(
   NetMatrix,
   normalize = "association",
@@ -329,8 +371,11 @@ networkPlot(
   NetMatrix,
   normalize = "association",
   weighted = TRUE,
+<<<<<<< HEAD
   cluster = "louvain",
   remove.multiple = TRUE,
+=======
+>>>>>>> bfe566e5ebc4840fc761c12d5df57388efdca142
   n = 20,
   Title = "Keyword Co-occurrences",
   type = "fruchterman",
@@ -344,6 +389,8 @@ netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
 
 # Co-citation -------------------------------------------------------------
+MATRIX_1$CR
+
 
 # Generating the matrix
 NetMatrix2 <-

@@ -60,17 +60,13 @@ NodeTraitGet <- function(Graph, mode = "in", dir = TRUE){
 
 # Loading the databases ---------------------------------------------------
 
-#db_graph <- read.csv("Database/text_compiled_absolute.csv") %>% column_to_rownames("WOS_ID")
-
-ref_tab <- read.csv("Database/Table_papers.csv")
-
-db_graph_rel <- read.csv("Database/text_compiled_relative.csv") %>% column_to_rownames("WOS_ID")
-db_graph <- db_graph_rel
+ref_tab   <- read.csv("Database/Table_papers.csv")
+db_graph2 <- read.csv("Database/text_compiled_relative.csv") %>% column_to_rownames("WOS_ID")
 
 # Generate a bi-partite network -------------------------------------------
 
 # Removing control
-db_graph <- db_graph[which(ref_tab$SEARCH_TYPE != "Control"),] 
+db_graph <- db_graph2[which(ref_tab$SEARCH_TYPE != "Control"),] 
 
 # transpose the matrix
 db_graph <- t(db_graph)
@@ -101,8 +97,13 @@ Graph_adj_matrix <- Graph_unipartite %>% get.adjacency(attr = "weight", sparse =
 Graph_tbl_uni <- Graph_unipartite %>% as_tbl_graph(directed = TRUE)
 
 Node_attributes <- data.frame( ID = rownames(db_graph), 
-                                 N = rowSums(ifelse(db_graph > 0, 1, 0)))# number of mentions
+                                N = rowSums(ifelse(db_graph > 0, 1, 0)))# number of mentions
 
+# What is the centrality of each word?
+node_trait <- Graph_tbl_uni %>% NodeTraitGet(mode = "in", dir = FALSE) %>% bind_cols()
+Node_attributes <- Node_attributes %>% left_join(node_trait, by = c("ID")) ; rm(node_trait)
+
+# Add to the graph
 Graph_tbl_uni <- Graph_tbl_uni %>% tidygraph::activate(nodes) %>% left_join(Node_attributes, by = c("name" = "ID"))
 
 # Adding clustering 
@@ -126,18 +127,14 @@ Layout1 <- layout_with_kk(Graph_tbl_uni) # Kamada-Kawai
   #geom_edge_density(fill="blue", alpha=0.8) +
   geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
   scale_edge_width_continuous("Edge strength",range=c(0,1))+
-  geom_node_point(col="grey10", fill = "purple", alpha = .8, 
-                  aes(size=N),
+  geom_node_point(col="grey10", alpha = .8, 
+                  aes(size=N, fill=Strength),
                    shape = 21) + 
-  scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
+  scale_fill_gradient("Node strength")+
   geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
-  theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
+  theme_void() + theme(legend.position = "left",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
 
 ggsave("Figures/Network_1.pdf", plot = net1)
-
-# What is the centrality of each word?
-node_trait <- Graph_tbl_uni %>% NodeTraitGet(mode = "in", dir = FALSE) %>% bind_cols()
-node_trait
 
 # Unipartite network for papers --------------------------------------------
 
@@ -226,52 +223,14 @@ EstimateDF %>% ggplot2::ggplot(aes(Variable, Estimate)) +
   geom_point() + theme_classic() +
   coord_flip()
 
-## With abundance
-# AdjMatrix <- Graph_tbl_uni2 %>% get.adjacency(attr = "weight", sparse = FALSE) 
-# AdjMatrix %>% as.matrix %>% dim #square
-# 
-# ResponseNetwork <- as.network(AdjMatrix %>% as.matrix, 
-#                               directed = TRUE, 
-#                               matrix.type = "a", 
-#                               ignore.eval = FALSE, 
-#                               names.eval = "weight")  # Important! )
-# 
-# as.matrix(ResponseNetwork, attrname = "weight")
-# 
-# #Adding node-level attributes
-# Graph_tbl_uni2 %>% as.data.frame %>% colnames
-# 
-# ResponseNetwork %v% "SEARCH_TYPE" <- Graph_tbl_uni2 %>% as.data.frame %>% pull(SEARCH_TYPE)
-# 
-# NMCMC <- 1000
-# 
-# test <- ergm(ResponseNetwork ~ sum + #nonzero +  
-#                nodematch("SEARCH_TYPE") , control = control.ergm(
-#                  parallel =10, parallel.type="PSOCK",
-#                  MCMC.samplesize = NMCMC,
-#                  MCMLE.maxit = 50),
-#              response = "weight", reference = ~ Poisson)
-# 
-# mcmc.diagnostics(test)
-# summary(test)
+#  Testing separate networks ----------------------------------------------
 
-
-#  Testing seprate networks ----------------------------------------------
-
-
-
-# controls
-db_graph_control <- db_graph[which(ref_tab$SEARCH_TYPE == "Control"),] 
-db_graph_EC      <- db_graph[which(ref_tab$SEARCH_TYPE == "Ecological complexity"),] 
-db_graph_CCS     <- db_graph[which(ref_tab$SEARCH_TYPE == "Complex system science"),] 
-
-# transpose the matrix
-db_graph_control <- t(db_graph_control)
-db_graph_EC      <- t(db_graph_EC)
-db_graph_CCS     <- t(db_graph_CCS)
+db_graph_control <- db_graph2[which(ref_tab$SEARCH_TYPE == "Control"),] %>% na.omit %>% t
+db_graph_EC      <- db_graph2[which(ref_tab$SEARCH_TYPE == "Ecological complexity"),] %>% na.omit %>% t
+db_graph_CCS     <- db_graph2[which(ref_tab$SEARCH_TYPE == "Complex system science"),] %>% na.omit %>% t
 
 #generate the graph
-db_graph_control <- igraph::graph_from_incidence_matrix(db_graph_control, multiple = TRUE, directed = TRUE)
+db_graph_control <- igraph::graph_from_incidence_matrix(db_graph_control, multiple = TRUE, directed = TRUE) 
 db_graph_EC      <- igraph::graph_from_incidence_matrix(db_graph_EC, multiple = TRUE, directed = TRUE)
 db_graph_CCS     <- igraph::graph_from_incidence_matrix(db_graph_CCS, multiple = TRUE, directed = TRUE)
 
@@ -289,14 +248,13 @@ Graph_unipartite_CCS     <- igraph::bipartite_projection(db_graph_CCS)$proj1 %>%
 
 # Plotting 
 
-
 (net_control <- Graph_unipartite_control %>% ggraph::ggraph(layout_with_kk(Graph_unipartite_control)) +
     geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
     scale_edge_width_continuous("Edge strength",range=c(0,1))+
     geom_node_point(col="grey10", fill = "purple", alpha = .8, shape = 21) + 
     scale_fill_manual("Edge strength",values = c("blue", "orange", "purple"))+
     geom_node_text(aes(label = name), size=2, color="gray10", repel = TRUE) +
-    theme_void() + theme(legend.position = "bottom",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
+    theme_void() + theme(legend.position = "left",legend.direction = "vertical")+ coord_fixed())# add edges to the plot geom_node_point()
 
 (net_EC <- Graph_unipartite_EC %>% ggraph::ggraph(layout_with_kk(Graph_unipartite_EC)) +
     geom_edge_fan(aes(width=weight),color="gray80", alpha = .8) +
@@ -443,7 +401,6 @@ NetMatrix3 <-
                 network = "countries",
                 sep = ";")
 
-
 dim(NetMatrix3)
 
 net3 <-
@@ -472,7 +429,6 @@ class(centroids)
 
 centroids <- centroids %>% data.frame %>% rownames_to_column("country") %>% mutate_at("country", tolower) %>% 
            filter(country %in% tolower(rownames(NetMatrix3)))
-
 
 
 # Countries of the Search

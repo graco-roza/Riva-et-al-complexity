@@ -12,23 +12,20 @@
 
 ###############################################################
 
-library(fulltext)
-library(tidytext)
-library(tidyr)
-cache_options_set(path = "Input", full_path = "~/OneDrive - University of Helsinki/Ongoing manuscripts/Riva-et-al-complexity/Input")
+library(tidyverse)
+library(readxl)
+files <- list.files("Control")
+dir <- "Control"
+control_database <-
+  lapply(files, function(x)
+    readxl::read_excel(paste(dir, x, sep = "/"), col_names = TRUE) %>%  mutate(across(.fns =
+                                                                                        as.character))) %>% bind_rows()
+control_old <- read_csv("Database/Control_papers.csv") %>% mutate(across(.fns =
+                                                                           as.character)) 
 
-#API keys 
-# Springer Nature link : https://dev.springernature.com/admin  user_key = c87e8660cce1e392df62d179849c6616
-# Elsevier (including ELSEVIER_TDM_KEY) link : https://dev.elsevier.com/apikey/manage   user_key = 	f56a2a13d2aeed53259acf32bcefb21a
+control_database_pool <- control_database[which(!control_database$DOI %in% control_old$DOI),] 
+control_new <-control_database_pool[sample(seq(nrow(control_database_pool)), 88),] 
 
-database <- readxl::read_excel("table_papers.xls") %>% tidyr::drop_na(DOI)
-for (i in 1:nrow(database)){
-doi<- database$DOI[i]
-wos<- database$WOS_ID[i]
-res <- ft_get(doi)
-extension<-res[[1]]$data$path[[1]]$type
-old<- paste0("Input/",stringr::str_replace_all(doi, c("\\." = "_", "/" = "_")),".",extension)
-new<- paste0("Input/",wos,".",extension)
-file.rename(old,new)
-print(i)
-}
+
+control_new %>%
+  write_csv('Database/Control_papers_new.csv') 

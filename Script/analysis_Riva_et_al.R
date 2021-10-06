@@ -66,7 +66,7 @@ db_graph2 <- read.csv("Database/text_compiled_relative.csv") %>% column_to_rowna
 # Generate a bi-partite network -------------------------------------------
 
 # Removing control
-db_graph <- db_graph2[which(ref_tab$SEARCH_TYPE != "Control"),] 
+db_graph <- db_graph2[which(ref_tab$SEARCH_TYPE == "Ecological complexity"),] 
 
 # transpose the matrix
 db_graph <- t(db_graph)
@@ -279,7 +279,6 @@ Graph_unipartite_CCS     <- igraph::bipartite_projection(db_graph_CCS)$proj1 %>%
 # Loading the databases ---------------------------------------------------
 
 MATRIX_1 <- bibliometrix::convert2df("Database/Search_1.txt", dbsource = "wos", format = "plaintext")
-MATRIX_2 <- bibliometrix::convert2df("Database/Search_2.txt", dbsource = "wos", format = "plaintext")
 
 # Analysing the data ------------------------------------------------------
 
@@ -290,6 +289,36 @@ summary(object = results, k = 10, pause = FALSE)
 S <- summary(object = results, k = 10, pause = FALSE)
 
 plot(x = results, k = 10, pause = FALSE)
+
+# Co-citation -------------------------------------------------------------
+
+# Generating the matrix
+NetMatrix2 <-
+  biblioNetwork(MATRIX_1,
+                analysis = "co-citation",
+                network = "references",
+                sep = ";")
+
+NetMatrix2@Dimnames
+
+# netstat2 <- networkStat(NetMatrix2)
+# summary(netstat2, k=10)
+
+# Plot
+pdf("Figures/Network_3.pdf", width = 10.3, height = 6.5)
+networkPlot(
+  NetMatrix2,
+  n = 20,
+  Title = "Co-Citation Network",
+  type = "fruchterman",
+  cluster = "louvain",
+  size = T,
+  remove.multiple = FALSE,
+  labelsize = 0.7,
+  edgesize = 5)
+dev.off()
+
+?
 
 # Network of keywords ------------------------------------------------------
 
@@ -312,7 +341,7 @@ for(i in 1: length(DE)) {
     DE[i] <- paste(Names, collapse = " ;")  
   }
 }
-  
+
 MATRIX_1$ID <- DE
 
 ###
@@ -360,36 +389,6 @@ dev.off()
 
 netstat1 <- networkStat(NetMatrix)
 summary(netstat1, k = 10)
-
-# Co-citation -------------------------------------------------------------
-
-# Generating the matrix
-NetMatrix2 <-
-  biblioNetwork(MATRIX_1,
-                analysis = "co-citation",
-                network = "references",
-                sep = ";")
-
-NetMatrix2@Dimnames
-
-# netstat2 <- networkStat(NetMatrix2)
-# summary(netstat2, k=10)
-
-# Plot
-pdf("Figures/Network_4.pdf", width = 10.3, height = 6.5)
-networkPlot(
-  NetMatrix2,
-  n = 30,
-  Title = "Co-Citation Network",
-  type = "fruchterman",
-  cluster = "louvain",
-  size = T,
-  remove.multiple = FALSE,
-  labelsize = 0.7,
-  edgesize = 5)
-dev.off()
-
-?networkPlot
 
 # Country network ---------------------------------------------------------
 

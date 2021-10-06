@@ -19,17 +19,15 @@ rm(list = ls())
 # Loading useful packages -------------------------------------------------
 
 library("bibliometrix")
-library("dplyr")
 library("ergm")
 library("fs")
-library("ggplot2")
 library("ggraph")
-library("igraph")
-library("magrittr")
 library("network")
 library("SemNetCleaner")
 library("tidyverse")
 library("tidygraph")
+library("rgeos")
+library("rworldmap")
 
 # Functions ---------------------------------------------------------------
 
@@ -393,41 +391,63 @@ summary(netstat1, k = 10)
 # Country network ---------------------------------------------------------
 
 NetMatrix3 <-
-  metaTagExtraction(MATRIX_1, Field = "AU_CO", sep = ";")
+  bibliometrix::metaTagExtraction(MATRIX_1, Field = "AU_CO", sep = ";")
 NetMatrix3 <-
-  biblioNetwork(NetMatrix3,
+  bibliometrix::biblioNetwork(NetMatrix3,
                 analysis = "collaboration",
                 network = "countries",
                 sep = ";")
 
-dim(NetMatrix3)
+chords <- NetMatrix3 %>%
+  as.matrix %>%
+  as.dist %>%
+  as.matrix %>%
+  reshape2::melt() %>%
+  mutate(across(
+    .cols = c(Var1, Var2),
+    .fns = ~
+      fct_recode(., "United States of America" = "USA")
+  )) %>%
+  mutate(across(
+    .cols = c(Var1, Var2),
+    .fns = ~
+      StandardizeText::standardize.countrynames(
+        input = .,
+        standard = "iso",
+        suggest = "auto"
+      )
+  )) %>%
+  rename(Origin = "Var1",
+         Destination = "Var2",
+         strength = "value") 
 
-net3 <-
-  networkPlot(
-    NetMatrix3,
-    n = dim(NetMatrix3)[1],
-    Title = "Country Collaboration",
-    type = "circle",
-    size = TRUE,
-    remove.multiple = FALSE,
-    labelsize = 0.7,
-    cluster = "none"
-  )
+centroid <- NetMatrix3 %>%
+  as.matrix %>%
+  diag %>% 
+    data.frame() %>% 
+  rownames_to_column("Country") %>% 
+  mutate(across(.cols=c(Country), .fns = ~
+                  fct_recode(., "United States of America" = "USA"))) %>% 
+  mutate(across(.cols=Country, .fns = ~
+                  StandardizeText::standardize.countrynames(input = ., standard="iso",suggest="auto"))) %>% 
+  rename(N = ".") 
 
-## Make this as a geographic map
 
-library("rgeos")
-library("rworldmap")
+
 
 # get world map
 wmap <- getMap(resolution="high")
 
 # get centroids
-centroids <- gCentroid(wmap, byid=TRUE)
-class(centroids)
+country_sf <- gCentroid(wmap, byid=TRUE)
 
-centroids <- centroids %>% data.frame %>% rownames_to_column("country") %>% mutate_at("country", tolower) %>% 
-           filter(country %in% tolower(rownames(NetMatrix3)))
+
+country_coord <- country_sf %>%
+  data.frame %>%
+  rownames_to_column("country") %>% 
+  mutate(across(.cols=country, .fns = ~
+                  StandardizeText::standardize.countrynames(input = ., standard="iso",suggest="auto"))) %>% 
+           filter(country %in% chords$Origin)
 
 
 # Countries of the Search

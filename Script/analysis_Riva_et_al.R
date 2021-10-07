@@ -399,6 +399,7 @@ NetMatrix3 <-
                 sep = ";")
 
 chords <- NetMatrix3 %>%
+prep_chords <- NetMatrix3 %>%
   as.matrix %>%
   as.dist %>%
   as.matrix %>%
@@ -408,6 +409,13 @@ chords <- NetMatrix3 %>%
     .fns = ~
       fct_recode(., "United States of America" = "USA")
   )) %>%
+=======
+      fct_recode(., "United States of America" = "USA"),
+        )) %>%
+  mutate(Var = map2_chr(Var1, Var2, ~toString(sort(c(.x, .y))))) %>%
+  distinct(Var, .keep_all = TRUE) %>%
+  select(-Var) %>% 
+>>>>>>> Stashed changes
   mutate(across(
     .cols = c(Var1, Var2),
     .fns = ~
@@ -486,65 +494,94 @@ for (i in 1:nlevels(db$Country_search)) {
   if(nrow(country_i) < 1){
     NULL
   }
+=======
+
+prep_centroid <- NetMatrix3 %>%
+  as.matrix %>%
+  diag %>%
+  data.frame() %>%
+  rownames_to_column("Country") %>%
+  mutate(across(
+    .cols = c(Country),
+    .fns = ~
+      fct_recode(., "United States of America" = "USA")
+  )) %>%
+  mutate(across(
+    .cols = Country,
+    .fns = ~
+      StandardizeText::standardize.countrynames(
+        input = .,
+        standard = "iso",
+        suggest = "auto"
+      )
+  )) %>%
+  rename(N = ".")
+
+country_coord <- 
+  getMap(resolution = "high") %>% #get world map
+  gCentroid(byid = TRUE) %>%  #
+  data.frame %>%
+  rownames_to_column("country") %>%
+  mutate(across(
+    .cols = country,
+    .fns = ~
+      StandardizeText::standardize.countrynames(
+        input = .,
+        standard = "iso",
+        suggest = "auto"
+      )
+  )) %>%
+  filter(country %in% chords$Origin)
+
+
+chords <- prep_chords %>% 
+  left_join(country_coord, by = c("Origin" = "country")) %>% 
+  left_join(country_coord, by = c("Destination" = "country")) %>% 
+  rename_with(.cols = c(x.x,y.x,x.y,y.y), .fn = ~ c("Long_origin","Lat_origin","Long_destiny","Lat_destiny")) 
+
+centroid <- prep_centroid %>%
+  left_join(country_coord, by = c("Country" = "country")) %>% 
+  rename(Lat = "y", Long = "x")
+
+theme_set(ggthemes::theme_map())
+theme_update( 
+    axis.line=element_blank(),axis.text.x=element_blank(),
+    axis.text.y=element_blank(),axis.ticks=element_blank(),
+    axis.title.x=element_blank(),
+    axis.title.y=element_blank(),legend.position="none",
+    panel.background=element_rect(fill = "black", colour = "black"),
+    panel.border=element_blank(),panel.grid.major=element_blank(),
+    panel.grid.minor=element_blank(),
+    plot.background= element_rect(fill = "black", colour = "black")
+)
+>>>>>>> Stashed changes
   
-  else {
-    len <- length(table(droplevels(country_i$Country_event)))
-    
-    all_pairs2 <- data.frame( long1 = rep(country_i$lon3[1], len),
-                              long2 = c(unique(country_i$lon2)),
-                              lat1 = rep(country_i$lat3[1], len),
-                              lat2 = c(unique(country_i$lat2)),
-                              lwd = as.numeric(table(droplevels(country_i$Country_event))),
-                              countrySearch = rep(as.character(unique(db$Country_search)[i]),len),
-                              country= names(table(droplevels(country_i$Country_event)))
-    ) 
-    
-    all_pairs  <- rbind(all_pairs,all_pairs2)
-    
-  }
-}
-
-all_pairs <- na.omit(all_pairs)
-
-world<-map_data("world")
-
-(map2 <- ggplot() +
+(map2 <- 
+  map_data("world") %>% 
+  ggplot() +
     geom_map(map = world, data = world,
              aes(long, lat, map_id = region), 
              color = "gray50", fill = "grey70", size = 0.3) +
-    
-    geom_curve(aes(x = jitter(long1,0.0001), 
-                   y = jitter(lat1,0.0001), 
-                   xend = jitter(long2, 0.0001), 
-                   yend = jitter(lat2, 0.0001),  # draw edges as arcs
-                   size = lwd),
-               data = all_pairs, curvature = 0.22,
-               alpha = 0.2,  color = "orange") +
-    
-    geom_point(data = Country, 
-               aes(x = long, y = lat),
-               alpha = 0.7, colour = "black",fill="blue",
-               size = range01(sqrt(Country$N_news))*13,
-               shape = 21,stroke = 0.8)+
-    
-    
-    scale_size_continuous("Number of connections:", breaks=c(1,5,10,15))+
-    
-    theme_map()+
+    geom_curve(data = chords,
+               aes(x = jitter(Long_origin,0.0001), 
+                   y = jitter(Lat_origin,0.0001), 
+                   xend = jitter(Long_destiny, 0.0001), 
+                   yend = jitter(Lat_destiny, 0.0001),  # draw edges as arcs
+                   size = strength),
+               curvature = 0.22,
+               alpha = 0.2, 
+               color = "orange") +
+    geom_point(data = centroid, 
+               aes(x = Long, 
+                   y = Lat,
+                   size=  GGally::range01(sqrt(N))*200, alpha=N),
+               alpha = 0.7, colour = "black",fill="blue", 
+                  shape = 21,stroke = 0.8)+
+    scale_size_continuous("Number of connections:", breaks=c(1,10,30,70)))
     # theme(legend.position = "bottom",
     #       legend.text = element_text(size = 12),
     #       legend.title = element_text(size = 12),
-    theme(
-      axis.line=element_blank(),axis.text.x=element_blank(),
-      axis.text.y=element_blank(),axis.ticks=element_blank(),
-      axis.title.x=element_blank(),
-      axis.title.y=element_blank(),legend.position="none",
-      panel.background=element_rect(fill = "black", colour = "black"),
-      panel.border=element_blank(),panel.grid.major=element_blank(),
-      panel.grid.minor=element_blank(),
-      plot.background= element_rect(fill = "black", colour = "black"))
-  
-)
+
 
 
 

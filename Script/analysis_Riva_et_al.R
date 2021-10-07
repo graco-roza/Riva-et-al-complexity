@@ -398,8 +398,11 @@ NetMatrix3 <-
                 network = "countries",
                 sep = ";")
 
+<<<<<<< Updated upstream
 chords <- NetMatrix3 %>%
+=======
 prep_chords <- NetMatrix3 %>%
+>>>>>>> Stashed changes
   as.matrix %>%
   as.dist %>%
   as.matrix %>%
@@ -407,6 +410,7 @@ prep_chords <- NetMatrix3 %>%
   mutate(across(
     .cols = c(Var1, Var2),
     .fns = ~
+<<<<<<< Updated upstream
       fct_recode(., "United States of America" = "USA")
   )) %>%
 =======
@@ -429,6 +433,7 @@ prep_chords <- NetMatrix3 %>%
          Destination = "Var2",
          strength = "value") 
 
+<<<<<<< Updated upstream
 centroid <- NetMatrix3 %>%
   as.matrix %>%
   diag %>% 

@@ -14,9 +14,14 @@
 
 pacman::p_load(pdftools,tidyverse,tidytext,stringr)
 
-#TRASH 
-# mutate(word = case_when(word == "1a" ~ "selforganization", word == "1c" ~ "self-organisation", TRUE ~ word)) %>% 
-
+#Fix file names whenever needed ----
+old_names<-list.files(path="Input/", pattern=":")
+new_names<- gsub(":","_",list.files(path="Input/", pattern=":"))
+setwd("Input/")
+file.rename(old_names,new_names)
+setwd("..")
+sort(downloaded)
+#Load files 
 directory <- "Input"
 pdfs <- paste(directory, "/", list.files(directory, pattern = "*.pdf"), sep = "")
 pdf_names <- list.files(directory, pattern = "*.pdf")
@@ -309,6 +314,4 @@ write_csv(output %>%
              mutate_at(vars(-WOS_ID), ~ ./word_total * 1e4)  %>% 
              select(-word_total),
           file = "Database/text_compiled_relative.csv")
-
-    
 

@@ -378,38 +378,65 @@ all_authors_affiliation<- ref_tab %>%
   mutate(authors_new = str_trim(str_to_title(authors_new))) %>% 
   distinct(Addresses, authors_new, WOS_ID, .keep_all=TRUE) %>%
   drop_na(Addresses) %>% 
-  mutate(authors_new =   sapply(authors_new, function(x) make_clean_names(x, case = "all_caps", sep_out=" ")))
+  bind_cols(coord_authors) %>% 
+  mutate(authors_new =   sapply(authors_new, function(x) make_clean_names(x, case = "all_caps", sep_out=" "))) %>%
+  mutate(authors_new = factor(authors_new, levels = unique(authors_new))) %>% 
+  distinct(authors_new, WOS_ID, .keep_all = TRUE) %>% 
+  mutate(ID = as.numeric(authors_new))
 
-all_authors_affiliation %>%  
+
+coord_authors<-data.frame(lat=NA,long=NA)
+for (i in 1:nrow(all_authors_affiliation)){
+  print(i)
+  coord_authors[i,]<- tryCatch(ggmap::geocode(all_authors_affiliation$Addresses[i]), error = function(e) c(NA,NA))
+
+network_collaborations<-  all_authors_affiliation %>%  
   select(WOS_ID, authors_new) %>% 
   mutate(value = 1 ) %>% 
-  pivot_wider(names_from = WOS_ID, values_from = value, values_fill = 0) %>% 
+  pivot_wider(id_cols = c(WOS_ID, authors_new),names_from = WOS_ID, values_from = value, values_fill = 0, values_fn=sum) %>% 
   column_to_rownames("authors_new") %>% 
   igraph::graph_from_incidence_matrix(multiple = TRUE,
                                       directed = TRUE,
                                       weighted = NULL) %>%
   igraph::bipartite_projection() %>%  #projecting to unipartite
   pluck("proj1") %>% #selecting node type 1
-  as_tbl_graph(directed = TRUE) %>%  #convert to table graph object
-  tidygraph::activate(edges) %>% 
-  left_join(all_authors_affiliation %>% 
-              mutate(authors_id = 
-                       as.numeric(
-                         factor(authors_new,
-                                levels = c(
-                                  distinct(all_authors_affiliation, authors_new)    
-                                  )    )))
-            
-            )
+  as_tbl_graph(directed = TRUE)  #convert to table graph object
 
-coord_authors<-data.frame(lat=NA,long=NA)
-for (i in 1:nrow(all_authors_affiliation)){
-  print(i)
-  coord_authors[i,]<- tryCatch(ggmap::geocode(all_authors_affiliation$Addresses[i]), error = function(e) c(NA,NA))
+  # Separate out edges and node data frames
+  colab_nodes <-
+    network_collaborations %>%
+  activate(nodes) %>%
+  data.frame() %>%
+  rownames_to_column("rowid") %>%
+  mutate(rowid = as.integer(rowid))
+ 
+  colab_edges <-
+    network_collaborations %>%
+  activate(edges) %>%
+  data.frame()
+
+named_edge_list <-
+  colab_edges %>%
+  # Rename from nodes
+  left_join(colab_nodes, by = c("from" = "rowid")) %>%
+  select(-from) %>%  # Remove unneeded column
+  rename(from = name) %>%  # Rename column with names now
   
-}
-all_authors_affiliation <- all_authors_affiliation %>% 
-  bind_cols(coord_authors)
+  # Rename to nodes
+  left_join(colab_nodes, by = c("to" = "rowid")) %>%
+  select(-to) %>%  # Remove unneeded column
+  rename(to = name) %>%  # Rename column with names now
+  
+  # Cleaning up
+  select(from, to, weight) %>% 
+  left_join(all_authors_affiliation %>%  select(lat,long,authors_new), by = c("from" = "authors_new")) %>% 
+  left_join(all_authors_affiliation %>%  select(lat,long,authors_new), by = c("to" = "authors_new")) %>% 
+  rename_with(.cols = c(lat.x,long.x,lat.y,long.y), .fn = ~ c("Lat_from","Long_from","Lat_to","Long_to")) 
+  
+  
+  
+library(tidygraph)
+
 
 getMap(resolution="high") %>% 
   ggplot() +
@@ -417,8 +444,18 @@ geom_polygon(aes(long,lat, group=group), colour="black", fill="black", size = 0.
   with_outer_glow(geom_point(data = all_authors_affiliation, 
                              aes(x = lat, 
                                  y = long) , size=.1, shape = 19, colour="#FFEA46FF"), colour="#FFEA46FF", sigma=2) +
+  with_outer_glow(geom_curve(data = named_edge_list,
+                             aes(y = jitter(Long_from,0.0001), 
+                                 x = jitter(Lat_from,0.0001), 
+                                 yend = jitter(Long_to, 0.0001), 
+                                 xend = jitter(Lat_to, 0.0001),  # draw edges as arcs
+                                 colour = strength),
+                             curvature = 0.2,
+                             alpha = 0.02, 
+                             color = "#FFEA46FF"),colour="white",sigma=2) +
   coord_fixed(ratio = 1)+
   scale_colour_gradientn(colours = c("yellow","white"))+
+  
   ggthemes::theme_map()+
   theme( 
     axis.line=element_blank(),axis.text.x=element_blank(),

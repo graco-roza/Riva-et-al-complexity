@@ -289,14 +289,6 @@ Figure_s2 <-  ERGM1 %>%
   labs(x="", y="Mean effect size (95% confidence interval)")
 
 
-
-
-
-
-
-
-
-
 network_words <- db_graph_original %>%
   left_join(ref_tab %>%  select(WOS_ID, SEARCH_TYPE)) %>% as_tibble() %>% 
   filter(SEARCH_TYPE == "Ecological complexity") %>%
@@ -349,33 +341,97 @@ network_words <- db_graph_original %>%
   tidygraph::activate(nodes) %>%
   mutate(Strength = Strength / max(Strength))
 
+coord_authors <-  read_csv("coordinates_coauthors.csv")
+
+all_authors_affiliation<- ref_tab %>% 
+  filter(SEARCH_TYPE == "Ecological complexity") %>% 
+  select(Authors,Addresses,WOS_ID) %>% 
+  mutate(Addresses= gsub("\\.;", "\\./", Addresses)) %>% view()
+  separate_rows(Addresses, sep=";") %>% 
+  mutate(authors_new = unlist(qdapRegex::ex_bracket(Addresses))) %>% 
+  mutate(Addresses = rm_square(Addresses)) %>% 
+  view
 
 
 
+all_authors_affiliation %>%
+  bind_cols(coord_authors) %>% 
+  mutate(authors_new = ifelse(is.na(authors_new), Authors, authors_new)) %>% 
+  hacksaw::keep_na(lat) %>% 
+  data.frame() %>% 
+  view()
+
+
+all_authors_affiliation<- ref_tab %>% 
+  filter(SEARCH_TYPE == "Ecological complexity") %>% 
+  select(Authors,Addresses,WOS_ID) %>% 
+  mutate(Addresses= gsub("\\[", "(", Addresses)) %>% 
+  mutate(Addresses= gsub("\\]", ")", Addresses)) %>% 
+  mutate(Addresses= gsub(";(?=[^()]*\\))" , " sep ",Addresses, perl = T)) %>% 
+  separate_rows(Addresses, sep=";") %>% 
+  mutate(authors_new = unlist(qdapRegex::ex_round(Addresses))) %>%
+  separate_rows(authors_new, sep=" sep ") %>%
+  mutate(Addresses = rm_round(Addresses))  %>% 
+  distinct(Addresses, authors_new, WOS_ID, .keep_all=TRUE) %>%
+  mutate(authors_new = ifelse(is.na(authors_new), Authors, authors_new)) %>% 
+  separate_rows(authors_new, sep=";")  %>%  
+  mutate(authors_new = str_trim(str_to_title(authors_new))) %>% 
+  distinct(Addresses, authors_new, WOS_ID, .keep_all=TRUE) %>%
+  drop_na(Addresses) %>% 
+  mutate(authors_new =   sapply(authors_new, function(x) make_clean_names(x, case = "all_caps", sep_out=" ")))
+
+all_authors_affiliation %>%  
+  select(WOS_ID, authors_new) %>% 
+  mutate(value = 1 ) %>% 
+  pivot_wider(names_from = WOS_ID, values_from = value, values_fill = 0) %>% 
+  column_to_rownames("authors_new") %>% 
+  igraph::graph_from_incidence_matrix(multiple = TRUE,
+                                      directed = TRUE,
+                                      weighted = NULL) %>%
+  igraph::bipartite_projection() %>%  #projecting to unipartite
+  pluck("proj1") %>% #selecting node type 1
+  as_tbl_graph(directed = TRUE) %>%  #convert to table graph object
+  tidygraph::activate(edges) %>% 
+  left_join(all_authors_affiliation %>% 
+              mutate(authors_id = 
+                       as.numeric(
+                         factor(authors_new,
+                                levels = c(
+                                  distinct(all_authors_affiliation, authors_new)    
+                                  )    )))
+            
+            )
+
+coord_authors<-data.frame(lat=NA,long=NA)
+for (i in 1:nrow(all_authors_affiliation)){
+  print(i)
+  coord_authors[i,]<- tryCatch(ggmap::geocode(all_authors_affiliation$Addresses[i]), error = function(e) c(NA,NA))
+  
+}
+all_authors_affiliation <- all_authors_affiliation %>% 
+  bind_cols(coord_authors)
 
 getMap(resolution="high") %>% 
   ggplot() +
-  geom_polygon(aes(long,lat, group=group), colour="black", fill="black", size = 0.25)+
-  with_outer_glow(geom_point(data = coord_authors, 
+geom_polygon(aes(long,lat, group=group), colour="black", fill="black", size = 0.1)+
+  with_outer_glow(geom_point(data = all_authors_affiliation, 
                              aes(x = lat, 
-                                 y = long) , size=.1, shape = 19, colour="#FFEA46FF"), colour="#FFEA46FF", sigma=2, expand= 2) +
+                                 y = long) , size=.1, shape = 19, colour="#FFEA46FF"), colour="#FFEA46FF", sigma=2) +
   coord_fixed(ratio = 1)+
   scale_colour_gradientn(colours = c("yellow","white"))+
-  scale_size_continuous(range = c(.1, 2))+
   ggthemes::theme_map()+
   theme( 
     axis.line=element_blank(),axis.text.x=element_blank(),
     axis.text.y=element_blank(),axis.ticks=element_blank(),
     axis.title.x=element_blank(),
     axis.title.y=element_blank(),legend.position="none",
-    panel.background=element_rect(fill ="gray10", colour="gray10"),
+    panel.background=element_rect(fill ="#152238", colour="#152238"),
     panel.border=element_blank(),
     panel.grid.major=element_blank(),
     panel.grid.minor=element_blank(),
-    plot.background=element_rect(fill ="gray10", colour="gray10")
+    plot.background=element_rect(fill ="#152238", colour="#152238")
   )
 
-coord_authors <-  read_csv("coordinates_coauthors.csv")
 
 
 
@@ -503,19 +559,21 @@ library(bibliometrix)
 NetMatrix3 <-
   bibliometrix::metaTagExtraction(MATRIX_1, Field = "AU_SO", sep = ";") %>% 
   bibliometrix::biblioNetwork(
-                analysis = "coupling",
-                network = "references",
+                analysis = "collaboration",
+                network = "authors",
                 sep = ";")
+
 networkPlot(NetMatrix3,
-            normalize = "jaccard",
             weighted = TRUE,
             cluster = "louvain",
             remove.multiple = TRUE)
+
 prep_chords <- NetMatrix3 %>%
   as.matrix %>%
   as.dist %>%
   as.matrix %>%
   reshape2::melt() %>%
+  filter(value > 0)
   mutate(across(
     .cols = c(Var1, Var2),
     .fns = ~
@@ -657,31 +715,28 @@ ggsave("Figures/network_map.pdf", network_global, device=cairo_pdf)
   
   ggmap::register_google('AIzaSyBP7U9mHiqB2q83f9JrNq4yjn4b6rAKhTg')
   
-all_authors_affiliation<-   authors_affiliation %>% 
-  mutate(C1 = gsub('.{1}$', '', C1)) %>%  select(AU_UN) %>% slice(5)
-    separate_rows(C1,AU, sep=";") %>%  drop_na(C1) 
-authors_affiliation %>%  glimpse
-authors_affiliation$C1
+
 
 all_authors_affiliation<- ref_tab %>% 
   filter(SEARCH_TYPE == "Ecological complexity") %>% 
   select(Authors,Addresses,WOS_ID) %>% 
- mutate(Addresses= gsub("\\.;", "\\./", Addresses)) %>% 
+ mutate(Addresses= gsub("\\[", "(", Addresses)) %>% 
+  mutate(Addresses= gsub("\\]", ")", Addresses)) %>% 
+  mutate(Addresses= gsub(";(?=[^()]*\\))" , " sep ",Addresses, perl = T)) %>% 
   separate_rows(Addresses, sep=";") %>% 
-  mutate(authors_new = unlist(qdapRegex::ex_bracket(Addresses))) %>% 
-  mutate(Addresses = rm_square(Addresses)) 
+  mutate(authors_new = unlist(qdapRegex::ex_round(Addresses))) %>%
+  separate_rows(authors_new, sep=" sep ") %>%
+  mutate(Addresses = rm_round(Addresses))  %>% 
+  distinct(Addresses, authors_new, WOS_ID, .keep_all=TRUE) %>%
+  mutate
 
 coord_authors<-data.frame(lat=NA,long=NA)
 for (i in 1:nrow(all_authors_affiliation)){
   coord_authors[i,]<- tryCatch(ggmap::geocode(all_authors_affiliation$Addresses[i]), error = function(e) c(NA,NA))
   
 }
+x<-"(Butler, Joy I.; blabla) Univ British Columbia, Vancouver (dedede), BC V6T 1Z4"
+gsub("(?m);(?=[^()]*\))"," ", text, perl = T)
+x<- "a: a(1; 2; 3); b: b[1; 2]"
+gsub(";(?=[^()]*\\))" , ",",x, perl = T)
 
-x<-"[Butler, Joy I.] Univ British Columbia, Vancouver, BC V6T 1Z4, Canada"
-gsub("\\[([^()]*)\\]|.", "\\1", x, perl=T)
-test<- qdapRegex::ex_bracket("[Butler, Joy I.] Univ British Columbia, Vancouver, BC V6T 1Z4")
-unlist(test)
-  text_2<-gsub("\\.;", "\\./", text)
-  
-  sub("^.*?\\((.*)\\)[^)]*$", "\\1", text_2)
-  

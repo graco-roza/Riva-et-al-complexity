@@ -37,6 +37,8 @@ pacman::p_load(
   qdapRegex
 )
 
+# hacksaw package missing from list above
+
 # Functions ---------------------------------------------------------------
 
 
@@ -775,3 +777,308 @@ gsub("(?m);(?=[^()]*\))"," ", text, perl = T)
 x<- "a: a(1; 2; 3); b: b[1; 2]"
 gsub(";(?=[^()]*\\))" , ",",x, perl = T)
 
+
+
+#####################################################
+#####################################################
+#####################################################
+# Alpha and Beta diversity analysis
+
+# this is copied from above for ease, simply re-open the original tables
+ref_tab   <- read_csv("Database/Table_papers.csv") #database listing papers 
+db_graph_original <- read_csv("Database/text_compiled_relative.csv") #database of ngrams by paper
+
+# merge to create the analysis table below
+data_beta <- merge(db_graph_original, ref_tab, by = "WOS_ID")
+data_beta <- data_beta[!(data_beta$SEARCH_TYPE=="Complex system science"),] # remove the CSS papers, which are not in the analysis anymore
+table(data_beta$SEARCH_TYPE) # check sample sizes; 180 controls vs 172 ecological complexity papers
+
+# main table for analysis: retain only themese (species) and type of research
+table_sp <- data_beta[ , c(1:26, 28)]
+
+# there are 6 empty rows that can
+# mess with the calculations; we should discuss solutions
+table_sp <- table_sp[apply(table_sp[,c(-1, -27)], 1, function(x) !all(x==0)),]
+# there are now 4 less controls and 2 less ecological complexity papers
+
+
+##
+## PART 1: alpha diversity
+##
+
+
+library(vegan)
+library(ggpubr)
+
+richness <- vegan::specnumber(table_sp[,2:26])  
+div <- exp(vegan::diversity(table_sp[,2:26])) # exp of Shannon entropy, Hill number of order 1; 
+# see http://www.loujost.com/Statistics%20and%20Physics/Diversity%20and%20Similarity/EffectiveNumberOfSpecies.htm#:~:text=The%20number%20of%20equally%2Dcommon%20species%20required%20to%20give%20a,4.5)%20%3D%2090%20effective%20species. 
+# Shannon entropy as a golden number for ecologists (MacArthur 1965; https://onlinelibrary.wiley.com/doi/10.1111/j.1469-185X.1965.tb00815.x)
+
+summary(lm(richness ~ table_sp$SEARCH_TYPE))
+summary(lm(div ~ table_sp$SEARCH_TYPE))
+# the difference between control and complexity papers is   
+
+
+library(ggplot2)
+library(ggpubr)
+
+boxplot <- data.frame(richness, div, table_sp$SEARCH_TYPE)
+
+plot1 <- boxplot %>%
+  ggplot( aes(x=table_sp$SEARCH_TYPE, y=richness, fill=table_sp$SEARCH_TYPE)) +
+  #geom_violin() +
+  scale_fill_manual(values=c("gainsboro", "cyan2")) +
+  #geom_jitter(color="black", size=1, alpha=0.9) +
+  theme_bw()+
+  theme(
+    legend.position="none",
+    plot.title = element_text(size=11)
+  ) +
+  #ggtitle("True diversity of complexity themes in a publication") +
+  geom_dotplot(binaxis='y', stackdir='center', dotsize=0.7) +
+  geom_boxplot(width=0.1, outlier.shape = NA, alpha = 0.8) +
+  ylim(0,20)+
+  ylab("Richness")+
+  xlab("") + 
+  geom_signif(comparisons = list(c("Control", "Ecological complexity")), 
+              map_signif_level=TRUE)
+
+plot2 <- boxplot %>%
+  ggplot( aes(x=table_sp$SEARCH_TYPE, y=div, fill=table_sp$SEARCH_TYPE)) +
+  #geom_violin() +
+  scale_fill_manual(values=c("gainsboro", "cyan2")) +
+  #geom_jitter(color="black", size=1, alpha=0.9) +
+  theme_bw()+
+  theme(
+    legend.position="none",
+    plot.title = element_text(size=11)
+  ) +
+  #ggtitle("True diversity of complexity themes in a publication") +
+  geom_dotplot(binaxis='y', stackdir='center', dotsize=0.7) +
+  geom_boxplot(width=0.1, outlier.shape = NA, alpha = 0.8) +
+  ylim(0,20)+
+  ylab("True diversity")+
+  xlab("")+ 
+  geom_signif(comparisons = list(c("Control", "Ecological complexity")), 
+              map_signif_level=TRUE)
+
+ggarrange(plot1, plot2)
+
+
+##
+## PART 2: beta diversity
+##
+
+# perhaps convert into presence/absence matrix
+#table_sp <- table_sp  %>% mutate_if(is.numeric, ~1 * (. > 0))
+
+
+# indicator words: are there themes typical of complexity papers?
+library(indicspecies)
+ind <- indicspecies::multipatt(table_sp[, 2:26], 
+                table_sp$SEARCH_TYPE, 
+                func = "r.g", 
+                control = how(nperm=9999))
+summary(ind)
+
+# several words typical of ecological complexity studies
+# scale_dependency  0.276  0.0001 ***
+#   self_organization 0.201  0.0001 ***
+#   dynamicity        0.197  0.0001 ***
+#   hierarchy         0.186  0.0001 ***
+#   non_linearity     0.171  0.0004 ***
+#   resilience        0.156  0.0001 ***
+#   fractality        0.152  0.0001 ***
+#   feedback          0.149  0.0024 ** 
+#   attractor         0.149  0.0001 ***
+#   memory            0.137  0.0039 ** 
+#   tipping_point     0.132  0.0121 *  
+#   emergence         0.130  0.0126 *  
+#   adaptation        0.128  0.0108 *  
+#   non_equilibrium   0.109  0.0048 ** 
+
+
+# similarity between vs within groups
+similarity <- vegan::anosim(table_sp[, 2:26], 
+                     table_sp$SEARCH_TYPE, 
+                     permutations = 999, 
+                     distance = "jaccard", 
+                     strata = NULL,
+                     parallel = 10)
+similarity
+# statistically significant difference in the themes touched between controls and ecological complexity papers
+
+
+
+
+# permanova; note that adonis does not run if we retain the six columns with all 0s
+perm_diss <- vegan::adonis2(table_sp[, 2:26] ~ table_sp$SEARCH_TYPE, 
+                  permutations = 999, 
+                  method = "jaccard", 
+                  sqrt.dist = FALSE, 
+                  add = FALSE, 
+                  by = NULL, 
+                  parallel = 10)
+
+
+perm_diss
+# significant difference, but only 0.016 of variation explained
+# when using presence/absence data, we go up to 3% of variation explaines
+
+# multi-response permutation procedure (MRPP)
+mrpp <- vegan::mrpp(table_sp[, 2:26], table_sp$SEARCH_TYPE)
+mrpp
+# the control and ecological complexity papers differ significantly also based on the frequency of themes use
+# but observed and expected delta are very similar, suggesting very small effect size
+
+
+
+# # nMDS, I leave it here but virtually useless; no apparent difference between the two groups
+# # BTW, same for PCA
+# NMDS <- metaMDS(table_sp[, 2:26], k=2, trymax=100)
+# stressplot(NMDS)
+# plot(NMDS)
+# 
+# plot(NMDS,type="n")
+# ordihull(NMDS,groups=table_sp$SEARCH_TYPE,draw="polygon",col="grey90",label=F)
+# orditorp(NMDS,display="species",col="red",air=0.01)
+# orditorp(NMDS,display="sites",col=c(rep("green",5),rep("blue",5)),
+#          air=0.01,cex=1.25)
+
+#contribution of themes to bray curtis similarity between papers
+vegan::simper(table_sp[, 2:26], table_sp$SEARCH_TYPE)
+
+
+# # distance-based RDA
+# # construct full model and calculate VIF
+# dbRDA <- capscale(table_sp[, 2:26] ~ table_sp$SEARCH_TYPE)
+# vif.cca(dbRDA)
+# 
+# #model is significantly better than null model
+# anova(dbRDA)
+# anova(dbRDA, by = "terms")
+# summary(dbRDA) # only 2% of variation explained
+# plot(dbRDA)
+
+
+# Caio's proposed analysis 
+
+dec <- adespatial::beta.div.comp((table_sp[, 2:26]), coef = "J")
+dec$part
+# 42% of beta diversity is due to replacement, 57% to richness
+
+BDLG <- adespatial::beta.div((table_sp[, 2:26]), 
+                             method="hellinger")
+
+# Local contributions to beta diversity (LCBD indices)
+LGLCBD = data.frame(BDLG$LCBD, BDLG$p.LCBD)
+LGLCBD <-cbind(LGLCBD, table_sp)
+LGLCBD$pval <- ifelse(LGLCBD$BDLG.p.LCBD >= 0.05, c("non-sig"),
+                      c("sig"))
+
+LGLCBD$richness <- richness
+LGLCBD$div <- div
+
+# Local contributions to beta diversity (LCBD indices) represent the degree of uniqueness of the sites
+# in terms of their species compositions. They can be computed in all cases: raw (not recommended) 
+# or transformed data, as well as dissimilarity matrices. See Legendre and De Cáceres (2013) for details. 
+# LCBD indices are tested for significance by random, independent permutations within the columns of Y. 
+# This permutation method tests H0 that the species are distributed at random, independently of one another, 
+# among the sites, while preserving the species abundance distributions in the observed data. 
+# See Legendre and De Cáceres (2013) for discussion.
+
+# paper in control are more unique that the paper in the ecological complexity researc
+summary(lm(LGLCBD$BDLG.LCBD ~ LGLCBD$SEARCH_TYPE))
+
+# local contribution to beta diversity is substantially higher in control papers
+plot3 <- boxplot %>%
+  ggplot( aes(x=LGLCBD$SEARCH_TYPE, y=LGLCBD$BDLG.LCBD, fill=table_sp$SEARCH_TYPE)) +
+  #geom_violin() +
+  scale_fill_manual(values=c("gainsboro", "cyan2")) +
+  #geom_jitter(color="black", size=1, alpha=0.9) +
+  theme_bw()+
+  theme(
+    legend.position="none",
+    plot.title = element_text(size=11)
+  ) +
+  #ggtitle("True diversity of complexity themes in a publication") +
+  geom_dotplot(binaxis='y', stackdir='center', dotsize=0.7) +
+  geom_boxplot(width=0.1, outlier.shape = NA, alpha = 0.8) +
+  #ylim(0,1)+
+  ylab("True diversity")+
+  xlab("")+ 
+  geom_signif(comparisons = list(c("Control", "Ecological complexity")), 
+              map_signif_level=TRUE)
+plot3
+
+
+
+# alternative to plot 3; same information
+# plot3 <- ggplot(LGLCBD, aes(SEARCH_TYPE, WOS_ID, color=SEARCH_TYPE, size =BDLG.LCBD, shape=pval)) + 
+#   geom_point() +                
+#   scale_shape_manual(values=c(1, 19)) +
+#   scale_color_manual(values=c("gainsboro", "cyan2")) +
+#   theme_bw() +                      
+#   theme(panel.grid.major = element_blank(), 
+#         panel.grid.minor = element_blank(),
+#         axis.text.y = element_blank())+
+#   labs(y="Paper ID", x = "Type of search")
+# plot3
+
+# local contribution to beta diversity is inversely related to the number of themes tackled in the paper
+plot4 <- ggplot(LGLCBD, aes(x=richness, y=BDLG.LCBD, shape=SEARCH_TYPE, color=SEARCH_TYPE)) +
+  geom_point(size = 2)+
+  theme_bw() +
+  scale_color_manual(values=c("gainsboro", "cyan2")) +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 1) +
+  labs(y="Local contributions to beta diversity", x = "Number of complexity themes addressed")+
+  theme(legend.title = element_blank())
+
+plot4
+
+ggarrange(plot1, plot2, plot3, plot4)
+
+
+## some additional tests
+table_sp <- table_sp  %>% mutate_if(is.numeric, ~1 * (. > 0))
+
+
+
+
+library(ade4)
+d <- dist.binary(table_sp[, 2:26], method = 1, diag = FALSE, upper = FALSE) #method 1 is Jaccard index (1901) S3 coefficient of Gower & Legendre
+hc <- hclust(d)               # apply hierarchical clustering 
+plot(hc, labels = table_sp$SEARCH_TYPE)    # plot the dendrogram
+# little evidence of differences
+
+
+
+# playing with something new - copulas; check FYI, it runs
+library(ecoCopula)
+# https://cran.r-project.org/web/packages/ecoCopula/vignettes/the_basics.html the tutorial is here
+
+# fit marginal model
+model <- stackedsdm(table_sp[, 2:26],~ table_sp$SEARCH_TYPE, data = table_sp, family="binomial",ncores = 10) 
+model_gr=cgr(model, seed=3)
+plot(model_gr, pad=1)
+
+
+#I looked also at model based ordinations; can look further if you are keen into this
+library(gllvm)
+
+model <- gllvm(table_sp[, 2:26], # response
+      as.data.frame(table_sp$SEARCH_TYPE), #covariate
+      family = "negative.binomial",
+      num.lv = 3,
+      #formula = ~ "table_sp$SEARCH_TYPE",
+      seed = 619)
+
+coefplot(model, cex.ylab = 0.7, mar = c(4, 9, 2, 1),
+         xlim.list = list(NULL, NULL, c(-4, 4)), mfrow=c(1,1))
+
+
+ordiplot(model, biplot = TRUE, ind.spp = 15, xlim = c(-3, 3), ylim = c(-3, 3),
+         main = "Biplot")
+ordiplot(model, biplot = FALSE, ind.spp = 15, xlim = c(-3, 3), ylim = c(-3, 3),
+         main = "Ordination plot", predict.region = TRUE)

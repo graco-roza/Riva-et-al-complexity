@@ -1,0 +1,507 @@
+---
+title: "Final Analysis : Towards a cohesive understanding of ecological complexity"
+author: "Caio Graco-Roza"
+date: "4/4/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+pacman::p_load(
+  bibliometrix,
+  ergm,
+  fs,
+  ggraph,
+  network,
+  SemNetCleaner,
+  tidyverse,
+  tidygraph,
+  rgeos,
+  rworldmap,
+  igraph,
+  magrittr,
+  ggmap,
+  ggfx,
+  qdapRegex,
+  useful,
+  grid,
+  patchwork,
+  ggtext,
+  janitor,
+  ggpubr,
+  ggforce,
+  showtext,
+  rstatix,
+  grid,
+  ggtext,
+  showtext,
+  showtextdb,
+  vegan,
+  colorspace,
+  patchwork,
+  ggpmisc,
+  indicspecies,
+  adespatial,
+  ggregplot,
+  ggdist,
+  modelr,
+  ggalt,
+  hacksaw,
+  DataEditR
+)
+```
+
+# Auxiliary functions
+
+```{r functions}
+# Functions --------------------------------------------------------------------------
+
+#' Function to extract node traits in a graph 
+#' For a discussion:
+#' https://medium.com/@615162020004/social-network-analysis-with-r-centrality-measure-86d7fa273574
+#' Graph should be a tidygraph dataset
+
+NetworkTraitGet <- function(Graph){
+  
+  data.frame(
+    
+    Size = vcount(Graph),
+    
+    Edge = gsize(Graph),
+    
+    Diameter = diameter(Graph),
+    
+    MeanDegree = mean(igraph::degree(Graph)),
+    
+    DegreeVariance = sd(igraph::degree(Graph)),
+    
+    Components = igraph::components(Graph)$no,
+    
+    Transitivity = transitivity(Graph),
+    
+    Density = ggregplot::Prev(get.adjacency(Graph, sparse = F) > 0),
+    
+    LouvainModularity = Graph %>% cluster_louvain %>% membership %>% modularity(Graph, .),
+    
+    RealizedConnectance = ecount(Graph) / ((vcount(Graph)*(vcount(Graph)-1))/2)
+    
+  ) %>% return
+  
+}
+
+NodeTraitGet <- function(Graph, mode = "in", dir = TRUE){
+  
+  list(
+    ID          = Graph %>% activate(nodes) %>% as.data.frame %>% pull(1),
+    Degree      = igraph::degree(Graph, mode = mode),
+    Strength    = strength(Graph, mode = mode),
+    Eigenvector = Graph %>% eigen_centrality(directed = dir) %>% extract2("vector"),
+    Betweenness = Graph %>% betweenness(directed = dir),
+    Closeness   = Graph %>% closeness(mode = mode)
+  )
+}
+
+coords2continent <- function(lon,lat) {  
+  countriesSP <- getMap(resolution='low')
+
+  # converting points to a SpatialPoints object
+  # setting CRS directly to that from rworldmap
+  pointsSP = SpatialPoints(cbind(lon,lat), proj4string=CRS(proj4string(countriesSP)))  
+  # use 'over' to get indices of the Polygons object containing each point 
+  indices = over(pointsSP, countriesSP)
+  
+  return(indices$REGION)   # returns the continent (7 continent model)
+  #indices$ADMIN  #returns country name
+  #indices$ISO3 # returns the ISO3 code 
+  
+}
+```
+
+# Setting standard parameters
+
+```{r parameters}
+#register key for using ggmaps
+ggmap::register_google('AIzaSyBP7U9mHiqB2q83f9JrNq4yjn4b6rAKhTg')
+
+
+# Loading fonts ----------------------------------------------------------------------
+
+font_install(showtextdb::google_fonts("Montserrat"))
+font_install(showtextdb::google_fonts("Lato"))
+font_install(showtextdb::google_fonts("Noto Sans"))
+font_add_google("Montserrat", "Montserrat")
+font_add_google("Noto Sans","Noto")
+font_add_google("Lato", "Lato")
+showtext::showtext_auto()
+
+
+# Set colors -------------------------------------------------------------------------
+
+main_color<-"#CA3542" #color for everything that is not related to groups
+title_color <- "#0A0B0B" #true black
+subtitle_color <- lighten("#0A0B0B",.2) #80% black
+cocit_colors <- c( "#CA3542", darken("#27647B",.2), lighten("#CA3542",.5), lighten("#57575F",.5) , lighten("#57575F",.7))#"#AEC0C9"
+searchtype_colors<- c("#CA3542", "#57575F")
+
+```
+
+# Load data
+
+```{r loading data}
+# Loading the data -------------------------------------------------------------------
+
+
+ref_tab   <- read_csv("Database/Table_papers.csv") #database listing papers 
+db_graph_original <- read_csv("Database/text_compiled_relative.csv") #database of ngrams by paper
+MATRIX_1 <- bibliometrix::convert2df("Database/Search_1.txt", dbsource = "wos", format = "plaintext")
+
+```
+
+# Summary statistics
+
+```{r summary statistics}
+ref_tab %>%
+  full_join(db_graph_original , by = "WOS_ID") %>%  
+  hacksaw::keep_na(diversity) %>% 
+  select("SEARCH_TYPE", "DOI", "WOS_ID", "EXTRACTED_BY") %>% 
+  drop_na(DOI) %>% 
+  data.frame
+
+#Sample size
+db_graph_original %>%
+  left_join(ref_tab %>%  select(WOS_ID, SEARCH_TYPE)) %>% as_tibble() %>% 
+  select(SEARCH_TYPE) %>% table
+
+#papers without features 
+names(which(rowSums(db_graph_original %>% 
+                                 column_to_rownames("WOS_ID")) == 0))
+
+data.frame(WOS_ID = zero_sum) %>% 
+  left_join(ref_tab) %>%  
+  select(SEARCH_TYPE, WOS_ID)
+```
+
+# Collaborative network
+
+```{r collabortive network}
+
+#Clean names, 
+all_authors_affiliation<- ref_tab %>% 
+  #select only ecological complexity papers
+  filter(SEARCH_TYPE == "Ecological complexity") %>% 
+  select(Authors,Addresses,WOS_ID) %>%
+  #get and clean the names of each author
+  mutate(Addresses= gsub("\\[", "(", Addresses)) %>% 
+  mutate(Addresses= gsub("\\]", ")", Addresses)) %>% 
+  mutate(Addresses= gsub(";(?=[^()]*\\))" , " sep ",Addresses, perl = T)) %>% 
+  separate_rows(Addresses, sep=";") %>% 
+  mutate(authors_new = unlist(qdapRegex::ex_round(Addresses))) %>%
+  separate_rows(authors_new, sep=" sep ") %>%
+  mutate(Addresses = rm_round(Addresses))  %>% 
+  distinct(Addresses, authors_new, WOS_ID, .keep_all=TRUE) %>%
+  mutate(authors_new = ifelse(is.na(authors_new), Authors, authors_new)) %>% 
+  separate_rows(authors_new, sep=";")  %>%  
+  mutate(authors_new = str_trim(str_to_title(authors_new))) %>% 
+  distinct(Addresses, authors_new, WOS_ID, .keep_all=TRUE) %>%
+  drop_na(Addresses) %>% 
+  distinct(authors_new, WOS_ID, .keep_all = TRUE) %>% 
+  #Get coordinates for each author addresses
+  rowwise() %>% 
+  mutate(authors_new =janitor::make_clean_names(authors_new, case = "all_caps", sep_out=" ")) %>%
+  mutate(ggmap::geocode(Addresses)) %>% 
+  mutate(authors_new = factor(authors_new, levels = unique(authors_new))) %>% 
+  mutate(ID = as.numeric(authors_new)) 
+
+# na_filled<- all_authors_affiliation %>% 
+#   data.frame() %>% 
+#   hacksaw::keep_na(lat,lon) %>% 
+#   data_edit()
+```
+
+```{r make collaboration network}
+
+network_collaborations<-  all_authors_affiliation %>%  
+  drop_na(lat,lon) %>% 
+  select(WOS_ID, authors_new) %>% 
+  mutate(value = 1 ) %>% 
+  pivot_wider(id_cols = authors_new, names_from = WOS_ID, values_from = value, values_fill = 0, values_fn=sum) %>% 
+  column_to_rownames("authors_new") %>% 
+  igraph::graph_from_incidence_matrix(multiple = TRUE,
+                                      directed = TRUE,
+                                      weighted = NULL) %>%
+  igraph::bipartite_projection() %>%  #projecting to unipartite
+  pluck("proj1") %>% #selecting node type 1
+  as_tbl_graph(directed = FALSE)  #convert to table graph object
+
+colab_summary <-network_collaborations %>% 
+  NetworkTraitGet()
+
+  # Separate out edges and node data frames
+  colab_nodes <-
+    network_collaborations %>%
+  activate(nodes) %>%
+  data.frame() %>%
+  rownames_to_column("rowid") %>%
+  mutate(rowid = as.integer(rowid))
+ 
+  colab_edges <-
+    network_collaborations %>%
+  activate(edges) %>%
+  data.frame()
+
+named_edge_list <-
+  colab_edges %>%
+  # Rename from nodes
+  left_join(colab_nodes, by = c("from" = "rowid")) %>%
+  select(-from) %>%  # Remove unneeded column
+  rename(from = name) %>%  # Rename column with names now
+  
+  # Rename to nodes
+  left_join(colab_nodes, by = c("to" = "rowid")) %>%
+  select(-to) %>%  # Remove unneeded column
+  rename(to = name) %>%  # Rename column with names now
+  
+  # Cleaning up
+  select(from, to, weight) %>% 
+  left_join(all_authors_affiliation %>%  select(lat,lon,authors_new), by = c("from" = "authors_new")) %>% 
+  left_join(all_authors_affiliation %>%  select(lat,lon,authors_new), by = c("to" = "authors_new")) %>% 
+  rename_with(.cols = c(lat.x,lon.x,lat.y,lon.y), .fn = ~ c("Lat_from","Long_from","Lat_to","Long_to")) 
+```
+
+## Plot collaboration map
+
+```{r plot map, warnings=FALSE}
+world <- map_data("world")
+collaboration_map <- 
+  ggplot()+
+  geom_cartogram(
+    data = world,
+    map = world,  aes(long, lat, map_id = region),
+    fill = lighten(searchtype_colors[2],.3), size=.1) +
+  geom_segment(data = named_edge_list,
+                              aes(x = jitter(Long_from,0.0001), 
+                                  y = jitter(Lat_from,0.0001), 
+                                  xend = jitter(Long_to, 0.0001), 
+                                  yend = jitter(Lat_to, 0.0001),  # draw edges as arcs
+                                  alpha = weight),
+                              show.legend = FALSE,
+                              #curvature = 0.2,
+                              size=.2,
+                              color = main_color) +
+                    geom_point(data = all_authors_affiliation,
+                             aes(y = lat,
+                                 x = lon) , size=.5, shape=19, colour=darken(main_color,0.1)) +
+labs(#title = "&nbsp; Global network of collaborations <br>",
+     subtitle = glue::glue("<i>N<sub>Nodes</sub></i> = {colab_summary$Size},
+                             <i>N<sub>Edges</sub></i> = {colab_summary$Edge},
+                             <i>Diameter</i> = {colab_summary$Diameter},
+                             <i>Realized connectance</i> = {round(colab_summary$RealizedConnectance,3)}")) +
+  #remove the background and default gridlines
+  theme(line = element_blank(),
+        panel.background = element_blank(),
+        plot.background = element_blank(), #element_rect(fill = "white", color = "white"),
+        plot.title = element_markdown(color = title_color, #vjust=-4,
+                                      family = "Montserrat", face = "bold",
+                                      size = 14, hjust= 0.05),
+        plot.subtitle = element_markdown(color = subtitle_color, margin = margin(b=0,unit="pt"), size=14, vjust=-1),
+        axis.text = element_blank(),
+        axis.title = element_blank()) +
+  coord_proj("+proj=wintri", xlim=c(-160,180)) 
+
+collaboration_map
+
+all_authors_affiliation %>% 
+  drop_na(lat,lon) %>% 
+  mutate(continent = coords2continent(lon,lat)) %>% 
+  pull(continent) %>%  table()
+
+```
+
+## Time series
+
+```{r make time series figure}
+
+roundUp <- function(x,to=100)
+{
+  to*(x%/%to + as.logical(x%%to))
+}
+
+annual_production <- "Database/timetrend.csv" %>% 
+  readr::read_csv()
+
+complex<- annual_production %>%  
+  group_split(group) %>% 
+  pluck(1) %>% 
+  pull(N) %>% 
+  seq_range(n=5, pretty = FALSE) %>% 
+  roundUp() %>% 
+  as.integer()
+
+ecol_complex<- annual_production %>%  
+  group_split(group) %>% 
+  pluck(2) %>% 
+  pull(N) %>% 
+  seq_range(n=5, pretty = TRUE) %>% 
+  as.integer()
+
+
+
+  plot_year <- annual_production %>%
+    arrange(year) %>% 
+    group_by(group) %>% 
+    mutate(Articles = (N - min(N)) / (max(N) - min(N))) %>% 
+    ggplot(aes(x = year, y = Articles)) +
+    geom_line(aes(colour= group), size = 2, show.legend = FALSE) +
+    scale_colour_manual(values=searchtype_colors) +
+    scale_x_continuous(limits=c(1966,2040)) +
+         annotate(
+      "text",
+      x = rep(1967, 5),
+      y = sapply(ecol_complex, 
+                function(i) {(i - min(ecol_complex))/
+                                (max(ecol_complex)-min(ecol_complex))}) ,
+      label = paste0(ecol_complex,c(rep("",4)," papers")),
+      colour =  searchtype_colors[1],
+      fontface="bold",
+      size = 5,
+      family = "Lato",
+      hjust=0
+    ) +
+    annotate(
+      "text",
+      x = rep(2023, 5),
+      y = sapply(complex, 
+                 function(i) {(i - min(complex))/
+                     (max(complex)-min(complex))}) ,
+      label = paste0(complex,c(rep("",4)," papers")),
+      colour =  searchtype_colors[2],
+      fontface="bold",
+      size = 5,
+      family = "Lato",
+      hjust=0
+    ) +
+    annotate(
+      "segment",
+      x = 1967.5,
+      xend = 1967.5,
+      y = sapply(ecol_complex[-5], #discards last value
+                 function(i) {(i - min(ecol_complex))/
+                     (max(ecol_complex)-min(ecol_complex))}) + .05
+        ,
+      yend = sapply(ecol_complex[-1], #discards first value 
+                    function(i) {(i - min(ecol_complex))/
+                        (max(ecol_complex)-min(ecol_complex))}) - .05,
+      colour =   searchtype_colors[1],
+      size = .7,
+      arrow = arrow(
+        ends = "both",
+        angle = 90,
+        length = unit(.1, "cm")
+      )
+    ) +
+    annotate(
+      "segment",
+      x = 2023.7,
+      xend = 2023.7,
+      y = sapply(complex[-5], 
+                 function(i) {(i - min(complex))/
+                     (max(complex)-min(complex))}) +.05,
+      yend = sapply(complex[-1], 
+                    function(i) {(i - min(complex))/
+                        (max(complex)-min(complex))}) - .05,
+      colour =   searchtype_colors[2],
+      size = .7,
+      arrow = arrow(
+        ends = "both",
+        angle = 90,
+        length = unit(.1, "cm")
+      )
+    ) +
+    #Make x-axis
+    annotate(
+      "segment",
+      x = 1974,
+      xend = 2019,
+      y = -.1,
+      yend = -.1,
+      colour =   subtitle_color,
+      size = 0.5,
+      arrow = arrow(length = unit(.3, "cm"))
+    ) +
+    annotate(
+      "text",
+      y = -.1,
+      x = 2021,
+      label = "2021",
+      family = "Lato",
+      colour =  subtitle_color,
+      size = 5,
+      hjust = 0
+    ) +
+    annotate(
+      "text",
+      y = -.1,
+      x = 1970,
+      label = "1970",
+      family = "Lato",
+      colour =  subtitle_color,
+      size = 5,
+      hjust = .5
+    ) +
+    labs(
+      y = "",
+      x = "",
+     # title = "Cummulative production of  <br> <span style = 'color:#57575F;'>Complexity</span> and \n <span style = 'color:#CA3542;'>Ecological complexity</span> papers"
+     ) +
+    theme(
+      plot.margin = margin(0, 0, 0, 5),
+      axis.text = element_text(colour = subtitle_color, size = 12),
+      axis.title = element_text(
+        colour = subtitle_color,
+        size = 14,
+        face = "bold",
+      ),
+      plot.title = element_markdown(
+        lineheight = 1.5,
+        hjust = 0,
+        color = title_color,
+       # vjust = -2,
+        family = "Montserrat",
+        face = "bold",
+        size = 14
+      ),
+     # plot.title.position = "plot",
+      panel.background = element_blank(),
+      plot.background = element_blank(),
+      panel.grid = element_blank(),
+      panel.grid.major = element_blank(),
+      panel.grid.minor =  element_blank(),
+      axis.ticks = element_blank(),
+      axis.text.x = element_blank(),
+      axis.text.y = element_blank()
+    ) +
+    coord_cartesian(clip = "off", expand=TRUE)
+
+
+```
+
+# Assemble figure 1
+
+```{r, fig.height = 5, fig.width = 12.5, warnings=FALSE}
+#| 
+#| fig.width = 16
+Figure_1  <- wrap_elements(collaboration_map) + 
+plot_year +  plot_annotation(tag_levels="a", tag_suffix = ")") & 
+  theme(plot.tag.position = c(0, 1),
+        plot.tag = element_text(size = 18, hjust = 0, vjust=.5,  face="bold")) 
+
+Figure_1
+
+
+ggsave(filename = "Figures/Figure_1.pdf", Figure_1, device= cairo_pdf(), width = 12.5, height =5, units= "in")
+```
+
+```{r}
+
+```

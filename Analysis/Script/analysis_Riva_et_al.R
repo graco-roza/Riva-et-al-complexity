@@ -64,12 +64,8 @@ ggmap::register_google('AIzaSyBP7U9mHiqB2q83f9JrNq4yjn4b6rAKhTg')
 # Loading fonts --------------------------------------------------------------------------------------------------
 
   
-font_install(showtextdb::google_fonts("Montserrat"))
-font_install(showtextdb::google_fonts("Lato"))
-font_install(showtextdb::google_fonts("Noto Sans"))
-font_add_google("Montserrat", "Montserrat")
-font_add_google("Noto Sans","Noto")
-font_add_google("Lato", "Lato")
+font_add_google("PT Sans", "PT Sans")
+font_add_google("Open Sans","Open Sans")
 showtext::showtext_auto()
 
 
@@ -278,7 +274,7 @@ geom_segment(data = named_edge_list,
                color = main_color, inherit.aes=FALSE) +
   geom_point(data = all_authors_affiliation,
              aes(x = lat,
-                 y = lon) , size=.5, shape=19, colour=colorspace::darken(main_color,0.1), inherit.aes=FALSE) +
+                 y = lon) , size=.3, shape=19, colour=colorspace::darken(main_color,0.1), inherit.aes=FALSE) +
   labs(#title = "&nbsp; Global network of collaborations <br>",
     subtitle = glue::glue("<br><i>N<sub>Nodes</sub></i> = {colab_summary$Size},
                              <i>N<sub>Edges</sub></i> = {colab_summary$Edge},
@@ -287,11 +283,8 @@ geom_segment(data = named_edge_list,
   #remove the background and default gridlines
   theme(line = element_blank(),
         panel.background = element_blank(),
-        plot.background = element_blank(), #element_rect(fill = "white", color = "white"),
-        plot.title = element_markdown(color = title_color, #vjust=-4,
-                                      family = "Montserrat", face = "bold",
-                                      size = 14, hjust= 0.05),
-        plot.subtitle = element_markdown(color = subtitle_color, margin = margin(b=0,unit="pt")),
+        plot.background = element_blank(),
+        plot.subtitle = element_markdown(color = subtitle_color, margin = margin(b=0,unit="pt"), family= "PT Sans",size=8),
         axis.text = element_blank(),
         axis.title = element_blank())
 
@@ -333,42 +326,32 @@ year_data_log <- year_data |>
 
 plot_year_log <- year_data_log |> 
   ggplot(aes(y=Articles,x=year, colour=group)) + 
-  geom_line(size=2) +
+  geom_line(linewidth=1) +
   scale_y_continuous(breaks=c(1:5,5.8)) +
   scale_colour_manual(values=rev(searchtype_colors))  + 
-  geom_text(data=data.frame(), aes(x=2020.5,y=5.8,label = "Complexity"),colour=searchtype_colors[2],hjust=0,family = "Lato")+
-  geom_text(data=data.frame(), aes(x=2020.5,y=3.2,label = "Ecological Complexity"),colour=searchtype_colors[1],hjust=0,family = "Lato")+
+  geom_text(data=data.frame(), aes(x=2020.5,y=5.8,label = "Complexity"),colour=searchtype_colors[2],hjust=0,family = "Open Sans",size=8/(14/5))+ #See https://stackoverflow.com/questions/25061822/ggplot-geom-text-font-size-control
+  geom_text(data=data.frame(), aes(x=2020.5,y=3.2,label = "Ecological Complexity"),colour=searchtype_colors[1],hjust=0,family = "Open Sans",size=8/(14/5))+ #See https://stackoverflow.com/questions/25061822/ggplot-geom-text-font-size-control
   labs(y="Number of Articles Log10(x+1)", x = "Publication year", colour="")+
   theme(
     plot.margin = margin(0, 0, 0, 5),
     axis.text = element_text(colour = subtitle_color, size = 10),
     axis.title = element_text(
       colour = subtitle_color,
-      size = 14,
+      size = 8,
       face = "bold",
     ),
-    plot.title = element_markdown(
-      lineheight = 1.5,
-      hjust = 0,
-      color = title_color,
-      # vjust = -2,
-      family = "Montserrat",
-      face = "bold",
-      size = 14
-    ),
-    # plot.title.position = "plot",
     legend.position = "none",
     panel.background = element_blank(),
     plot.background = element_blank(),
     panel.grid = element_blank(),
     panel.grid.major = element_blank(),
     panel.grid.minor =  element_blank(),
-    axis.text.x = element_text(colour = subtitle_color, size = 10, family = "Lato"),
-    axis.text.y = element_text(colour = subtitle_color, size = 10, family = "Lato")
+    axis.text.x = element_text(colour = subtitle_color, size = 8, family = "Open Sans"),
+    axis.text.y = element_text(colour = subtitle_color, size = 8, family = "Open Sans")
   ) +
-  scale_x_continuous(breaks=seq(1970,2020,by=10), limits = c(1970,2030))
+  scale_x_continuous(breaks=seq(1970,2020,by=10), limits = c(1970,2050))
 
-ggsave(plot = plot_year_log, filename="Figures/Figure_S1.pdf", device=cairo_pdf)
+ggsave(plot = plot_year_log, filename="Figures/Figure_S1.pdf", device=cairo_pdf, width= 3.55 , height=.75*3.55, units="in")
 
 
 plot_year <- annual_production %>%
@@ -376,7 +359,7 @@ plot_year <- annual_production %>%
     group_by(group) %>% 
     mutate(Articles = (N - min(N)) / (max(N) - min(N))) %>% 
     ggplot(aes(x = year, y = Articles)) +
-    geom_line(aes(colour= group), size = 2, show.legend = FALSE) +
+    geom_line(aes(colour= group), linewidth = .5, show.legend = FALSE) +
     scale_colour_manual(values=searchtype_colors) +
     scale_x_continuous(limits=c(1966,2040)) +
          annotate(
@@ -387,22 +370,22 @@ plot_year <- annual_production %>%
                                 (max(ecol_complex)-min(ecol_complex))}) ,
       label = paste0(ecol_complex,c(rep("",4)," papers")),
       colour =  searchtype_colors[1],
-      fontface="bold",
-      size = 5,
-      family = "Lato",
+      fontface="plain",
+      size = 3,
+      family = "Open Sans",
       hjust=0
     ) +
     annotate(
       "text",
-      x = rep(2023, 5),
+      x = rep(2022.5, 5),
       y = sapply(complex, 
                  function(i) {(i - min(complex))/
                      (max(complex)-min(complex))}) ,
       label = paste0(complex,c(rep("",4)," papers")),
       colour =  searchtype_colors[2],
-      fontface="bold",
-      size = 5,
-      family = "Lato",
+      fontface="plain",
+      size = 3,
+      family = "Open Sans",
       hjust=0
     ) +
     annotate(
@@ -417,7 +400,7 @@ plot_year <- annual_production %>%
                     function(i) {(i - min(ecol_complex))/
                         (max(ecol_complex)-min(ecol_complex))}) - .05,
       colour =   searchtype_colors[1],
-      size = .7,
+      size = .3,
       arrow = arrow(
         ends = "both",
         angle = 90,
@@ -435,7 +418,7 @@ plot_year <- annual_production %>%
                     function(i) {(i - min(complex))/
                         (max(complex)-min(complex))}) - .05,
       colour =   searchtype_colors[2],
-      size = .7,
+      size = .3,
       arrow = arrow(
         ends = "both",
         angle = 90,
@@ -450,7 +433,7 @@ plot_year <- annual_production %>%
       y = -.1,
       yend = -.1,
       colour =   subtitle_color,
-      size = 0.5,
+      size = 0.3,
       arrow = arrow(length = unit(.3, "cm"))
     ) +
     annotate(
@@ -458,9 +441,9 @@ plot_year <- annual_production %>%
       y = -.1,
       x = 2021,
       label = "2021",
-      family = "Lato",
+      family = "Open Sans",
       colour =  subtitle_color,
-      size = 5,
+      size = 3,
       hjust = 0
     ) +
     annotate(
@@ -468,33 +451,30 @@ plot_year <- annual_production %>%
       y = -.1,
       x = 1970,
       label = "1970",
-      family = "Lato",
+      family = "Open Sans",
       colour =  subtitle_color,
-      size = 5,
+      size = 3,
       hjust = .5
     ) +
     labs(
       y = "",
-      x = "",
-     # title = "Cummulative production of  <br> <span style = 'color:#57575F;'>Complexity</span> and \n <span style = 'color:#CA3542;'>Ecological complexity</span> papers",
-      size = 16
-    ) +
+      x = "") +
     theme(
       plot.margin = margin(0, 0, 0, 5),
       axis.text = element_text(colour = subtitle_color, size = 10),
       axis.title = element_text(
         colour = subtitle_color,
-        size = 14,
-        face = "bold",
+        size = 8,
+        face = "plain",
       ),
       plot.title = element_markdown(
         lineheight = 1.5,
         hjust = 0,
         color = title_color,
        # vjust = -2,
-        family = "Montserrat",
-        face = "bold",
-        size = 14
+        family = "PT Sans",
+        face = "plain",
+        size = 8
       ),
      # plot.title.position = "plot",
       panel.background = element_blank(),
@@ -509,11 +489,12 @@ plot_year <- annual_production %>%
     coord_cartesian(clip = "off", expand=TRUE)
 
 Figure_2  <- collaboration_map + 
-plot_year +  plot_annotation(tag_levels="a", tag_suffix = ")") & 
+plot_year +  plot_annotation(tag_levels="A") & 
   theme(plot.tag.position = c(0, 1),
-        plot.tag = element_text(size = 14, hjust = 0, vjust=0,  face="bold")) 
+        plot.tag = element_text(size = 9, hjust = 0, vjust=0,  face="bold"),
+        plot.margin = margin(t=0,b=0,unit="mm")) 
 
-ggsave(filename = "Figures/Figure_2.pdf", Figure_2, device= cairo_pdf(), width = 16, height =6, units= "in")
+ggsave(filename = "Figures/Figure_2.pdf", Figure_2, device= cairo_pdf(), width = 7.25, height =.35*7.25, units= "in")
 
 
 #'------------------------------------------------------------------------------------------
@@ -576,7 +557,7 @@ div_rect <-
     ymax = c(Inf, Inf)
   )
 
-plot_richness <-
+Figure_3A <-
   alpha_iqr %>%
   ggplot(aes(x = richness, y = group_number - .25)) +
   geom_rect(
@@ -678,8 +659,8 @@ plot_richness <-
       colour = group
     ),
     inherit.aes = F,
-    family = "Lato",
-    size = 5,
+    family = "Open Sans",
+    size = 8/(14/5),
     fontface = "bold"
   ) +
   geom_text(
@@ -693,8 +674,8 @@ plot_richness <-
       color = group
     ),
     inherit.aes = F,
-    family = "Lato",
-    size = 5,
+    family = "Open Sans",
+    size = 8/(14/5),
     hjust = 0
   ) +
   coord_cartesian(clip = "off") +
@@ -720,30 +701,22 @@ plot_richness <-
     subtitle = get_test_label(alpha_iqr %>%  anova_test(richness ~
                                                           group), detailed = TRUE)
   ) +
-  theme_minimal(base_size = 15, base_family = "Montserrat") +
+  theme_minimal(base_size = 8, base_family = "PT Sans") +
   theme(
     panel.grid.major = element_line(color = "grey92", size = .4),
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_blank(),
-    axis.title.x = element_text(color = subtitle_color, size = 12),
+    axis.title.x = element_text(color = subtitle_color, size = 8),
     axis.title.y = element_text(color = subtitle_color),
     axis.text = element_text(color = subtitle_color),
     axis.ticks =  element_line(color = "grey92", size = .4),
     axis.ticks.length = unit(.6, "lines"),
     legend.position = "top",
-    plot.title = element_text(
-      hjust = 0,
-      color = title_color,
-      vjust = -1,
-      family = "Montserrat",
-      face = "bold",
-      size = 14
-    ),
     plot.subtitle = element_text(
       hjust = 0,
       color = "grey30",
       family = "Noto",
-      size = 14
+      size = 8
     ),
     plot.title.position = "plot"
   )
@@ -751,7 +724,7 @@ plot_richness <-
    #summary of alpha diversity across groups (Richness)
    alpha_iqr %>%  distinct(group, .keep_all = TRUE) %>%  select(group,richness_median, richness_sd)
 
-   plot_div <-
+   Figure_3B <-
      alpha_iqr %>%
      ggplot(aes(x = div, y = group_number - .25)) +
      geom_rect(
@@ -853,8 +826,8 @@ plot_richness <-
          color = group
        ),
        inherit.aes = F,
-       family = "Lato",
-       size = 5,
+       family = "Open Sans",
+       size = 8/(14/5),
        hjust = 0
      ) +
      geom_text(
@@ -868,8 +841,8 @@ plot_richness <-
          colour = group
        ),
        inherit.aes = F,
-       family = "Lato",
-       size = 5,
+       family = "Open Sans",
+       size = 8/(14/5),
        fontface = "bold"
      ) +
      coord_cartesian(clip = "off") +
@@ -895,30 +868,22 @@ plot_richness <-
        #titles= "True diversity of features per study",
        subtitle = get_test_label(alpha_iqr %>%  anova_test(div ~ group), detailed = TRUE)
      ) +
-     theme_minimal(base_size = 15, base_family = "Montserrat") +
+     theme_minimal(base_size = 8, base_family = "PT Sans") +
      theme(
        panel.grid.major = element_line(color = "grey92", size = .4),
        panel.grid.minor = element_blank(),
        panel.grid.major.y = element_blank(),
-       axis.title.x = element_text(color = subtitle_color, size = 12),
+       axis.title.x = element_text(color = subtitle_color, size = 8),
        axis.title.y = element_text(color = subtitle_color),
        axis.text = element_text(color = subtitle_color),
        axis.ticks =  element_line(color = "grey92", size = .4),
        axis.ticks.length = unit(.6, "lines"),
        legend.position = "top",
-       plot.title = element_text(
-         hjust = 0,
-         color = title_color,
-         vjust = -1,
-         family = "Montserrat",
-         face = "bold",
-         size = 14
-       ),
        plot.subtitle = element_text(
          hjust = 0,
          color = "grey30",
          family = "Noto",
-         size = 14
+         size = 8
        ),
        plot.title.position = "plot"
      )
@@ -969,7 +934,7 @@ beta_iqr <- betadiv %>%
     ymax = c(Inf, Inf)
   )
 
-  dist_plot <- 
+  Figure_3C <- 
   beta_iqr %>%
   ggplot(aes(x= distances, y = group_number-.25)) +
   geom_rect(
@@ -1077,8 +1042,8 @@ beta_iqr <- betadiv %>%
       colour = group
     ),
     inherit.aes = F,
-    family = "Lato",
-    size = 5, 
+    family = "Open Sans",
+    size = 8/(14/5), 
     fontface="bold"
   ) +
   geom_text(
@@ -1092,8 +1057,8 @@ beta_iqr <- betadiv %>%
       color = group
     ),
     inherit.aes = F,
-    family = "Lato",
-    size = 5,
+    family = "Open Sans",
+    size = 8/(14/5),
     hjust = 0
   ) +
   scale_x_continuous(
@@ -1120,30 +1085,27 @@ beta_iqr <- betadiv %>%
        y = "",
        #title = " Study uniqueness based on features",
        subtitle = get_test_label(beta_iqr %>%  anova_test(distances~group), detailed = TRUE)) +
-  theme_minimal(base_size = 15, base_family = "Montserrat") +
+  theme_minimal(base_size = 8, base_family = "PT Sans") +
   theme(
     panel.grid.major = element_line(color = "grey92", size = .4),
     panel.grid.minor = element_blank(),
     panel.grid.major.y = element_blank(),
-    axis.title.x = element_markdown(size=12),
+    axis.title.x = element_markdown(size=8),
     axis.title.y = element_text(color = subtitle_color),
     axis.text = element_text(color = subtitle_color),
     axis.ticks =  element_line(color = "grey92", size = .4),
     axis.ticks.length = unit(.6, "lines"),
     legend.position = "top",
-    plot.title = element_text(hjust = 0, color = title_color, vjust=-1, 
-                              family = "Montserrat", face = "bold",
-                              size = 14),
     plot.subtitle = element_text(hjust = 0, color = "grey30",
                                  family = "Noto", 
-                                 size = 14),
+                                 size = 8),
     plot.title.position = "plot"
   ) +
   coord_cartesian(clip = "off") 
   
-fit_formula <- y~poly(x,2)
+fit_formula <- y~poly(x,2) #formula needs to be given as an object to `stat_poly_eq`
 
-dist_richness <- betadiv %>% 
+Figure_3D <- betadiv %>% 
   mutate(dist = scale(distances)) %>% 
   ggplot(aes(x=richness, y=dist, color=group)) +
   geom_point(size = 2, shape=19, alpha=.7)+
@@ -1156,11 +1118,12 @@ dist_richness <- betadiv %>%
                                  "italic(p)~' <0.001 '",
                                  "'; '",
                                  gsub("italic","plain",after_stat(rr.label)), sep="~")))
-                   ),label.y='top',
-               label.x='right', 
-               coef.digits = 4,
-               vstep=.08,
-               size=4,
+                   ),label.y="top",
+               label.x="right", 
+               coef.digits = 3,
+               family="PT Sans",
+               vstep=.05,
+               size=6/(14/5),
                parse = TRUE)+
   labs(y="Mean distance to<br> the group median (<span style='font-family:Noto;'>&#x0240;</span>-score)",
        x = "Number of features addressed by the study")+
@@ -1174,33 +1137,33 @@ dist_richness <- betadiv %>%
     breaks = seq(-3, 3, by = 1),
     expand = c(.01, .01)
   ) +
-  theme_minimal(base_size = 15, base_family = "Montserrat") +
+  theme_minimal(base_size = 8, base_family = "PT Sans") +
   theme(
     panel.grid.minor = element_blank(),
     panel.grid.major = element_blank(),
-    axis.title.y = element_markdown(color = subtitle_color, size=12),
-    axis.title.x = element_text(color = subtitle_color, size=12),
+    axis.title.y = element_markdown(color = subtitle_color, size=8),
+    axis.title.x = element_text(color = subtitle_color, size=8),
     axis.text = element_text(color = subtitle_color),
     axis.ticks =  element_line(color = "grey92", size = .4),
     axis.ticks.length = unit(.6, "lines"),
     legend.position = "none",
     plot.title = element_text(hjust = 0, color = title_color, vjust=-1, 
-                              family = "Montserrat", face = "bold",
-                              size = 14),
+                              family = "PT Sans", face = "bold",
+                              size = 8),
     plot.subtitle = element_text(hjust = 0, color = "grey30",
                                  family = "Noto", 
-                                 size = 14),
+                                 size = 8),
     plot.title.position = "plot"
   )
 
-summary_plots <- ((plot_richness/plot_div) |(wrap_elements(full = dist_plot) / wrap_elements(full = dist_richness))) +
-  plot_annotation(tag_levels="a", tag_suffix = ")") & 
+Figure_3 <- ((Figure_3A/Figure_3B) |(wrap_elements(full = Figure_3C) / wrap_elements(full = Figure_3D))) +
+  plot_annotation(tag_levels="A") & 
   theme(title = element_blank(),
     plot.tag.position = c(0, 1),
-        plot.tag = element_text(size = 15, hjust = 1, vjust = 0, face="bold"))
+        plot.tag = element_text(size = 8, hjust = 1, vjust = -.8, face="bold"))
 
 
-ggsave(filename="Figures/Figure_3.pdf", plot = summary_plots, device=cairo_pdf(), height=7, width=12.5)
+ggsave(filename="Figures/Figure_3.pdf", plot = Figure_3, device=cairo_pdf(), height=5.2, width=7.25,units="in")
 
 
 
@@ -1274,29 +1237,54 @@ network_words <- db_graph_original %>%
 theme_summary <- network_words %>%  NetworkTraitGet()
 
 #Adjustment to positioning words in the plot.
-nudged<-c(-.3, #diversity
-  -.35, #interaction
-  .35, #aggreg
-  .45, #self_org
-  .35, #adapt
-  .4, #non_lin
- -.3, #hierarchy
-  -.3, # mod
- .35, #emergence
-  .3, #scaling
-  .3, #fractality
-  .2, #flow
-  .4, #dinamic
-  .3, #memory
-  .35, #feedback 
-  .45, #Non equilibrium
-  .3, #Attractor
-  .35, #homeostasis
-  .3, #stability 
-  -.35, #resilience
-  -.35, #threshold
-  -.3,  #network
-  .25 #chaos
+nudged_x <- c(-.4, #diversity
+  -.45, #interaction
+  .45, #aggreg
+  .6, #self_org
+  .45, #adapt
+  .45, #non_lin
+ -.4, #hierarchy
+  -.4, # mod
+ .45, #emergence
+  .4, #scaling
+  .4, #fractality
+  .3, #flow
+  .5, #dinamic
+  .4, #memory
+  .45, #feedback 
+  .55, #Non equilibrium
+  .4, #Attractor
+  .45, #homeostasis
+  .4, #stability 
+  -.45, #resilience
+  -.45, #threshold
+  -.4,  #network
+  .3 #chaos
+)
+
+nudged_y <- c(0, #diversity
+          0, #interaction
+          0, #aggreg
+          0, #self_org
+          0, #adapt
+          .2, #non_lin
+          0, #hierarchy
+          0, # mod
+          0, #emergence
+          0, #scaling
+          0, #fractality
+          0, #flow
+          0, #dinamic
+          0, #memory
+          0, #feedback 
+          0, #Non equilibrium
+          0, #Attractor
+          0, #homeostasis
+          0, #stability 
+          0, #resilience
+          0, #threshold
+          0,  #network
+          .1 #chaos
 )
 
 
@@ -1338,10 +1326,11 @@ colour="black",
     geom_node_text(
       aes(label = stringr::str_to_sentence(gsub("_"," ", name)),
           colour = p.value >= 0.05),
-      size = 5,
+      size = 8/(14/5),
       fontface = ifelse(themes_sig$p.value < 0.05, "bold", "plain"),
       repel=FALSE,
-      nudge_x= nudged 
+      nudge_x= nudged_x, 
+      nudge_y = nudged_y
     ) +
     guides(
       fill = guide_colorbar(
@@ -1369,7 +1358,7 @@ colour="black",
      scale_edge_color_gradient("Co-occurrence strength",
                                low = "#ede5cf",
                                high = "#541f3f") +
-     scale_size_continuous(breaks = c(9, 64, 150), range = c(8, 15)) +
+     scale_size_continuous(breaks = c(9, 64, 150), range = c(3, 8)) +
     labs(size = "Occurrence in papers", 
          fill = "Feature importance",
          #title = "The most addressed features of ecological complexity",
@@ -1379,16 +1368,16 @@ colour="black",
                              <i>Realized connectance</i> = {round(theme_summary$RealizedConnectance,3)}")
          ) +
      theme(line = element_blank(),
-                        plot.title = element_text(size = 20, vjust=0, color = title_color, face="bold"),
+                        plot.title = element_text(size = 8, vjust=0, color = title_color, face="bold"),
                         plot.subtitle = element_markdown(
-                          size = 14,
+                          size = 8,
                           colour = subtitle_color,
                           vjust=2
                         ),
                         panel.background = element_blank(),
                         plot.background = element_blank(),
-                        legend.title = element_text(colour = title_color, family="Montserrat", size=14, face="bold"),
-                        legend.text = element_text(colour = subtitle_color, family = "Lato", size=12),
+                        legend.title = element_text(colour = title_color, family="PT Sans", size=8, face="bold"),
+                        legend.text = element_text(colour = subtitle_color, family = "Open Sans", size=8),
                         legend.key = element_rect(colour = NA, fill = NA),
                  legend.box.just = "top",
                  legend.position="bottom",
@@ -1396,14 +1385,14 @@ colour="black",
                  legend.justification = "center",
                  legend.box = "horizontal",
                  legend.direction = "horizontal",
-                 legend.key.width = unit(1.5,"cm"))+
+                 legend.key.width = unit(.7,"cm"))+
      scale_x_continuous(expand = c(0, 0.5))+
      coord_cartesian(clip="off")
     )
 }
 
 
-ggsave("Figures/Figure_4.pdf", plot = figure_4, width=13,height=8, device=cairo_pdf())
+ggsave("Figures/Figure_4.pdf", plot = figure_4, width=5.67,height=.75*5.67, units="in", device=cairo_pdf())
 
 
 adj_freatures<- igraph::as_adjacency_matrix( network_words %>%
@@ -1427,20 +1416,22 @@ adj_freatures<- igraph::as_adjacency_matrix( network_words %>%
   mutate(Var1_colour = fct_reorder2(Var1_colour, Var1, sig.x),
          Var2_colour = fct_reorder2(Var2_colour, Var2, sig.y)) 
 
-plot_adj_features <- adj_freatures |> 
+Figure_S3 <- adj_freatures |> 
   ggplot(aes(x=Var2_colour,y=Var1_colour,fill=Freq)) + 
   geom_tile() + 
   scale_fill_gradient(low = "#ede5cf",
                       high = "#541f3f", na.value=NA)+
-  theme_minimal()+
+  theme_minimal(base_size = 8)+
   theme(axis.title.y=element_blank(),
-        axis.text.y = element_markdown(size=15),
-        axis.text.x = element_markdown(angle=90, hjust=1,size=15),
-        panel.grid = element_blank()) + 
+        axis.text.y = element_markdown(size=8, family="PT Sans"),
+        axis.text.x = element_markdown(angle=90, hjust=1,size=8, family="PT Sans"),
+        panel.grid = element_blank(),
+        legend.text = element_text(size=8, family="PT Sans"),
+        legend.key.width = unit(.3,"cm")) + 
   scale_x_discrete(limits = rev(levels(adj_freatures$Var2_colour))) + 
   labs(x="",y="", fill = "Weight")
 
-ggsave("Figures/Figure_S3.pdf", plot_adj_features)
+ggsave("Figures/Figure_S3.pdf", Figure_S3, width=5.65,height=5.65, units="in")
 
 
 # Co-citation network -------------------------------------------------------------
@@ -1580,7 +1571,7 @@ final_cocit %>%
 
 {
 set.seed(1)
-cocit_fig <- final_cocit %>%
+Figure_5_no_refs <- final_cocit %>%
   as_tbl_graph() %>%
   activate(nodes) %>%
   left_join(clustered_co_citation %>% 
@@ -1603,22 +1594,21 @@ cocit_fig <- final_cocit %>%
     values = cocit_colors
   ) +
   scale_edge_alpha_continuous("Number of co-occurrences\nbetween references (Weight)", range = c(0.2, .8)) +
-  scale_size_continuous(breaks =c(60,300,600), range = c(3, 15)) +
+  scale_size_continuous(breaks =c(60,300,600), range = c(1, 8)) +
   labs(size = "Overall number of co-citations") +
   theme_void()+
   theme(
     line = element_blank(),
-    plot.title = element_text(size = 32, vjust=-2, color = title_color, face="bold"),
     plot.subtitle = element_markdown(
-      size = 20,
+      size = 8,
       colour = subtitle_color,
       vjust=2
     ),
     panel.background = element_blank(),
     plot.background = element_blank(),
     legend.position = c(.01,.85),
-    legend.title = element_text(colour = title_color, family="Montserrat", size=14, face="bold"),
-    legend.text = element_text(colour = subtitle_color, family = "Lato", size=14),
+    legend.title = element_text(colour = title_color, family="PT Sans", size=8, face="bold"),
+    legend.text = element_text(colour = subtitle_color, family = "Open Sans", size=8),
     legend.key = element_rect(colour = NA, fill = NA),
     legend.box.just = "left",
     legend.title.align = 0,
@@ -1657,7 +1647,7 @@ text_position <- text_data %>%
   select(x,y,group) %>% 
   add_row(x=c(2,5),y=c(5.3,-.7),group=factor(rep(1,2))) %>% #Levin 1992
   add_row(x=c(-1.5,-4, -4.5),y=c(0.5,2, -4),group=factor(rep(2,3))) %>%  #Levin 1998
-  add_row(x=c(0,-1.6),y=c(-1,-7),group=factor(rep(3,2))) %>% #May
+  add_row(x=c(0,-0.7),y=c(-1,-7),group=factor(rep(3,2))) %>% #May
   add_row(x=c(2,1),y=c(-3,-8),group=factor(rep(4,2))) %>% #Vandermeer 
   add_row(x=c(-3.5,-3),y=c(-8,-9),group=factor(rep(5,2))) %>%  #Ulanowicz
   arrange(group)
@@ -1665,21 +1655,21 @@ text_position <- text_data %>%
 box_text <- tribble( 
   ~x, ~y, ~label, ~group,
   #group1  
-  4.3 ,  -.7 ,  "&nbsp;70. S. A. Levin,<br>The problem of pattern and scale in ecology: <br>The Robert H. macarthur award lecture.<br><i>Ecology</i>. 73, 1943–1967 (1992). "     , 1 ,
+  4.3 ,  -.7 ,  "(<i>70</i>) S. A. Levin,<br>The problem of pattern and scale in ecology: <br>The Robert H. macarthur award lecture.<br><i>Ecology</i>. 73, 1943–1967 (1992). "     , 1 ,
   #group2  
-  -3.5 , -4  ,   "&nbsp;18. S. A. Levin,<br>Ecosystems and the biosphere as complex adaptive systems.<br><i>Ecosystems</i>. 1, 431–436 (1998)."     , 2,
+  -3.5 , -4  ,   "(<i>18</i>) S. A. Levin,<br>Ecosystems and the biosphere as complex adaptive systems.<br><i>Ecosystems</i>. 1, 431–436 (1998)."     , 2,
   #group3  
-  -2, -6.5   , "&nbsp;2. R. M. May,<br><i>Stability and Complexity in Model Ecosystems</i><br>(Princeton University Press, 1973)."      , 3,
+  -2, -6.5   , "(<i>2</i>) R. M. May,<br><i>Stability and Complexity in Model Ecosystems</i><br>(Princeton University Press, 1973)."      , 3,
   #group4  
-  3,  -8 , "&nbsp;151. J. Vandermeer, I. Perfecto, S. Philpott,<br>Ecological complexity and pest control in organic coffee production:<br>Uncovering an autonomous ecosystem service.<br><i>Bioscience</i>. 60, 527–537 (2010).", 4,
+  3,  -8 , "(<i>151</i>) J. Vandermeer, I. Perfecto, S. Philpott,<br>Ecological complexity and pest control in organic coffee production:<br>Uncovering an autonomous ecosystem service.<br><i>Bioscience</i>. 60, 527–537 (2010).", 4,
   #group5  
-  -2,  -9 ,  "&nbsp;43. R. E. Ulanowicz,<br><i>Growth and Development</i><br>(Springer New York, 1986)."     , 5
+  -2,  -9 ,  "(<i>43</i>) R. E. Ulanowicz,<br><i>Growth and Development</i><br>(Springer New York, 1986)."     , 5
   
 ) %>% 
   mutate(group = factor(group))
 
-(cocit_fig_final<-
-  cocit_fig +
+(Figure_5<-
+    Figure_5_no_refs +
   geom_bspline(
     data = text_position,
     aes(x, y,
@@ -1687,8 +1677,9 @@ box_text <- tribble(
         colour = group,
         colour = after_scale(colorspace::darken(colour, .1, space = "HLS"))
         ),
-    size = 1
+    size = .5
   ) +
+    #Levin 1992
     geom_textbox(data=box_text |>  slice(1), aes(x=x,
                                     y=y,
                                     group= group,
@@ -1696,14 +1687,15 @@ box_text <- tribble(
                                     label=label,
                                     colour = after_scale(colorspace::darken(colour, .1, space = "HLS")))
                  ,
-                 box.size=1,
-                 width = .3,
+                 box.size=.5,
+                 width = .33,
                  text.colour = "black",
                  hjust=0.5,
-                 family = "Lato",
-                 size = 5,
+                 family = "PT Sans",
+                 size = 8/(14/5),
                  inherit.aes=FALSE
     ) +
+    #Levin 1998
   geom_textbox(data=box_text |>  slice(2), aes(x=x,
                                                y=y,
                                                group= group,
@@ -1711,14 +1703,15 @@ box_text <- tribble(
                                                label=label,
                                                colour = after_scale(colorspace::darken(colour, .1, space = "HLS")))
                ,
-               box.size=1,
-               width = .3,
+               box.size=.5,
+               width = .43,
                text.colour = "black",
-               hjust=0.5,
-               family = "Lato",
-               size = 5, 
+               hjust=0.4,
+               family = "PT Sans",
+               size = 8/(14/5), 
                inherit.aes=FALSE
   ) +
+    #May 1973
     geom_textbox(data=box_text |>  slice(3), aes(x=x,
                                                  y=y,
                                                  group= group,
@@ -1726,14 +1719,15 @@ box_text <- tribble(
                                                  label=label,
                                                  colour = after_scale(colorspace::darken(colour, .1, space = "HLS")))
                  ,
-                 box.size=1,
+                 box.size=.5,
                  width = .3,
                  text.colour = "black",
                  hjust=0.5,
-                 family = "Lato",
-                 size = 5, 
+                 family = "PT Sans",
+                 size = 8/(14/5), 
                  inherit.aes=FALSE
     ) +
+    #Vandermeer et al. 2010
     geom_textbox(data=box_text |>  slice(4), aes(x=x,
                                                  y=y,
                                                  group= group,
@@ -1741,14 +1735,15 @@ box_text <- tribble(
                                                  label=label,
                                                  colour = after_scale(colorspace::darken(colour, .1, space = "HLS")))
                  ,
-                 box.size=1,
-                 width = .45,
+                 box.size=.5,
+                 width = .5,
                  text.colour = "black",
                  hjust=0.5,
-                 family = "Lato",
-                 size = 5, 
+                 family = "PT Sans",
+                 size = 8/(14/5), 
                  inherit.aes=FALSE
     ) +
+    #Ulanowicz 1986
     geom_textbox(data=box_text |>  slice(5), aes(x=x,
                                                  y=y,
                                                  group= group,
@@ -1756,12 +1751,12 @@ box_text <- tribble(
                                                  label=label,
                                                  colour = after_scale(colorspace::darken(colour, .1, space = "HLS")))
                  ,
-                 box.size=1,
+                 box.size=.5,
                  width = .2,
                  text.colour = "black",
                  hjust=0.5,
-                 family = "Lato",
-                 size = 5, 
+                 family = "PT Sans",
+                 size = 8/(14/5), 
                  inherit.aes=FALSE
     ) +
   geom_node_point(
@@ -1773,13 +1768,13 @@ box_text <- tribble(
         fill = after_scale(colorspace::lighten(fill, .3, space = "HLS")),
         colour = after_scale(colorspace::darken(fill, .1, space = "HLS"))),
     shape = 21
-    ,stroke=1.5
+    ,stroke=1
   ) +
     scale_colour_manual(values=cocit_colors)+
   coord_cartesian(clip = "off"))
   
 
-ggsave(filename = "Figures/Figure_5.pdf", plot = cocit_fig_final, device=cairo_pdf, width= 15, height=9)
+ggsave(filename = "Figures/Figure_5.pdf", plot = Figure_5, device=cairo_pdf, width= 7.25, height=.75*7.25, units="in")
 
 
 
@@ -1811,21 +1806,26 @@ adj_cocit<- igraph::as_adjacency_matrix( final_cocit %>%
   mutate(Var1_colour = fct_reorder2(Var1_colour, Var1, group.x),
          Var2_colour = fct_reorder2(Var2_colour, Var2, group.y)) 
 
-plot_adj_cocit <- adj_cocit |> 
+Figure_S4 <- adj_cocit |> 
   ggplot(aes(x=Var2_colour,y=Var1_colour,fill=Freq)) + 
   geom_tile() + 
   scale_fill_gradient(low = "#ede5cf",
                       high = "#541f3f", na.value=NA)+
-  theme_minimal()+
+  theme_minimal(base_size=5)+
   theme(axis.title.y=element_blank(),
-        axis.text.y = element_markdown(size=10),
-        axis.text.x = element_markdown(angle=90, hjust=1,size=10),
-        panel.grid = element_blank()) + 
+        axis.text.y = element_markdown(size=5, family= "PT Sans"),
+        axis.text.x = element_markdown(angle=90, hjust=1,size=5, family="PT Sans"),
+        panel.grid = element_blank(),
+        legend.title = element_text(size=6, family="PT Sans"),
+        legend.position="bottom",
+        legend.key.width = unit(.3,"cm"),
+        legend.key.height = unit(.3,"cm"),
+        ) + 
   scale_x_discrete(limits = rev(levels(adj_cocit$Var2_colour))) + 
   labs(x="",y="", fill = "Co-occurrences")
 
 
-ggsave("Figures/Figure_S4.pdf", plot_adj_cocit)
+ggsave("Figures/Figure_S4.pdf", Figure_S4, width = 7.25, height=7.25, units="in")
 
 # Network regression ---------------------------------------------------------
 
@@ -1840,7 +1840,7 @@ network_ergm <- db_graph_original %>%
                                       directed = TRUE,
                                       weighted = NULL) %>%
   igraph::bipartite_projection() %>%  #projecting to unipartite
-  pluck("proj2") %>% #selecting node type 1
+  pluck("proj2") %>% #selecting node type 2
   as_tbl_graph(directed = TRUE) %>%  #convert to table graph object
   tidygraph::activate(nodes) |> 
   left_join(ref_tab %>%  select(WOS_ID, SEARCH_TYPE), by = c("name"="WOS_ID")) 
@@ -1852,9 +1852,10 @@ ResponseNetwork <- network_ergm %>%
     ignore.eval = FALSE,
     names.eval = "weight"
   )
-ResponseNetwork %v%  "SEARCH_TYPE"  <- network_ergm %>%  pull(SEARCH_TYPE)
+
+ResponseNetwork %v%  "SEARCH_TYPE"  <- network_ergm %>%  pull(SEARCH_TYPE) #add the search type to the data
 
 #@Fitting the model ----
-ERGM1 <- ergm::ergm(ResponseNetwork ~ edges + nodefactor("SEARCH_TYPE") + nodematch("SEARCH_TYPE"), estimate = "MLE")
+ERGM_output <- ergm::ergm(ResponseNetwork ~ edges + nodefactor("SEARCH_TYPE") + nodematch("SEARCH_TYPE"), estimate = "MLE")
 
-summary(ERGM1)
+summary(ERGM_output)
